@@ -1,4 +1,4 @@
-# wp scaffold child-theme
+# fin scaffold child-theme
 
 Generates child theme based on an existing theme.
 
@@ -36,12 +36,12 @@ Creates a child theme folder with `functions.php` and `style.css` files.
 ### EXAMPLES
 
     # Generate a 'sample-theme' child theme based on TwentySixteen
-    $ wp scaffold child-theme sample-theme --parent_theme=twentysixteen
-    Success: Created '/var/www/example.com/public_html/wp-content/themes/sample-theme'.
+    $ fin scaffold child-theme sample-theme --parent_theme=twentysixteen
+    Success: Created '/var/www/example.com/public_html/fin-content/themes/sample-theme'.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -57,6 +57,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

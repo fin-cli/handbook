@@ -11,15 +11,15 @@ Run or try a given command in a subdirectory.
 
 ```
 Scenario: My example scenario
-  When I run `wp core is-installed`
+  When I run `fin core is-installed`
   Then STDOUT should be empty
 
-  When I run `wp core is-installed` from 'foo/wp-content'
+  When I run `fin core is-installed` from 'foo/fin-content'
   Then STDOUT should be empty
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

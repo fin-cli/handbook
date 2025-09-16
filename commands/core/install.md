@@ -1,10 +1,10 @@
-# wp core install
+# fin core install
 
 Runs the standard WordPress installation process.
 
 Creates the WordPress tables in the database using the URL, title, and default admin user details provided. Performs the famous 5 minute install in seconds or less.
 
-Note: if you've installed WordPress in a subdirectory, then you'll need to `wp option update siteurl` after `wp core install`. For instance, if WordPress is installed in the `/wp` directory and your domain is example.com, then you'll need to run `wp option update siteurl http://example.com/wp` for your WordPress installation to function properly.
+Note: if you've installed WordPress in a subdirectory, then you'll need to `fin option update siteurl` after `fin core install`. For instance, if WordPress is installed in the `/fin` directory and your domain is example.com, then you'll need to run `fin option update siteurl http://example.com/fin` for your WordPress installation to function properly.
 
 Note: When using custom user tables (e.g. `CUSTOM_USER_TABLE`), the admin email and password are ignored if the user_login already exists. If the user_login doesn't exist, a new user will be created.
 
@@ -34,15 +34,15 @@ Note: When using custom user tables (e.g. `CUSTOM_USER_TABLE`), the admin email 
 ### EXAMPLES
 
     # Install WordPress in 5 seconds
-    $ wp core install --url=example.com --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com
+    $ fin core install --url=example.com --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com
     Success: WordPress installed successfully.
 
     # Install WordPress without disclosing admin_password to bash history
-    $ wp core install --url=example.com --title=Example --admin_user=supervisor --admin_email=info@example.com --prompt=admin_password < admin_password.txt
+    $ fin core install --url=example.com --title=Example --admin_user=supervisor --admin_email=info@example.com --prompt=admin_password < admin_password.txt
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -58,6 +58,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

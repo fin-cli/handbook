@@ -1,6 +1,6 @@
 # Customize doctor diagnostic checks
 
-Even though `wp doctor` comes with a [number of default diagnostic checks](https://make.wordpress.org/cli/handbook/doctor-default-checks/), it's designed with extensibility at its core. Checks are defined at runtime, read from a `doctor.yml` configuration file naming each check with its options.
+Even though `fin doctor` comes with a [number of default diagnostic checks](https://make.wordpress.org/cli/handbook/doctor-default-checks/), it's designed with extensibility at its core. Checks are defined at runtime, read from a `doctor.yml` configuration file naming each check with its options.
 
 ## doctor.yml format
 
@@ -25,7 +25,7 @@ For the sake of completeness, it's also worth noting `Autoload_Options_Size` acc
 
 ## Custom doctor.yml configuration files
 
-Run your own doctor checks by creating a `doctor.yml` and supplying it with `wp doctor check --config=doctor.yml`. Use different configurations for different environments by creating separate `prod.yml` and `dev.yml` files.
+Run your own doctor checks by creating a `doctor.yml` and supplying it with `fin doctor check --config=doctor.yml`. Use different configurations for different environments by creating separate `prod.yml` and `dev.yml` files.
 
 If you want your custom file to extend an existing doctor config, you can use the magical `_` config file option to define which config file to inherit. 'default' is a magic reference to the bundled `doctor.yml`; you also specify an entire file path.
 
@@ -59,7 +59,7 @@ This custom `doctor.yml` file:
 
 ## Available check types
 
-Some `wp doctor` check types are configurable, meaning the default setting can be changed, while other check types are abstracted in such a way that they can be reusable. For instance, the `Autoload_Options_Size` check accepts an option 'threshold\_kb' while `Plugin_Status` accepts 'plugin' and 'status' as options.
+Some `fin doctor` check types are configurable, meaning the default setting can be changed, while other check types are abstracted in such a way that they can be reusable. For instance, the `Autoload_Options_Size` check accepts an option 'threshold\_kb' while `Plugin_Status` accepts 'plugin' and 'status' as options.
 
 The configurable check types include:
 

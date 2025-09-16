@@ -1,8 +1,8 @@
-# wp core multisite-convert
+# fin core multisite-convert
 
 Transforms an existing single-site installation into a multisite installation.
 
-Creates the multisite database tables, and adds the multisite constants to wp-config.php.
+Creates the multisite database tables, and adds the multisite constants to fin-config.php.
 
 For those using WordPress with Apache, remember to update the `.htaccess` file with the appropriate multisite rewrite rules.
 
@@ -23,18 +23,18 @@ default: /
 : If passed, the network will use subdomains, instead of subdirectories. Doesn't work with 'localhost'.
 
 [\--skip-config]
-: Don't add multisite constants to wp-config.php.
+: Don't add multisite constants to fin-config.php.
 
 ### EXAMPLES
 
-    $ wp core multisite-convert
+    $ fin core multisite-convert
     Set up multisite database tables.
-    Added multisite constants to wp-config.php.
+    Added multisite constants to fin-config.php.
     Success: Network installed. Don't forget to set up rewrite rules.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -50,6 +50,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

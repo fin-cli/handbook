@@ -1,22 +1,22 @@
-# wp cron test
+# fin cron test
 
-Tests the WP Cron spawning system and reports back its status.
+Tests the FIN Cron spawning system and reports back its status.
 
 This command tests the spawning system by performing the following steps:
 
-* Checks to see if the `DISABLE_WP_CRON` constant is set; errors if true because WP-Cron is disabled.
-* Checks to see if the `ALTERNATE_WP_CRON` constant is set; warns if true.
-* Attempts to spawn WP-Cron over HTTP; warns if non 200 response code is returned.
+* Checks to see if the `DISABLE_FIN_CRON` constant is set; errors if true because FIN-Cron is disabled.
+* Checks to see if the `ALTERNATE_FIN_CRON` constant is set; warns if true.
+* Attempts to spawn FIN-Cron over HTTP; warns if non 200 response code is returned.
 
 ### EXAMPLES
 
     # Cron test runs successfully.
-    $ wp cron test
-    Success: WP-Cron spawning is working as expected.
+    $ fin cron test
+    Success: FIN-Cron spawning is working as expected.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -32,6 +32,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

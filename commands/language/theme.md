@@ -1,11 +1,11 @@
-# wp language theme
+# fin language theme
 
 Installs, activates, and manages theme language packs.
 
 ### EXAMPLES
 
     # Install the Dutch theme language pack for Twenty Ten.
-    $ wp language theme install twentyten nl_NL
+    $ fin language theme install twentyten nl_NL
     Downloading translation from https://downloads.wordpress.org/translation/theme/twentyten/4.0/nl_NL.zip...
     Unpacking the update...
     Installing the latest version...
@@ -15,7 +15,7 @@ Installs, activates, and manages theme language packs.
     Success: Installed 1 of 1 languages.
 
     # Uninstall the Dutch theme language pack for Twenty Ten.
-    $ wp language theme uninstall twentyten nl_NL
+    $ fin language theme uninstall twentyten nl_NL
     Language 'nl_NL' for 'twentyten' uninstalled.
     +-----------+--------+-------------+
     | name      | locale | status      |
@@ -25,7 +25,7 @@ Installs, activates, and manages theme language packs.
     Success: Uninstalled 1 of 1 languages.
 
     # List installed theme language packs for Twenty Ten.
-    $ wp language theme list twentyten --status=installed
+    $ fin language theme list twentyten --status=installed
     +-----------+----------+--------------+-------------+-----------+--------+---------------------+
     | theme     | language | english_name | native_name | status    | update | updated             |
     +-----------+----------+--------------+-------------+-----------+--------+---------------------+

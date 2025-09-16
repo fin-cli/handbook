@@ -1,4 +1,4 @@
-# wp theme enable
+# fin theme enable
 
 Enables a theme on a WordPress multisite install.
 
@@ -18,21 +18,21 @@ Permits theme to be activated from the dashboard of a site on a WordPress multis
 ### EXAMPLES
 
     # Enable theme
-    $ wp theme enable twentysixteen
+    $ fin theme enable twentysixteen
     Success: Enabled the 'Twenty Sixteen' theme.
 
     # Network enable theme
-    $ wp theme enable twentysixteen --network
+    $ fin theme enable twentysixteen --network
     Success: Network enabled the 'Twenty Sixteen' theme.
 
     # Network enable and activate theme for current site
-    $ wp theme enable twentysixteen --activate
+    $ fin theme enable twentysixteen --activate
     Success: Enabled the 'Twenty Sixteen' theme.
     Success: Switched to 'Twenty Sixteen' theme.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -48,6 +48,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

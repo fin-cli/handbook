@@ -1,4 +1,4 @@
-# wp profile eval-file
+# fin profile eval-file
 
 Profile execution of an arbitrary file.
 
@@ -40,8 +40,8 @@ options:
 
 ### EXAMPLES
 
-    # Profile from a file `request.php` containing `&lt;?php wp_remote_get( "https://www.apple.com/" );`.
-    $ wp profile eval-file request.php --fields=time,cache_ratio,request_count
+    # Profile from a file `request.php` containing `&lt;?php fin_remote_get( "https://www.apple.com/" );`.
+    $ fin profile eval-file request.php --fields=time,cache_ratio,request_count
     +---------+-------------+---------------+
     | time    | cache_ratio | request_count |
     +---------+-------------+---------------+
@@ -50,7 +50,7 @@ options:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -66,6 +66,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

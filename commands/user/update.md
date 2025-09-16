@@ -1,4 +1,4 @@
-# wp user update
+# fin user update
 
 Updates an existing user.
 
@@ -44,7 +44,7 @@ Updates an existing user.
 : A string used to set the user's role.
 
 \--&lt;field&gt;=&lt;value&gt;
-: One or more fields to update. For accepted fields, see wp_update_user().
+: One or more fields to update. For accepted fields, see fin_update_user().
 
 [\--skip-email]
 : Don't send an email notification to the user.
@@ -52,12 +52,12 @@ Updates an existing user.
 ### EXAMPLES
 
     # Update user
-    $ wp user update 123 --display_name=Mary --user_pass=marypass
+    $ fin user update 123 --display_name=Mary --user_pass=marypass
     Success: Updated user 123.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -73,6 +73,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

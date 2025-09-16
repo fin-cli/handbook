@@ -1,4 +1,4 @@
-# wp user session destroy
+# fin user session destroy
 
 Destroy a session for the given user.
 
@@ -16,25 +16,25 @@ Destroy a session for the given user.
 ### EXAMPLES
 
     # Destroy the most recent session of the given user.
-    $ wp user session destroy admin
+    $ fin user session destroy admin
     Success: Destroyed session. 3 sessions remaining.
 
     # Destroy a specific session of the given user.
-    $ wp user session destroy admin e073ad8540a9c2...
+    $ fin user session destroy admin e073ad8540a9c2...
     Success: Destroyed session. 2 sessions remaining.
 
     # Destroy all the sessions of the given user.
-    $ wp user session destroy admin --all
+    $ fin user session destroy admin --all
     Success: Destroyed all sessions.
 
     # Destroy all sessions for all users.
-    $ wp user list --field=ID | xargs -n 1 wp user session destroy --all
+    $ fin user list --field=ID | xargs -n 1 fin user session destroy --all
     Success: Destroyed all sessions.
     Success: Destroyed all sessions.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -50,6 +50,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

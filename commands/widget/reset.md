@@ -1,4 +1,4 @@
-# wp widget reset
+# fin widget reset
 
 Resets sidebar.
 
@@ -15,23 +15,23 @@ Removes all widgets from the sidebar and places them in Inactive Widgets.
 ### EXAMPLES
 
     # Reset a sidebar
-    $ wp widget reset sidebar-1
+    $ fin widget reset sidebar-1
     Success: Sidebar 'sidebar-1' reset.
 
     # Reset multiple sidebars
-    $ wp widget reset sidebar-1 sidebar-2
+    $ fin widget reset sidebar-1 sidebar-2
     Success: Sidebar 'sidebar-1' reset.
     Success: Sidebar 'sidebar-2' reset.
 
     # Reset all sidebars
-    $ wp widget reset --all
+    $ fin widget reset --all
     Success: Sidebar 'sidebar-1' reset.
     Success: Sidebar 'sidebar-2' reset.
     Success: Sidebar 'sidebar-3' reset.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -47,6 +47,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

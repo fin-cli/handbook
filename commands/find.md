@@ -1,10 +1,10 @@
-# wp find
+# fin find
 
 Find WordPress installations on the filesystem.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
-Recursively iterates subdirectories of provided &lt;path&gt; to find and report WordPress installations. A WordPress installation is a wp-includes directory with a version.php file.
+Recursively iterates subdirectories of provided &lt;path&gt; to find and report WordPress installations. A WordPress installation is a fin-includes directory with a version.php file.
 
 Avoids recursing some known paths (e.g. /node_modules/, hidden sys dirs) to significantly improve performance.
 
@@ -52,11 +52,11 @@ These fields will be displayed by default for each installation:
 * version_path - Path to the version.php file.
 * version - WordPress version.
 * depth - Directory depth at which the installation was found.
-* alias - WP-CLI alias, if one is registered.
+* alias - FIN-CLI alias, if one is registered.
 
 These fields are optionally available:
 
-* wp_path - Path that can be passed to `--path=&lt;path&gt;` global parameter.
+* fin_path - Path that can be passed to `--path=&lt;path&gt;` global parameter.
 * db_host - Host name for the database.
 * db_user - User name for the database.
 * db_name - Database name for the database.
@@ -64,16 +64,16 @@ These fields are optionally available:
 ### EXAMPLES
 
     # Find WordPress installations.
-    $ wp find ./
+    $ fin find ./
     +--------------------------------------+---------------------+-------+--------+
     | version_path                         | version             | depth | alias  |
     +--------------------------------------+---------------------+-------+--------+
-    | /Users/wpcli/wp-includes/version.php | 4.8-alpha-39357-src | 2     | @wpcli |
+    | /Users/fincli/fin-includes/version.php | 4.8-alpha-39357-src | 2     | @fincli |
     +--------------------------------------+---------------------+-------+--------+
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -89,6 +89,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

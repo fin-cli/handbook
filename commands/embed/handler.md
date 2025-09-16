@@ -1,11 +1,11 @@
-# wp embed handler
+# fin embed handler
 
 Retrieves embed handlers.
 
 ### EXAMPLES
 
     # List id,regex,priority fields of available handlers.
-    $ wp embed handler list --fields=priority,id
+    $ fin embed handler list --fields=priority,id
     +----------+-------------------+
     | priority | id                |
     +----------+-------------------+

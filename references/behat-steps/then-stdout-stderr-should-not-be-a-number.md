@@ -9,13 +9,13 @@ Expect STDOUT or STDERR to not be a numeric value.
 
 ```
 Scenario: My example scenario
-  Given a WP installation
-  When I run `wp post list --format=json`
+  Given a FIN installation
+  When I run `fin post list --format=json`
   Then STDOUT should not be a number
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

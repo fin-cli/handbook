@@ -1,4 +1,4 @@
-# wp option
+# fin option
 
 Retrieves and sets site options, including plugin and WordPress settings.
 
@@ -7,19 +7,19 @@ See the [Plugin Settings API](https://developer.wordpress.org/plugins/settings/s
 ### EXAMPLES
 
     # Get site URL.
-    $ wp option get siteurl
+    $ fin option get siteurl
     http://example.com
 
     # Add option.
-    $ wp option add my_option foobar
+    $ fin option add my_option foobar
     Success: Added 'my_option' option.
 
     # Update option.
-    $ wp option update my_option '{"foo": "bar"}' --format=json
+    $ fin option update my_option '{"foo": "bar"}' --format=json
     Success: Updated 'my_option' option.
 
     # Delete option.
-    $ wp option delete my_option
+    $ fin option delete my_option
     Success: Deleted 'my_option' option.
 
 

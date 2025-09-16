@@ -1,4 +1,4 @@
-# wp option list
+# fin option list
 
 Lists options and their values.
 
@@ -72,11 +72,11 @@ These fields are optionally available:
 ### EXAMPLES
 
     # Get the total size of all autoload options.
-    $ wp option list --autoload=on --format=total_bytes
+    $ fin option list --autoload=on --format=total_bytes
     33198
 
     # Find biggest transients.
-    $ wp option list --search="*_transient_*" --fields=option_name,size_bytes | sort -n -k 2 | tail
+    $ fin option list --search="*_transient_*" --fields=option_name,size_bytes | sort -n -k 2 | tail
     option_name size_bytes
     _site_transient_timeout_theme_roots 10
     _site_transient_theme_roots 76
@@ -85,7 +85,7 @@ These fields are optionally available:
     _site_transient_update_plugins  6645
 
     # List all options beginning with "i2f_".
-    $ wp option list --search="i2f_*"
+    $ fin option list --search="i2f_*"
     +-------------+--------------+
     | option_name | option_value |
     +-------------+--------------+
@@ -93,14 +93,14 @@ These fields are optionally available:
     +-------------+--------------+
 
     # Delete all options beginning with "theme_mods_".
-    $ wp option list --search="theme_mods_*" --field=option_name | xargs -I % wp option delete %
+    $ fin option list --search="theme_mods_*" --field=option_name | xargs -I % fin option delete %
     Success: Deleted 'theme_mods_twentysixteen' option.
     Success: Deleted 'theme_mods_twentyfifteen' option.
     Success: Deleted 'theme_mods_twentyfourteen' option.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -116,6 +116,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

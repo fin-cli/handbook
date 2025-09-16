@@ -1,8 +1,8 @@
-# wp config list
+# fin config list
 
-Lists variables, constants, and file includes defined in wp-config.php file.
+Lists variables, constants, and file includes defined in fin-config.php file.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 ### OPTIONS
 
@@ -28,25 +28,25 @@ options:
 : Enforce strict matching when a filter is provided.
 
 [\--config-file=&lt;path&gt;]
-: Specify the file path to the config file to be read. Defaults to the root of the WordPress installation and the filename "wp-config.php".
+: Specify the file path to the config file to be read. Defaults to the root of the WordPress installation and the filename "fin-config.php".
 
 ### EXAMPLES
 
-    # List constants and variables defined in wp-config.php file.
-    $ wp config list
+    # List constants and variables defined in fin-config.php file.
+    $ fin config list
     +------------------+------------------------------------------------------------------+----------+
     | key              | value                                                            | type     |
     +------------------+------------------------------------------------------------------+----------+
-    | table_prefix     | wp_                                                              | variable |
-    | DB_NAME          | wp_cli_test                                                      | constant |
+    | table_prefix     | fin_                                                              | variable |
+    | DB_NAME          | fin_cli_test                                                      | constant |
     | DB_USER          | root                                                             | constant |
     | DB_PASSWORD      | root                                                             | constant |
     | AUTH_KEY         | r6+@shP1yO&amp;$)1gdu.hl[/j;7Zrvmt~o;#WxSsa0mlQOi24j2cR,7i+QM/#7S:o^ | constant |
     | SECURE_AUTH_KEY  | iO-z!_m--YH$Tx2tf/&amp;V,YW*13Z_HiRLqi)d?$o-tMdY+82pK$`T.NYW~iTLW;xp | constant |
     +------------------+------------------------------------------------------------------+----------+
 
-    # List only database user and password from wp-config.php file.
-    $ wp config list DB_USER DB_PASSWORD --strict
+    # List only database user and password from fin-config.php file.
+    $ fin config list DB_USER DB_PASSWORD --strict
     +------------------+-------+----------+
     | key              | value | type     |
     +------------------+-------+----------+
@@ -54,8 +54,8 @@ options:
     | DB_PASSWORD      | root  | constant |
     +------------------+-------+----------+
 
-    # List all salts from wp-config.php file.
-    $ wp config list _SALT
+    # List all salts from fin-config.php file.
+    $ fin config list _SALT
     +------------------+------------------------------------------------------------------+----------+
     | key              | value                                                            | type     |
     +------------------+------------------------------------------------------------------+----------+
@@ -67,7 +67,7 @@ options:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -83,6 +83,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

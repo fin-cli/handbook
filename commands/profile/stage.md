@@ -1,13 +1,13 @@
-# wp profile stage
+# fin profile stage
 
 Profile each stage of the WordPress load process (bootstrap, main_query, template).
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
-When WordPress handles a request from a browser, it’s essentially executing as one long PHP script. `wp profile stage` breaks the script into three stages:
+When WordPress handles a request from a browser, it’s essentially executing as one long PHP script. `fin profile stage` breaks the script into three stages:
 
 * **bootstrap** is where WordPress is setting itself up, loading plugins and the main theme, and firing the `init` hook.
-* **main_query** is how WordPress transforms the request (e.g. `/2016/10/21/moms-birthday/`) into the primary WP_Query.
+* **main_query** is how WordPress transforms the request (e.g. `/2016/10/21/moms-birthday/`) into the primary FIN_Query.
 * **template** is where WordPress determines which theme template to render based on the main query, and renders it.
 
 ### OPTIONS
@@ -53,7 +53,7 @@ options:
 ### EXAMPLES
 
     # See an overview for each stage of the load process.
-    $ wp profile stage --fields=stage,time,cache_ratio
+    $ fin profile stage --fields=stage,time,cache_ratio
     +------------+---------+-------------+
     | stage      | time    | cache_ratio |
     +------------+---------+-------------+
@@ -65,7 +65,7 @@ options:
     +------------+---------+-------------+
 
     # Dive into hook performance for a given stage.
-    $ wp profile stage bootstrap --fields=hook,time,cache_ratio --spotlight
+    $ fin profile stage bootstrap --fields=hook,time,cache_ratio --spotlight
     +--------------------------+---------+-------------+
     | hook                     | time    | cache_ratio |
     +--------------------------+---------+-------------+
@@ -75,14 +75,14 @@ options:
     | plugins_loaded           | 0.1502s | 100%        |
     | after_setup_theme:before | 0.068s  | 100%        |
     | init                     | 0.2643s | 96.88%      |
-    | wp_loaded:after          | 0.0377s |             |
+    | fin_loaded:after          | 0.0377s |             |
     +--------------------------+---------+-------------+
     | total (7)                | 1.0335s | 77.42%      |
     +--------------------------+---------+-------------+
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -98,6 +98,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

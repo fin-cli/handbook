@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="WP-CLI-handbook">
-	<description>Custom ruleset for WP-CLI command</description>
+<ruleset name="FIN-CLI-handbook">
+	<description>Custom ruleset for FIN-CLI command</description>
 
 	<!--
 	#############################################################################
@@ -24,11 +24,11 @@
 
 	<!--
 	#############################################################################
-	USE THE WP_CLI_CS RULESET
+	USE THE FIN_CLI_CS RULESET
 	#############################################################################
 	-->
 
-	<rule ref="WP_CLI_CS"/>
+	<rule ref="FIN_CLI_CS"/>
 
 	<!--
 	#############################################################################

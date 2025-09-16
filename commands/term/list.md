@@ -1,4 +1,4 @@
-# wp term list
+# fin term list
 
 Lists terms in a taxonomy.
 
@@ -48,7 +48,7 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List post categories
-    $ wp term list category --format=csv
+    $ fin term list category --format=csv
     term_id,term_taxonomy_id,name,slug,description,parent,count
     2,2,aciform,aciform,,0,1
     3,3,antiquarianism,antiquarianism,,0,1
@@ -56,7 +56,7 @@ These fields are optionally available:
     5,5,asmodeus,asmodeus,,0,1
 
     # List post tags
-    $ wp term list post_tag --fields=name,slug
+    $ fin term list post_tag --fields=name,slug
     +-----------+-------------+
     | name      | slug        |
     +-----------+-------------+
@@ -68,7 +68,7 @@ These fields are optionally available:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -84,6 +84,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,8 +1,8 @@
-# wp user delete
+# fin user delete
 
 Deletes one or more users from the current site.
 
-On multisite, `wp user delete` only removes the user from the current site. Include `--network` to also remove the user from the database, but make sure to reassign their posts prior to deleting the user.
+On multisite, `fin user delete` only removes the user from the current site. Include `--network` to also remove the user from the database, but make sure to reassign their posts prior to deleting the user.
 
 ### OPTIONS
 
@@ -21,20 +21,20 @@ On multisite, `wp user delete` only removes the user from the current site. Incl
 ### EXAMPLES
 
     # Delete user 123 and reassign posts to user 567
-    $ wp user delete 123 --reassign=567
+    $ fin user delete 123 --reassign=567
     Success: Removed user 123 from http://example.com.
 
     # Delete all contributors and reassign their posts to user 2
-    $ wp user delete $(wp user list --role=contributor --field=ID) --reassign=2
+    $ fin user delete $(fin user list --role=contributor --field=ID) --reassign=2
     Success: Removed user 813 from http://example.com.
     Success: Removed user 578 from http://example.com.
 
-    # Delete all contributors in batches of 100 (avoid error: argument list too long: wp)
-    $ wp user delete $(wp user list --role=contributor --field=ID | head -n 100)
+    # Delete all contributors in batches of 100 (avoid error: argument list too long: fin)
+    $ fin user delete $(fin user list --role=contributor --field=ID | head -n 100)
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -50,6 +50,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

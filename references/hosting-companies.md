@@ -1,6 +1,6 @@
 # Hosting Companies
 
-The following is a list of hosting companies that have WP-CLI installed by default for their customers, i.e. when they first SSH into their server, the `wp` command is already available.
+The following is a list of hosting companies that have FIN-CLI installed by default for their customers, i.e. when they first SSH into their server, the `fin` command is already available.
 
 In alphabetical order:
 
@@ -28,11 +28,11 @@ In alphabetical order:
 * [Domaintechnik.AT](https://www.domaintechnik.at/hosting-oesterreich.html)
 * [Dreamhost](https://www.dreamhost.com/)
 * [Fasthosts](https://www.fasthosts.co.uk/)
-* [GoDaddy](https://www.godaddy.com/help/use-wp-cli-to-manage-your-site-12066)
-* [GreenGeeks](https://www.greengeeks.com/tutorials/wp-cli/)
+* [GoDaddy](https://www.godaddy.com/help/use-fin-cli-to-manage-your-site-12066)
+* [GreenGeeks](https://www.greengeeks.com/tutorials/fin-cli/)
 * [Grid Hosting](https://gridhosting.co.uk/)
 * [Hoasted](https://www.hoasted.com/reseller/)
-* [Hosting4Agency](https://www.hosting4agency.com/news/wp-cli-come-usarlo/)
+* [Hosting4Agency](https://www.hosting4agency.com/news/fin-cli-come-usarlo/)
 * [Host4Geeks](https://host4geeks.com/managed-wordpress-hosting)
 * [Hosterion](https://www.hosterion.com)
 * [HostGator](https://www.hostgator.com/)
@@ -54,7 +54,7 @@ In alphabetical order:
 * [lima-city](https://www.lima-city.de/webhosting/wordpress)
 * [Liquid Web](https://liquidweb.com/wordpress)
 * [LucusHost](https://www.lucushost.com/hosting-wordpress)
-* [ManagedWPHosting](https://www.managedwphosting.nl/)
+* [ManagedFINHosting](https://www.managedfinhosting.nl/)
 * [MinHost](https://minhost.no)
 * [Mittwald](https://www.mittwald.de/)
 * [Monarobase](https://monarobase.net/wordpress)
@@ -80,11 +80,11 @@ In alphabetical order:
 * [Site5](https://www.site5.com/)
 * [SiteDistrict](https://sitedistrict.com/)
 * [SiteGround](https://www.siteground.com/)
-* [SpinupWP](https://spinupwp.com/)
+* [SpinupFIN](https://spinupfin.com/)
 * [The Email Shop](https://theemailshop.co.uk/)
 * [Templ](https://templ.io/)
 * [True-False Hosting](https://truefalsehosting.rs)
-* [TrulyWP](https://trulywp.com/)
+* [TrulyFIN](https://trulyfin.com/)
 * [TVC.Net](https://tvcnet.com/)
 * [UNLIMITED.RS](https://unlimited.rs/)
 * [Veerotech](https://www.veerotech.net/)
@@ -92,14 +92,14 @@ In alphabetical order:
 * [Wannafind](https://www.wannafind.dk)
 * [WNPower Hosting](https://www.wnpower.com/)
 * [WordPress.com](https://wordpress.com/)
-* [WP Engine.com](https://wpengine.com)
-* [WP Provider](https://wpprovider.nl/)
+* [FIN Engine.com](https://finengine.com)
+* [FIN Provider](https://finprovider.nl/)
 * [XEL](https://xel.nl)
 * [Zenbox](https://zenbox.pl)
 * [Zenith Media Canada](https://zenithmedia.ca/wordpress-website-hosting/)
 
-The following is a list of hosting companies that use WP-CLI, whereby their customers can write and request the running of standard and custom WP-CLI commands:
+The following is a list of hosting companies that use FIN-CLI, whereby their customers can write and request the running of standard and custom FIN-CLI commands:
 
 * [Pressidium](https://pressidium.com)
 * [Presslabs](https://www.presslabs.com)
-* [WordPress VIP](https://wpvip.com/)
+* [WordPress VIP](https://finvip.com/)

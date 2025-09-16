@@ -1,10 +1,10 @@
-# wp term recount
+# fin term recount
 
 Recalculates number of posts assigned to each term.
 
 In instances where manual updates are made to the terms assigned to posts in the database, the number of posts associated with a term can become out-of-sync with the actual number of posts.
 
-This command runs wp_update_term_count() on the taxonomy's terms to bring the count back to the correct value.
+This command runs fin_update_term_count() on the taxonomy's terms to bring the count back to the correct value.
 
 ### OPTIONS
 
@@ -14,12 +14,12 @@ This command runs wp_update_term_count() on the taxonomy's terms to bring the co
 ### EXAMPLES
 
     # Recount posts assigned to each categories and tags
-    $ wp term recount category post_tag
+    $ fin term recount category post_tag
     Success: Updated category term count.
     Success: Updated post_tag term count.
 
     # Recount all listed taxonomies
-    $ wp taxonomy list --field=name | xargs wp term recount
+    $ fin taxonomy list --field=name | xargs fin term recount
     Success: Updated category term count.
     Success: Updated post_tag term count.
     Success: Updated nav_menu term count.
@@ -28,7 +28,7 @@ This command runs wp_update_term_count() on the taxonomy's terms to bring the co
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -44,6 +44,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

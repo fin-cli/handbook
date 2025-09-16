@@ -1,4 +1,4 @@
-# wp widget move
+# fin widget move
 
 Moves the position of a widget.
 
@@ -18,16 +18,16 @@ Changes the order of a widget in its existing sidebar, or moves it to a new side
 ### EXAMPLES
 
     # Change position of widget
-    $ wp widget move recent-comments-2 --position=2
+    $ fin widget move recent-comments-2 --position=2
     Success: Widget moved.
 
     # Move widget to Inactive Widgets
-    $ wp widget move recent-comments-2 --sidebar-id=wp_inactive_widgets
+    $ fin widget move recent-comments-2 --sidebar-id=fin_inactive_widgets
     Success: Widget moved.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -43,6 +43,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,57 +1,57 @@
-# wp config
+# fin config
 
-Generates and reads the wp-config.php file.
+Generates and reads the fin-config.php file.
 
 ### EXAMPLES
 
-    # Create standard wp-config.php file.
-    $ wp config create --dbname=testing --dbuser=wp --dbpass=securepswd --locale=ro_RO
-    Success: Generated 'wp-config.php' file.
+    # Create standard fin-config.php file.
+    $ fin config create --dbname=testing --dbuser=fin --dbpass=securepswd --locale=ro_RO
+    Success: Generated 'fin-config.php' file.
 
-    # List constants and variables defined in wp-config.php file.
-    $ wp config list
+    # List constants and variables defined in fin-config.php file.
+    $ fin config list
     +------------------+------------------------------------------------------------------+----------+
     | key              | value                                                            | type     |
     +------------------+------------------------------------------------------------------+----------+
-    | table_prefix     | wp_                                                              | variable |
-    | DB_NAME          | wp_cli_test                                                      | constant |
+    | table_prefix     | fin_                                                              | variable |
+    | DB_NAME          | fin_cli_test                                                      | constant |
     | DB_USER          | root                                                             | constant |
     | DB_PASSWORD      | root                                                             | constant |
     | AUTH_KEY         | r6+@shP1yO&amp;$)1gdu.hl[/j;7Zrvmt~o;#WxSsa0mlQOi24j2cR,7i+QM/#7S:o^ | constant |
     | SECURE_AUTH_KEY  | iO-z!_m--YH$Tx2tf/&amp;V,YW*13Z_HiRLqi)d?$o-tMdY+82pK$`T.NYW~iTLW;xp | constant |
     +------------------+------------------------------------------------------------------+----------+
 
-    # Get wp-config.php file path.
-    $ wp config path
-    /home/person/htdocs/project/wp-config.php
+    # Get fin-config.php file path.
+    $ fin config path
+    /home/person/htdocs/project/fin-config.php
 
-    # Get the table_prefix as defined in wp-config.php file.
-    $ wp config get table_prefix
-    wp_
+    # Get the table_prefix as defined in fin-config.php file.
+    $ fin config get table_prefix
+    fin_
 
-    # Set the WP_DEBUG constant to true.
-    $ wp config set WP_DEBUG true --raw
-    Success: Updated the constant 'WP_DEBUG' in the 'wp-config.php' file with the raw value 'true'.
+    # Set the FIN_DEBUG constant to true.
+    $ fin config set FIN_DEBUG true --raw
+    Success: Updated the constant 'FIN_DEBUG' in the 'fin-config.php' file with the raw value 'true'.
 
-    # Delete the COOKIE_DOMAIN constant from the wp-config.php file.
-    $ wp config delete COOKIE_DOMAIN
-    Success: Deleted the constant 'COOKIE_DOMAIN' from the 'wp-config.php' file.
+    # Delete the COOKIE_DOMAIN constant from the fin-config.php file.
+    $ fin config delete COOKIE_DOMAIN
+    Success: Deleted the constant 'COOKIE_DOMAIN' from the 'fin-config.php' file.
 
-    # Launch system editor to edit wp-config.php file.
-    $ wp config edit
+    # Launch system editor to edit fin-config.php file.
+    $ fin config edit
 
-    # Check whether the DB_PASSWORD constant exists in the wp-config.php file.
-    $ wp config has DB_PASSWORD
+    # Check whether the DB_PASSWORD constant exists in the fin-config.php file.
+    $ fin config has DB_PASSWORD
     $ echo $?
     0
 
     # Assert if MULTISITE is true.
-    $ wp config is-true MULTISITE
+    $ fin config is-true MULTISITE
     $ echo $?
     0
 
-    # Get new salts for your wp-config.php file.
-    $ wp config shuffle-salts
+    # Get new salts for your fin-config.php file.
+    $ fin config shuffle-salts
     Success: Shuffled the salt keys.
 
 

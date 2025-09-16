@@ -1,4 +1,4 @@
-# wp plugin delete
+# fin plugin delete
 
 Deletes plugin files without deactivating or uninstalling.
 
@@ -16,24 +16,24 @@ Deletes plugin files without deactivating or uninstalling.
 ### EXAMPLES
 
     # Delete plugin
-    $ wp plugin delete hello
+    $ fin plugin delete hello
     Deleted 'hello' plugin.
     Success: Deleted 1 of 1 plugins.
 
     # Delete inactive plugins
-    $ wp plugin delete $(wp plugin list --status=inactive --field=name)
+    $ fin plugin delete $(fin plugin list --status=inactive --field=name)
     Deleted 'tinymce-templates' plugin.
     Success: Deleted 1 of 1 plugins.
 
     # Delete all plugins excluding specified ones
-    $ wp plugin delete --all --exclude=hello-dolly,jetpack
+    $ fin plugin delete --all --exclude=hello-dolly,jetpack
     Deleted 'akismet' plugin.
     Deleted 'tinymce-templates' plugin.
     Success: Deleted 2 of 2 plugins.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -49,6 +49,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

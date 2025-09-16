@@ -1,6 +1,6 @@
 # Doctor Guides
 
-Here are some helpful guides for using `wp doctor`:
+Here are some helpful guides for using `fin doctor`:
 
 * [Default doctor diagnostic checks](https://make.wordpress.org/cli/handbook/guides/doctor/doctor-default-checks/)
 * [Customize doctor diagnostic checks](https://make.wordpress.org/cli/handbook/guides/doctor/doctor-customize-config/)

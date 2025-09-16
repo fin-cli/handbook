@@ -9,14 +9,14 @@ Expect STDOUT to be CSV containing certain values.
 
 ```
 Scenario: My example scenario
-  When I run `wp term list post_tag --fields=name,slug --format=csv`
+  When I run `fin term list post_tag --fields=name,slug --format=csv`
   Then STDOUT should be CSV containing:
     | name      | slug |
     | Test term | test |
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

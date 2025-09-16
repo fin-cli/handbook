@@ -1,4 +1,4 @@
-# wp media image-size
+# fin media image-size
 
 Lists image sizes registered with WordPress.
 
@@ -31,7 +31,7 @@ These fields will be displayed by default for each image size:
 ### EXAMPLES
 
     # List all registered image sizes
-    $ wp media image-size
+    $ fin media image-size
     +---------------------------+-------+--------+-------+-------+
     | name                      | width | height | crop  | ratio |
     +---------------------------+-------+--------+-------+-------+
@@ -45,7 +45,7 @@ These fields will be displayed by default for each image size:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -61,6 +61,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,24 +1,24 @@
-# wp shell
+# fin shell
 
 Opens an interactive PHP console for running and testing PHP code.
 
-`wp shell` allows you to evaluate PHP statements and expressions interactively, from within a WordPress environment. Type a bit of code, hit enter, and see the code execute right before you. Because WordPress is loaded, you have access to all the functions, classes and globals that you can use within a WordPress plugin, for example.
+`fin shell` allows you to evaluate PHP statements and expressions interactively, from within a WordPress environment. Type a bit of code, hit enter, and see the code execute right before you. Because WordPress is loaded, you have access to all the functions, classes and globals that you can use within a WordPress plugin, for example.
 
 ### OPTIONS
 
 [\--basic]
-: Force the use of WP-CLI's built-in PHP REPL, even if the Boris or PsySH PHP REPLs are available.
+: Force the use of FIN-CLI's built-in PHP REPL, even if the Boris or PsySH PHP REPLs are available.
 
 ### EXAMPLES
 
     # Call get_bloginfo() to get the name of the site.
-    $ wp shell
-    wp> get_bloginfo( 'name' );
-    => string(6) "WP-CLI"
+    $ fin shell
+    fin> get_bloginfo( 'name' );
+    => string(6) "FIN-CLI"
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -34,6 +34,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

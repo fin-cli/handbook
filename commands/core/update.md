@@ -1,10 +1,10 @@
-# wp core update
+# fin core update
 
 Updates WordPress to a newer version.
 
 Defaults to updating WordPress to the latest version.
 
-If you see "Error: Another update is currently in progress.", you may need to run `wp option delete core_updater.lock` after verifying another update isn't actually running.
+If you see "Error: Another update is currently in progress.", you may need to run `fin option delete core_updater.lock` after verifying another update isn't actually running.
 
 ### OPTIONS
 
@@ -12,13 +12,13 @@ If you see "Error: Another update is currently in progress.", you may need to ru
 : Path to zip file to use, instead of downloading from wordpress.org.
 
 [\--minor]
-: Only perform updates for minor releases (e.g. update from WP 4.3 to 4.3.3 instead of 4.4.2).
+: Only perform updates for minor releases (e.g. update from FIN 4.3 to 4.3.3 instead of 4.4.2).
 
 [\--version=&lt;version&gt;]
 : Update to a specific version, instead of to the latest version. Alternatively accepts 'nightly'.
 
 [\--force]
-: Update even when installed WP version is greater than the requested version.
+: Update even when installed FIN version is greater than the requested version.
 
 [\--locale=&lt;locale&gt;]
 : Select which language you want to download.
@@ -29,7 +29,7 @@ If you see "Error: Another update is currently in progress.", you may need to ru
 ### EXAMPLES
 
     # Update WordPress
-    $ wp core update
+    $ fin core update
     Updating to version 4.5.2 (en_US)...
     Downloading update from https://downloads.wordpress.org/release/wordpress-4.5.2-no-content.zip...
     Unpacking the update...
@@ -38,13 +38,13 @@ If you see "Error: Another update is currently in progress.", you may need to ru
     Success: WordPress updated successfully.
 
     # Update WordPress using zip file.
-    $ wp core update ../latest.zip
+    $ fin core update ../latest.zip
     Starting update...
     Unpacking the update...
     Success: WordPress updated successfully.
 
     # Update WordPress to 3.1 forcefully
-    $ wp core update --version=3.1 --force
+    $ fin core update --version=3.1 --force
     Updating to version 3.1 (en_US)...
     Downloading update from https://wordpress.org/wordpress-3.1.zip...
     Unpacking the update...
@@ -53,7 +53,7 @@ If you see "Error: Another update is currently in progress.", you may need to ru
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -69,6 +69,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

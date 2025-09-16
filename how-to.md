@@ -1,8 +1,8 @@
-# How to WP-CLI
+# How to FIN-CLI
 
 ## Introduction
 
-Using WP-CLI, you can perform specific tasks using the command line instead of accessing the WordPress admin panel. In the following section, we will cover step by step some of these
+Using FIN-CLI, you can perform specific tasks using the command line instead of accessing the WordPress admin panel. In the following section, we will cover step by step some of these
 tasks.
 
 - [How-to install WordPress](https://make.wordpress.org/cli/handbook/how-to-install/)

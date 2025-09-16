@@ -1,4 +1,4 @@
-# wp post delete
+# fin post delete
 
 Deletes an existing post.
 
@@ -16,28 +16,28 @@ Deletes an existing post.
 ### EXAMPLES
 
     # Delete post skipping trash
-    $ wp post delete 123 --force
+    $ fin post delete 123 --force
     Success: Deleted post 123.
 
     # Delete multiple posts
-    $ wp post delete 123 456 789
+    $ fin post delete 123 456 789
     Success: Trashed post 123.
     Success: Trashed post 456.
     Success: Trashed post 789.
 
     # Delete all pages
-    $ wp post delete $(wp post list --post_type='page' --format=ids)
+    $ fin post delete $(fin post list --post_type='page' --format=ids)
     Success: Trashed post 1164.
     Success: Trashed post 1186.
 
     # Delete all posts in the trash
-    $ wp post delete $(wp post list --post_status=trash --format=ids)
+    $ fin post delete $(fin post list --post_status=trash --format=ids)
     Success: Deleted post 1268.
     Success: Deleted post 1294.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -53,6 +53,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

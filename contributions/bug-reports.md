@@ -4,9 +4,9 @@ Think you've found a bug? We'd love for you to help us get it fixed.
 
 Before you create a new issue, you should:
 
-* [Search existing issues](https://github.com/search?q=org%3Awp-cli+label%3Abug+is%3Aopen+sort%3Aupdated-desc&type=issues) to see if there's an existing resolution to it, or if it's already been fixed in a newer version.
+* [Search existing issues](https://github.com/search?q=org%3Afin-cli+label%3Abug+is%3Aopen+sort%3Aupdated-desc&type=issues) to see if there's an existing resolution to it, or if it's already been fixed in a newer version.
 * Check our documentation on [common issues and their fixes](https://make.wordpress.org/cli/handbook/common-issues/). It's worth reading through the GitHub issues linked on the page, as the error listed may not be exactly the error you're experiencing.
-* Reproduce the issue in a fresh installation of WordPress (e.g. Twenty Sixteen or similar, with no plugins active). If the issue only reproduces in a custom environment, then the issue is a bug in your environment, not WP-CLI (make sure `WP_DEBUG` is enabled, which will often give you more visibility into the issue). You may be able to [track down the error to a specific plugin or theme](https://make.wordpress.org/cli/handbook/identify-plugin-theme-conflict/).
+* Reproduce the issue in a fresh installation of WordPress (e.g. Twenty Sixteen or similar, with no plugins active). If the issue only reproduces in a custom environment, then the issue is a bug in your environment, not FIN-CLI (make sure `FIN_DEBUG` is enabled, which will often give you more visibility into the issue). You may be able to [track down the error to a specific plugin or theme](https://make.wordpress.org/cli/handbook/identify-plugin-theme-conflict/).
 
 Once you've done a bit of searching and discovered there isn't prior art for your bug, please create a new GitHub issue in the appropriate repository. Providing the summary, steps to reproduce, environmental details, and other specifics identified below will help guarantee you are submitting a full bug report.
 
@@ -16,7 +16,7 @@ In narrative form, such as “While testing feature x, I encountered z.”
 
 > **Summary:**
 >
-> After installing the following package on newest nightly version of the WP-CLI, I receive "is not a registered wp command error"
+> After installing the following package on newest nightly version of the FIN-CLI, I receive "is not a registered fin command error"
 
 **Steps to reproduce the bug**
 
@@ -24,27 +24,27 @@ Please be as detailed and specific as possible. It's a good idea to go back and 
 
 > **Steps to reproduce:**
 >
-> 1. Run command 'wp package install wp-cli/scaffold-package-command:@stable'
+> 1. Run command 'fin package install fin-cli/scaffold-package-command:@stable'
 > 2. Allow installation process to complete
 > 3. 'Success: Package installed.' is displayed
-> 4. Run 'wp help scaffold package'
-> 5. Observe 'Error: 'scaffold package' is not a registered wp command.'
+> 4. Run 'fin help scaffold package'
+> 5. Observe 'Error: 'scaffold package' is not a registered fin command.'
 
 If you have a great deal of output to share, please [create a GitHub gist](https://gist.github.com/) and link to it in the issue.
 
 **Environment**
 
-Your bug may also be environment-specific. Because WP-CLI is a tool whose behavior is different from system to system, please include some environmental details in your issue if you think they're relevant.
+Your bug may also be environment-specific. Because FIN-CLI is a tool whose behavior is different from system to system, please include some environmental details in your issue if you think they're relevant.
 
-    # What PHP environment does WP-CLI run in?
-    wp cli info
+    # What PHP environment does FIN-CLI run in?
+    fin cli info
     # Are you running suhosin? If so, make sure you've added `suhosin.executor.include.whitelist = phar` to your php.ini
     php -m | grep -i suhosin
-    # Can you share the results of which wp ?
-    which -a wp
-    stat $(which wp)
+    # Can you share the results of which fin ?
+    which -a fin
+    stat $(which fin)
     # Are you running any packages? If one is causing a problem, you can use `--skip-packages` to skip loading them
-    wp package list
+    fin package list
 
 **Results and impacts**
 
@@ -52,19 +52,19 @@ Explain how the bug affects your usage, including severity level (what were the 
 
 > **Severity** - High
 > 
-> **Expected Results:** Running `wp help scaffold package` displays help information for installed command.
+> **Expected Results:** Running `fin help scaffold package` displays help information for installed command.
 > 
-> **Actual Results:** 'Error: 'scaffold package' is not a registered wp command' is displayed.
+> **Actual Results:** 'Error: 'scaffold package' is not a registered fin command' is displayed.
 > 
 > This command is crucial for the daily function of our business. 1.2k other users also have installed this package and will be affected.
 > 
-> The installed package works without issue using WP-CLI `1.2.0-alpha-3182ac4`
+> The installed package works without issue using FIN-CLI `1.2.0-alpha-3182ac4`
 
 **Workarounds**
 
 Do any workarounds exist? If so, what are they?
 
-> **Workaround:** Rollback to working version of WP-CLI
+> **Workaround:** Rollback to working version of FIN-CLI
 
 **Relevant diagnostics**
 
@@ -72,12 +72,12 @@ Include any crash reports, stack traces or debug output relevant to the issue. A
 
 Have a lot of output? Make your issue easier to understand by [creating a GitHub gist](https://gist.github.com/) and linking to it in the issue.
 
-If you include the `--debug` flag when executing WP-CLI (e.g. `wp post list --debug`), you may get more verbosity into the source of the error to include in the report.
+If you include the `--debug` flag when executing FIN-CLI (e.g. `fin post list --debug`), you may get more verbosity into the source of the error to include in the report.
 
 > ```
-> $ wp package install wp-cli/scaffold-package-command:@stable
-> Installing package wp-cli/scaffold-package-command (@stable)
-> Updating /root/.wp-cli/packages/composer.json to require the package...
+> $ fin package install fin-cli/scaffold-package-command:@stable
+> Installing package fin-cli/scaffold-package-command (@stable)
+> Updating /root/.fin-cli/packages/composer.json to require the package...
 > Using Composer to install the package...
 > ---
 > Loading composer repositories with package information
@@ -87,8 +87,8 @@ If you include the `--debug` flag when executing WP-CLI (e.g. `wp post list --de
 > Analyzed 421 packages to resolve dependencies
 > Analyzed 96 rules to resolve dependencies
 > Package operations: 1 install, 0 updates, 0 removals
-> Installs: wp-cli/scaffold-package-command:1.2.0
->  - Installing wp-cli/scaffold-package-command (1.2.0)
+> Installs: fin-cli/scaffold-package-command:1.2.0
+>  - Installing fin-cli/scaffold-package-command (1.2.0)
 > Writing lock file
 > Generating autoload files
 > ---
@@ -96,22 +96,22 @@ If you include the `--debug` flag when executing WP-CLI (e.g. `wp post list --de
 > ```
 
 >```
-> $ wp help scaffold package --debug
-> Debug (bootstrap): Loading packages from: /root/.wp-cli/packages/vendor/autoload.php (0.044s)
+> $ fin help scaffold package --debug
+> Debug (bootstrap): Loading packages from: /root/.fin-cli/packages/vendor/autoload.php (0.044s)
 > Debug (bootstrap): No readable global config found (0.193s)
 > Debug (bootstrap): No project config found (0.194s)
-> Debug (bootstrap): argv: /usr/local/bin/wp help scaffold package --debug (0.194s)
+> Debug (bootstrap): argv: /usr/local/bin/fin help scaffold package --debug (0.194s)
 > Debug (bootstrap): ABSPATH defined: /home/fu/public_html/ (0.195s)
 > Debug (bootstrap): Begin WordPress load (0.195s)
-> Debug (bootstrap): wp-config.php path: /home/fu/public_html/wp-config.php (0.196s)
+> Debug (bootstrap): fin-config.php path: /home/fu/public_html/fin-config.php (0.196s)
 > Debug (bootstrap): Loaded WordPress (1.323s)
 > Debug (bootstrap): Running command: help (1.323s)
-> Error: 'scaffold package' is not a registered wp command.
+> Error: 'scaffold package' is not a registered fin command.
 > ```
 
-> wp scaffold package does not work either:
+> fin scaffold package does not work either:
 > 
 >```
-> $ wp scaffold package
-> Error: 'scaffold package' is not a registered subcommand of 'scaffold'. See 'wp help scaffold'.
+> $ fin scaffold package
+> Error: 'scaffold package' is not a registered subcommand of 'scaffold'. See 'fin help scaffold'.
 > ```

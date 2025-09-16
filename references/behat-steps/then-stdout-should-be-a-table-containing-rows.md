@@ -9,8 +9,8 @@ Expect STDOUT to be a table containing the given rows.
 
 ```
 Scenario: My example scenario
-  Given a WP installation
-  When I run `wp config list --fields=name,type`
+  Given a FIN installation
+  When I run `fin config list --fields=name,type`
   Then STDOUT should be a table containing rows:
     | name    | type     |
     | DB_NAME | constant |
@@ -18,7 +18,7 @@ Scenario: My example scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

@@ -1,4 +1,4 @@
-# wp post update
+# fin post update
 
 Updates one or more existing posts.
 
@@ -90,33 +90,33 @@ Updates one or more existing posts.
   be read from STDIN.
 
 \--&lt;field&gt;=&lt;value&gt;
-: One or more fields to update. See wp_insert_post().
+: One or more fields to update. See fin_insert_post().
 
 [\--defer-term-counting]
 : Recalculate term count in batch, for a performance boost.
 
 ### EXAMPLES
 
-    $ wp post update 123 --post_name=something --post_status=draft
+    $ fin post update 123 --post_name=something --post_status=draft
     Success: Updated post 123.
 
     # Update a post with multiple meta values.
-    $ wp post update 123 --meta_input='{"key1":"value1","key2":"value2"}'
+    $ fin post update 123 --meta_input='{"key1":"value1","key2":"value2"}'
     Success: Updated post 123.
 
     # Update multiple posts at once.
-    $ wp post update 123 456 --post_author=789
+    $ fin post update 123 456 --post_author=789
     Success: Updated post 123.
     Success: Updated post 456.
 
     # Update all posts of a given post type at once.
-    $ wp post update $(wp post list --post_type=page --format=ids) --post_author=123
+    $ fin post update $(fin post list --post_type=page --format=ids) --post_author=123
     Success: Updated post 123.
     Success: Updated post 456.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -132,6 +132,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

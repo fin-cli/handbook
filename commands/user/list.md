@@ -1,9 +1,9 @@
-# wp user list
+# fin user list
 
 Lists users.
 
 Display WordPress users based on all arguments supported by
-[WP_User_Query()](https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/).
+[FIN_User_Query()](https://developer.wordpress.org/reference/classes/fin_user_query/prepare_query/).
 
 ### OPTIONS
 
@@ -11,7 +11,7 @@ Display WordPress users based on all arguments supported by
 : Only display users with a certain role.
 
 [\--&lt;field&gt;=&lt;value&gt;]
-: Control output by one or more arguments of WP_User_Query().
+: Control output by one or more arguments of FIN_User_Query().
 
 [\--network]
 : List all users in the network for multisite.
@@ -64,24 +64,24 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List user IDs
-    $ wp user list --field=ID
+    $ fin user list --field=ID
     1
 
     # List users with administrator role
-    $ wp user list --role=administrator --format=csv
+    $ fin user list --role=administrator --format=csv
     ID,user_login,display_name,user_email,user_registered,roles
     1,supervisor,supervisor,supervisor@gmail.com,"2016-06-03 04:37:00",administrator
 
     # List users with only given fields
-    $ wp user list --fields=display_name,user_email --format=json
+    $ fin user list --fields=display_name,user_email --format=json
     [{"display_name":"supervisor","user_email":"supervisor@gmail.com"}]
 
     # List users ordered by the 'last_activity' meta value.
-    $ wp user list --meta_key=last_activity --orderby=meta_value_num
+    $ fin user list --meta_key=last_activity --orderby=meta_value_num
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -97,6 +97,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

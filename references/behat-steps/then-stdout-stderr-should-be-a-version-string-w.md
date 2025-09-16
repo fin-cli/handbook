@@ -9,13 +9,13 @@ Expect STDOUT or STDERR to be a version string comparing to the given version.
 
 ```
 Scenario: My example scenario
-  Given a WP install
-  When I run `wp core version
+  Given a FIN install
+  When I run `fin core version
   Then STDOUT should be a version string >= 6.8
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

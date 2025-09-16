@@ -1,11 +1,11 @@
-# wp profile
+# fin profile
 
 Quickly identify what's slow with WordPress.
 
 ### EXAMPLES
 
     # See an overview for each stage of the load process.
-    $ wp profile stage --fields=stage,time,cache_ratio
+    $ fin profile stage --fields=stage,time,cache_ratio
     +------------+---------+-------------+
     | stage      | time    | cache_ratio |
     +------------+---------+-------------+
@@ -17,7 +17,7 @@ Quickly identify what's slow with WordPress.
     +------------+---------+-------------+
 
     # Dive into hook performance for a given stage.
-    $ wp profile stage bootstrap --fields=hook,time,cache_ratio --spotlight
+    $ fin profile stage bootstrap --fields=hook,time,cache_ratio --spotlight
     +--------------------------+---------+-------------+
     | hook                     | time    | cache_ratio |
     +--------------------------+---------+-------------+
@@ -28,7 +28,7 @@ Quickly identify what's slow with WordPress.
     | after_setup_theme:before | 0.0116s | 95.45%      |
     | after_setup_theme        | 0.0049s | 96%         |
     | init                     | 0.1428s | 76.74%      |
-    | wp_loaded:after          | 0.0236s |             |
+    | fin_loaded:after          | 0.0236s |             |
     +--------------------------+---------+-------------+
     | total (8)                | 0.4837s | 67.71%      |
     +--------------------------+---------+-------------+

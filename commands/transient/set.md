@@ -1,10 +1,10 @@
-# wp transient set
+# fin transient set
 
 Sets a transient value.
 
 `&lt;expiration&gt;` is the time until expiration, in seconds.
 
-For a more complete explanation of the transient cache, including the network|site cache, please see docs for `wp transient`.
+For a more complete explanation of the transient cache, including the network|site cache, please see docs for `fin transient`.
 
 ### OPTIONS
 
@@ -22,12 +22,12 @@ For a more complete explanation of the transient cache, including the network|si
 
 ### EXAMPLES
 
-    $ wp transient set sample_key "test data" 3600
+    $ fin transient set sample_key "test data" 3600
     Success: Transient added.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -43,6 +43,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

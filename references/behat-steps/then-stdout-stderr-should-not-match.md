@@ -9,12 +9,12 @@ Match STDOUT or STDERR against a regex.
 
 ```
 Scenario: My example scenario
-  When I run `wp dist-archive wp-content/plugins/hello-world`
+  When I run `fin dist-archive fin-content/plugins/hello-world`
   Then STDOUT should match /^Success: Created hello-world.0.1.0.zip \(Size: \d+(?:\.\d*)? [a-zA-Z]{1,3}\)$/
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

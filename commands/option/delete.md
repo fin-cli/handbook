@@ -1,4 +1,4 @@
-# wp option delete
+# fin option delete
 
 Deletes an option.
 
@@ -10,18 +10,18 @@ Deletes an option.
 ### EXAMPLES
 
     # Delete an option.
-    $ wp option delete my_option
+    $ fin option delete my_option
     Success: Deleted 'my_option' option.
 
     # Delete multiple options.
-    $ wp option delete option_one option_two option_three
+    $ fin option delete option_one option_two option_three
     Success: Deleted 'option_one' option.
     Success: Deleted 'option_two' option.
     Warning: Could not delete 'option_three' option. Does it exist?
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -37,6 +37,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

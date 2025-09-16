@@ -1,18 +1,18 @@
-# wp cache type
+# fin cache type
 
 Attempts to determine which object cache is being used.
 
-Note that the guesses made by this function are based on the WP_Object_Cache classes that define the 3rd party object cache extension. Changes to those classes could render problems with this function's ability to determine which object cache is being used.
+Note that the guesses made by this function are based on the FIN_Object_Cache classes that define the 3rd party object cache extension. Changes to those classes could render problems with this function's ability to determine which object cache is being used.
 
 ### EXAMPLES
 
     # Check cache type.
-    $ wp cache type
+    $ fin cache type
     Default
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -28,6 +28,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

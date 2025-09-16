@@ -1,25 +1,25 @@
-# wp config edit
+# fin config edit
 
-Launches system editor to edit the wp-config.php file.
+Launches system editor to edit the fin-config.php file.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 ### OPTIONS
 
 [\--config-file=&lt;path&gt;]
-: Specify the file path to the config file to be edited. Defaults to the root of the WordPress installation and the filename "wp-config.php".
+: Specify the file path to the config file to be edited. Defaults to the root of the WordPress installation and the filename "fin-config.php".
 
 ### EXAMPLES
 
-    # Launch system editor to edit wp-config.php file
-    $ wp config edit
+    # Launch system editor to edit fin-config.php file
+    $ fin config edit
 
-    # Edit wp-config.php file in a specific editor
-    $ EDITOR=vim wp config edit
+    # Edit fin-config.php file in a specific editor
+    $ EDITOR=vim fin config edit
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -35,6 +35,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

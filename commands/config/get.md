@@ -1,13 +1,13 @@
-# wp config get
+# fin config get
 
-Gets the value of a specific constant or variable defined in wp-config.php file.
+Gets the value of a specific constant or variable defined in fin-config.php file.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 ### OPTIONS
 
 &lt;name&gt;
-: Name of the wp-config.php constant or variable.
+: Name of the fin-config.php constant or variable.
 
 [\--type=&lt;type&gt;]
 : Type of config value to retrieve. Defaults to 'all'.
@@ -31,17 +31,17 @@ options:
 \---
 
 [\--config-file=&lt;path&gt;]
-: Specify the file path to the config file to be read. Defaults to the root of the WordPress installation and the filename "wp-config.php".
+: Specify the file path to the config file to be read. Defaults to the root of the WordPress installation and the filename "fin-config.php".
 
 ### EXAMPLES
 
-    # Get the table_prefix as defined in wp-config.php file.
-    $ wp config get table_prefix
-    wp_
+    # Get the table_prefix as defined in fin-config.php file.
+    $ fin config get table_prefix
+    fin_
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -57,6 +57,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,4 +1,4 @@
-# wp plugin search
+# fin plugin search
 
 Searches the WordPress.org plugin directory.
 
@@ -69,11 +69,11 @@ options:
 
 ### EXAMPLES
 
-    $ wp plugin search dsgnwrks --per-page=20 --format=json
+    $ fin plugin search dsgnwrks --per-page=20 --format=json
     Success: Showing 3 of 3 plugins.
     [{"name":"DsgnWrks Instagram Importer Debug","slug":"dsgnwrks-instagram-importer-debug","rating":0},{"name":"DsgnWrks Instagram Importer","slug":"dsgnwrks-instagram-importer","rating":84},{"name":"DsgnWrks Twitter Importer","slug":"dsgnwrks-twitter-importer","rating":80}]
 
-    $ wp plugin search dsgnwrks --fields=name,version,slug,rating,num_ratings
+    $ fin plugin search dsgnwrks --fields=name,version,slug,rating,num_ratings
     Success: Showing 3 of 3 plugins.
     +-----------------------------------+---------+-----------------------------------+--------+-------------+
     | name                              | version | slug                              | rating | num_ratings |
@@ -85,7 +85,7 @@ options:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -101,6 +101,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,4 +1,4 @@
-# wp cron schedule list
+# fin cron schedule list
 
 List available cron schedules.
 
@@ -35,7 +35,7 @@ There are no additional fields.
 ### EXAMPLES
 
     # List available cron schedules
-    $ wp cron schedule list
+    $ fin cron schedule list
     +------------+-------------+----------+
     | name       | display     | interval |
     +------------+-------------+----------+
@@ -45,12 +45,12 @@ There are no additional fields.
     +------------+-------------+----------+
 
     # List id of available cron schedule
-    $ wp cron schedule list --fields=name --format=ids
+    $ fin cron schedule list --fields=name --format=ids
     hourly twicedaily daily
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -66,6 +66,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

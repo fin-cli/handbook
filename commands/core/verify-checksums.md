@@ -1,8 +1,8 @@
-# wp core verify-checksums
+# fin core verify-checksums
 
 Verifies WordPress files against WordPress.org's checksums.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 Downloads md5 checksums for the current version from WordPress.org, and compares those checksums against the currently installed files.
 
@@ -30,31 +30,31 @@ If you experience issues verifying from this command, ensure you are passing the
 ### EXAMPLES
 
     # Verify checksums
-    $ wp core verify-checksums
+    $ fin core verify-checksums
     Success: WordPress installation verifies against checksums.
 
     # Verify checksums for given WordPress version
-    $ wp core verify-checksums --version=4.0
+    $ fin core verify-checksums --version=4.0
     Success: WordPress installation verifies against checksums.
 
     # Verify checksums for given locale
-    $ wp core verify-checksums --locale=en_US
+    $ fin core verify-checksums --locale=en_US
     Success: WordPress installation verifies against checksums.
 
     # Verify checksums for given locale
-    $ wp core verify-checksums --locale=ja
-    Warning: File doesn't verify against checksum: wp-includes/version.php
+    $ fin core verify-checksums --locale=ja
+    Warning: File doesn't verify against checksum: fin-includes/version.php
     Warning: File doesn't verify against checksum: readme.html
-    Warning: File doesn't verify against checksum: wp-config-sample.php
+    Warning: File doesn't verify against checksum: fin-config-sample.php
     Error: WordPress installation doesn't verify against checksums.
 
     # Verify checksums and exclude files
-    $ wp core verify-checksums --exclude="readme.html"
+    $ fin core verify-checksums --exclude="readme.html"
     Success: WordPress installation verifies against checksums.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -70,6 +70,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

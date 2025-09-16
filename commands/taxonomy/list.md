@@ -1,4 +1,4 @@
-# wp taxonomy list
+# fin taxonomy list
 
 Lists registered taxonomies.
 
@@ -44,7 +44,7 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List all taxonomies.
-    $ wp taxonomy list --format=csv
+    $ fin taxonomy list --format=csv
     name,label,description,object_type,show_tagcloud,hierarchical,public
     category,Categories,,post,1,1,1
     post_tag,Tags,,post,1,,1
@@ -53,7 +53,7 @@ These fields are optionally available:
     post_format,Format,,post,,,1
 
     # List all taxonomies with 'post' object type.
-    $ wp taxonomy list --object_type=post --fields=name,public
+    $ fin taxonomy list --object_type=post --fields=name,public
     +-------------+--------+
     | name        | public |
     +-------------+--------+
@@ -64,7 +64,7 @@ These fields are optionally available:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -80,6 +80,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

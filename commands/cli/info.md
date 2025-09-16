@@ -1,8 +1,8 @@
-# wp cli info
+# fin cli info
 
-Prints various details about the WP-CLI environment.
+Prints various details about the FIN-CLI environment.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 Helpful for diagnostic purposes, this command shares:
 
@@ -11,10 +11,10 @@ Helpful for diagnostic purposes, this command shares:
 * PHP binary used.
 * PHP binary version.
 * php.ini configuration file used (which is typically different than web).
-* WP-CLI root dir: where WP-CLI is installed (if non-Phar install).
-* WP-CLI global config: where the global config YAML file is located.
-* WP-CLI project config: where the project config YAML file is located.
-* WP-CLI version: currently installed version.
+* FIN-CLI root dir: where FIN-CLI is installed (if non-Phar install).
+* FIN-CLI global config: where the global config YAML file is located.
+* FIN-CLI project config: where the project config YAML file is located.
+* FIN-CLI version: currently installed version.
 
 See [config docs](https://make.wordpress.org/cli/handbook/references/config/) for more details on global and project config YAML files.
 
@@ -32,21 +32,21 @@ options:
 ### EXAMPLES
 
     # Display various data about the CLI environment.
-    $ wp cli info
+    $ fin cli info
     OS:  Linux 4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017 x86_64
     Shell:   /usr/bin/zsh
     PHP binary:  /usr/bin/php
     PHP version: 7.1.12-1+ubuntu16.04.1+deb.sury.org+1
     php.ini used:    /etc/php/7.1/cli/php.ini
-    WP-CLI root dir:    phar://wp-cli.phar
-    WP-CLI packages dir:    /home/person/.wp-cli/packages/
-    WP-CLI global config:
-    WP-CLI project config:
-    WP-CLI version: 1.5.0
+    FIN-CLI root dir:    phar://fin-cli.phar
+    FIN-CLI packages dir:    /home/person/.fin-cli/packages/
+    FIN-CLI global config:
+    FIN-CLI project config:
+    FIN-CLI version: 1.5.0
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -62,6 +62,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

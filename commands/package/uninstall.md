@@ -1,8 +1,8 @@
-# wp package uninstall
+# fin package uninstall
 
-Uninstalls a WP-CLI package.
+Uninstalls a FIN-CLI package.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 ### OPTIONS
 
@@ -15,15 +15,15 @@ This command runs on the `before_wp_load` hook, just before the WP load process 
 ### EXAMPLES
 
     # Uninstall package.
-    $ wp package uninstall wp-cli/server-command
-    Removing require statement for package 'wp-cli/server-command' from /home/person/.wp-cli/packages/composer.json
-    Removing repository details from /home/person/.wp-cli/packages/composer.json
+    $ fin package uninstall fin-cli/server-command
+    Removing require statement for package 'fin-cli/server-command' from /home/person/.fin-cli/packages/composer.json
+    Removing repository details from /home/person/.fin-cli/packages/composer.json
     Removing package directories and regenerating autoloader...
     Success: Uninstalled package.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -39,6 +39,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

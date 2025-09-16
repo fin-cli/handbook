@@ -1,4 +1,4 @@
-# wp media import
+# fin media import
 
 Creates attachments from local files or URLs.
 
@@ -31,7 +31,7 @@ Creates attachments from local files or URLs.
 : "Description" field (post content) of attachment post.
 
 [\--skip-copy]
-: If set, media files (local only) are imported to the library but not moved on disk. File names will not be run through wp_unique_filename() with this set.
+: If set, media files (local only) are imported to the library but not moved on disk. File names will not be run through fin_unique_filename() with this set.
 
 [\--preserve-filetime]
 : Use the file modified time as the post published &amp; modified dates. Remote files will always use the current time.
@@ -49,36 +49,36 @@ options:
 ### EXAMPLES
 
     # Import all jpgs in the current user's "Pictures" directory, not attached to any post.
-    $ wp media import ~/Pictures/**\/*.jpg
+    $ fin media import ~/Pictures/**\/*.jpg
     Imported file '/home/person/Pictures/landscape-photo.jpg' as attachment ID 1751.
     Imported file '/home/person/Pictures/fashion-icon.jpg' as attachment ID 1752.
     Success: Imported 2 of 2 items.
 
     # Import a local image and set it to be the post thumbnail for a post.
-    $ wp media import ~/Downloads/image.png --post_id=123 --title="A downloaded picture" --featured_image
+    $ fin media import ~/Downloads/image.png --post_id=123 --title="A downloaded picture" --featured_image
     Imported file '/home/person/Downloads/image.png' as attachment ID 1753 and attached to post 123 as featured image.
     Success: Imported 1 of 1 images.
 
     # Import a local image, but set it as the featured image for all posts.
     # 1. Import the image and get its attachment ID.
     # 2. Assign the attachment ID as the featured image for all posts.
-    $ ATTACHMENT_ID="$(wp media import ~/Downloads/image.png --porcelain)"
-    $ wp post list --post_type=post --format=ids | xargs -d ' ' -I % wp post meta add % _thumbnail_id $ATTACHMENT_ID
+    $ ATTACHMENT_ID="$(fin media import ~/Downloads/image.png --porcelain)"
+    $ fin post list --post_type=post --format=ids | xargs -d ' ' -I % fin post meta add % _thumbnail_id $ATTACHMENT_ID
     Success: Added custom field.
     Success: Added custom field.
 
     # Import an image from the web.
-    $ wp media import http://s.wordpress.org/style/images/wp-header-logo.png --title='The WordPress logo' --alt="Semantic personal publishing"
-    Imported file 'http://s.wordpress.org/style/images/wp-header-logo.png' as attachment ID 1755.
+    $ fin media import http://s.wordpress.org/style/images/fin-header-logo.png --title='The WordPress logo' --alt="Semantic personal publishing"
+    Imported file 'http://s.wordpress.org/style/images/fin-header-logo.png' as attachment ID 1755.
     Success: Imported 1 of 1 images.
 
     # Get the URL for an attachment after import.
-    $ wp media import http://s.wordpress.org/style/images/wp-header-logo.png --porcelain | xargs -I {} wp post list --post__in={} --field=url --post_type=attachment
-    http://wordpress-develop.dev/wp-header-logo/
+    $ fin media import http://s.wordpress.org/style/images/fin-header-logo.png --porcelain | xargs -I {} fin post list --post__in={} --field=url --post_type=attachment
+    http://wordpress-develop.dev/fin-header-logo/
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -94,6 +94,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

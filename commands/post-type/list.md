@@ -1,4 +1,4 @@
-# wp post-type list
+# fin post-type list
 
 Lists registered post types.
 
@@ -43,7 +43,7 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List registered post types
-    $ wp post-type list --format=csv
+    $ fin post-type list --format=csv
     name,label,description,hierarchical,public,capability_type
     post,Posts,,,1,post
     page,Pages,,1,1,page
@@ -52,7 +52,7 @@ These fields are optionally available:
     nav_menu_item,"Navigation Menu Items",,,,post
 
     # List post types with 'post' capability type
-    $ wp post-type list --capability_type=post --fields=name,public
+    $ fin post-type list --capability_type=post --fields=name,public
     +---------------+--------+
     | name          | public |
     +---------------+--------+
@@ -64,7 +64,7 @@ These fields are optionally available:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -80,6 +80,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

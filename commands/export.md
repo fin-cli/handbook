@@ -1,4 +1,4 @@
-# wp export
+# fin export
 
 Exports WordPress content to a WXR file.
 
@@ -71,26 +71,26 @@ default: any
 ### EXAMPLES
 
     # Export posts published by the user between given start and end date
-    $ wp export --dir=/tmp/ --user=admin --post_type=post --start_date=2011-01-01 --end_date=2011-12-31
+    $ fin export --dir=/tmp/ --user=admin --post_type=post --start_date=2011-01-01 --end_date=2011-12-31
     Starting export process...
     Writing to file /tmp/staging.wordpress.2016-05-24.000.xml
     Success: All done with export.
 
     # Export posts by IDs
-    $ wp export --dir=/tmp/ --post__in=123,124,125
+    $ fin export --dir=/tmp/ --post__in=123,124,125
     Starting export process...
     Writing to file /tmp/staging.wordpress.2016-05-24.000.xml
     Success: All done with export.
 
     # Export a random subset of content
-    $ wp export --post__in="$(wp post list --post_type=post --orderby=rand --posts_per_page=8 --format=ids)"
+    $ fin export --post__in="$(fin post list --post_type=post --orderby=rand --posts_per_page=8 --format=ids)"
     Starting export process...
     Writing to file /var/www/example.com/public_html/staging.wordpress.2016-05-24.000.xml
     Success: All done with export.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -106,6 +106,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

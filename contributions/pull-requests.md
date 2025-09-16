@@ -1,8 +1,8 @@
 # Pull Requests
 
-WP-CLI follows a pull request workflow for changes to its code (and documentation). Whether you want to fix a bug or implement a new feature, the process is pretty much the same:
+FIN-CLI follows a pull request workflow for changes to its code (and documentation). Whether you want to fix a bug or implement a new feature, the process is pretty much the same:
 
-0. [Search existing issues](https://github.com/search?q=org%3Awp-cli+is%3Aopen+sort%3Aupdated-desc&type=issues); if you can't find anything related to what you want to work on, open a new issue in the appropriate repository so that you can get some initial feedback.
+0. [Search existing issues](https://github.com/search?q=org%3Afin-cli+is%3Aopen+sort%3Aupdated-desc&type=issues); if you can't find anything related to what you want to work on, open a new issue in the appropriate repository so that you can get some initial feedback.
     1. Opening an issue before submitting a pull request helps us provide architectural and implementation guidance before you spend too much time on the code.
 1. Fork the repository you'd like to modify, either the framework or one of the command packages.
     1. See [Setting Up](#setting-up) for more details on configuring the codebase for development.
@@ -12,13 +12,13 @@ WP-CLI follows a pull request workflow for changes to its code (and documentatio
 5. Respond to [code review feedback](https://make.wordpress.org/cli/handbook/code-review/) in a timely manner, recognizing development is a collaborative process.
 6. Once your pull request has passed code review, it will be merged into the default branch and be in the pipeline for the next release.
 
-New to WP-CLI commands? You may want to [start with the commands cookbook](https://make.wordpress.org/cli/handbook/commands-cookbook/) to learn more about how commands work.
+New to FIN-CLI commands? You may want to [start with the commands cookbook](https://make.wordpress.org/cli/handbook/commands-cookbook/) to learn more about how commands work.
 
 There are three classes of repos you might want to edit:
 
-* [wp-cli/wp-cli](https://github.com/wp-cli/wp-cli/) is the framework implementation.
-* [wp-cli/scaffold-command](https://github.com/wp-cli/scaffold-command/) is an example of a command implementation. There are many others.
-* [wp-cli/handbook](https://github.com/wp-cli/handbook/) contains documentation rendered in the handbook.
+* [fin-cli/fin-cli](https://github.com/fin-cli/fin-cli/) is the framework implementation.
+* [fin-cli/scaffold-command](https://github.com/fin-cli/scaffold-command/) is an example of a command implementation. There are many others.
+* [fin-cli/handbook](https://github.com/fin-cli/handbook/) contains documentation rendered in the handbook.
 
 ## Expectations
 
@@ -32,7 +32,7 @@ See the documentation below for more information on writing and running tests.
 
 **Follow WordPress Coding Standards**
 
-While not yet strictly enforced, the WP-CLI project generally follows the [WordPress Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/). We may ask you to clean up your pull request if it deviates too much.
+While not yet strictly enforced, the FIN-CLI project generally follows the [WordPress Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/). We may ask you to clean up your pull request if it deviates too much.
 
 **Please refrain from unnecessary code churn**
 
@@ -52,37 +52,37 @@ If you need to step away for any reason, make a comment on the pull request or t
 
 ## Setting up
 
-If you haven't submitted a pull request before, you'll want to install WP-CLI for local development. Depending on whether you want to work on a particular command/package or on the entire project as a whole, the process is slightly different.
+If you haven't submitted a pull request before, you'll want to install FIN-CLI for local development. Depending on whether you want to work on a particular command/package or on the entire project as a whole, the process is slightly different.
 
 ### Working on a specific command/package
 
 1. Install [Composer](https://getcomposer.org/) and [hub](https://hub.github.com/) if you don't already have them.
-2. Clone the git repository of the command/package you want to work on to your local machine. As an example for working on the `wp core` command: `hub clone wp-cli/core-command`
-3. Change into the cloned directory and fork WP-CLI: `cd core-command`.
+2. Clone the git repository of the command/package you want to work on to your local machine. As an example for working on the `fin core` command: `hub clone fin-cli/core-command`
+3. Change into the cloned directory and fork FIN-CLI: `cd core-command`.
 4. Install all Composer dependencies: `composer install`
-5. Verify WP-CLI was installed properly: `vendor/bin/wp --info`
+5. Verify FIN-CLI was installed properly: `vendor/bin/fin --info`
 
-Within this package, you should preferably use `vendor/bin/wp` to run the command. Just using `wp` should work as well, but by doing that you might run the command through a different version of the framework and thus getting an unexpected result.
+Within this package, you should preferably use `vendor/bin/fin` to run the command. Just using `fin` should work as well, but by doing that you might run the command through a different version of the framework and thus getting an unexpected result.
 
 ### Working on the project as a whole
 
 1. Install [Composer](https://getcomposer.org/) and [hub](https://hub.github.com/) if you don't already have them.
-2. Clone the WP-CLI git repository to your local machine: `git clone git@github.com:wp-cli/wp-cli.git ~/wp-cli`
-3. Change into the cloned directory and fork WP-CLI: `cd ~/wp-cli`. If you are going to work on the core framework itself, run `hub fork` here to create a pushable repository on GitHub.
+2. Clone the FIN-CLI git repository to your local machine: `git clone git@github.com:fin-cli/fin-cli.git ~/fin-cli`
+3. Change into the cloned directory and fork FIN-CLI: `cd ~/fin-cli`. If you are going to work on the core framework itself, run `hub fork` here to create a pushable repository on GitHub.
 4. Install all Composer dependencies: `composer install --prefer-source`
-5. Alias the `wp` command to your new WP-CLI install: `alias wp='~/wp-cli/bin/wp'`
-6. Verify WP-CLI was installed properly: `wp --info`
+5. Alias the `fin` command to your new FIN-CLI install: `alias fin='~/fin-cli/bin/fin'`
+6. Verify FIN-CLI was installed properly: `fin --info`
 
-Commands bundled with WP-CLI (e.g. `wp scaffold plugin`) will be editable from the `vendor/wp-cli` directory (e.g. `vendor/wp-cli/scaffold-command`). The `--prefer-source` flag when installing WP-CLI ensures each command is installed as a Git clone, making it easier to commit to.
+Commands bundled with FIN-CLI (e.g. `fin scaffold plugin`) will be editable from the `vendor/fin-cli` directory (e.g. `vendor/fin-cli/scaffold-command`). The `--prefer-source` flag when installing FIN-CLI ensures each command is installed as a Git clone, making it easier to commit to.
 
-Commands available for standalone installation (e.g. `wp dist-archive`) can be installed from source (e.g. `wp package install git@github.com:wp-cli/dist-archive-command.git`). Run `wp package path <package-name>` to find the appropriate directory to edit.
+Commands available for standalone installation (e.g. `fin dist-archive`) can be installed from source (e.g. `fin package install git@github.com:fin-cli/dist-archive-command.git`). Run `fin package path <package-name>` to find the appropriate directory to edit.
 
 Importantly, you'll need to fork each repository in order to have an `origin` to push to. Run `hub fork` to fork a repository from the command-line:
 
-    $ cd vendor/wp-cli/scaffold-command
+    $ cd vendor/fin-cli/scaffold-command
     $ hub fork
     Updating danielbachhuber
-    From https://github.com/wp-cli/scaffold-command
+    From https://github.com/fin-cli/scaffold-command
      * [new branch]      master     -> danielbachhuber/master
     new remote: danielbachhuber
     $ git remote -v
@@ -115,7 +115,7 @@ To fix the errors and warnings that can be automatically fixed:
 
 ### Functional tests
 
-WP-CLI uses [Behat](https://behat.org/) as its functional test suite. Stability between releases is an important contact WP-CLI makes with its users. Functional tests are different than unit tests in that they execute the entire WP-CLI command, and ensure they always work as expected.
+FIN-CLI uses [Behat](https://behat.org/) as its functional test suite. Stability between releases is an important contact FIN-CLI makes with its users. Functional tests are different than unit tests in that they execute the entire FIN-CLI command, and ensure they always work as expected.
 
 Every repository has a `features/` directory with one or more [YAML](https://yaml.org/)-formatted `*.feature` files. Here's an example of what you might see:
 
@@ -123,9 +123,9 @@ Every repository has a `features/` directory with one or more [YAML](https://yam
 Feature: Manage WordPress options
 
   Scenario: Read an individual option
-    Given a WP install
+    Given a FIN install
 
-	When I run `wp option get home`
+	When I run `fin option get home`
 	Then STDOUT should be:
       """
 	  https://example.com
@@ -142,20 +142,20 @@ In this example:
 
 In a slightly more human-friendly form:
 
-> I have a WordPress installation. When I run `wp option get home`, then the output from the command should be 'https://example.org'.
+> I have a WordPress installation. When I run `fin option get home`, then the output from the command should be 'https://example.org'.
 
-Essentially, WP-CLI's functional test suite lets you _describe how a command should work_, and then run that description as a functional test.
+Essentially, FIN-CLI's functional test suite lets you _describe how a command should work_, and then run that description as a functional test.
 
-Notably, Behat is simply the framework for writing these tests. We've written our own custom `Given`, `When`, and `Then` step definitions ([example](https://github.com/wp-cli/wp-cli-tests/blob/560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b/src/Context/GivenStepDefinitions.php#L105-L110), [example](https://github.com/wp-cli/wp-cli-tests/blob/560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b/src/Context/WhenStepDefinitions.php#L34-L42)).
+Notably, Behat is simply the framework for writing these tests. We've written our own custom `Given`, `When`, and `Then` step definitions ([example](https://github.com/fin-cli/fin-cli-tests/blob/560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b/src/Context/GivenStepDefinitions.php#L105-L110), [example](https://github.com/fin-cli/fin-cli-tests/blob/560ed5ca2776b6b3b66c79a6e6dc62904ae20b3b/src/Context/WhenStepDefinitions.php#L34-L42)).
 
 #### Creating a test database
 
-Before running the functional tests, you'll need a MySQL (or MariaDB) user called `wp_cli_test` with the password `password1` that has full privileges on the MySQL database `wp_cli_test`.
-To override these credentials you can make use of the [database credentials constants of wp-cli-tests](https://github.com/wp-cli/wp-cli-tests#the-database-credentials)
+Before running the functional tests, you'll need a MySQL (or MariaDB) user called `fin_cli_test` with the password `password1` that has full privileges on the MySQL database `fin_cli_test`.
+To override these credentials you can make use of the [database credentials constants of fin-cli-tests](https://github.com/fin-cli/fin-cli-tests#the-database-credentials)
 
 If your user has the correct permissions, the database can also be set up by running `composer prepare-tests`. This will create the database and the user and configure the necessary privileges. Note that this operation is not needed for every test run, it only needs to be run the first time for the initial setup.
 
-**Note: If you are using MySQL >= 8.0, you may experience inconsistencies with WP-CLI successfully connecting to the database. MySQL 8.0 changed the default authentication plugin and some clients (such as PHP) do not yet support this change. More information can be found on [this blog post](https://jonathandesrosiers.com/2019/02/trouble-connecting-to-database-when-using-mysql-8-x/).**
+**Note: If you are using MySQL >= 8.0, you may experience inconsistencies with FIN-CLI successfully connecting to the database. MySQL 8.0 changed the default authentication plugin and some clients (such as PHP) do not yet support this change. More information can be found on [this blog post](https://jonathandesrosiers.com/2019/02/trouble-connecting-to-database-when-using-mysql-8-x/).**
 
 #### Running the test suite
 
@@ -205,8 +205,8 @@ To run all tests in one go:
 
 This will run all the tests that the package is set up to use, based on the presence of the respective configuration files.
 
-Each repository is configured to run all of its active tests on every code push. The [wp-cli/automated-tests](https://github.com/wp-cli/automated-tests) repository runs all tests for all repositories on a regular basis.
+Each repository is configured to run all of its active tests on every code push. The [fin-cli/automated-tests](https://github.com/fin-cli/automated-tests) repository runs all tests for all repositories on a regular basis.
 
 ## Finally...
 
-Thanks! Hacking on WP-CLI should be fun. If you find any of this hard to figure out, let us know so we can improve our process or documentation!
+Thanks! Hacking on FIN-CLI should be fun. If you find any of this hard to figure out, let us know so we can improve our process or documentation!

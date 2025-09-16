@@ -9,12 +9,12 @@ Match file contents against a regex.
 
 ```
 Scenario: My example scenario
-  When I run `wp scaffold plugin hello-world`
-  Then the contents of the wp-content/plugins/hello-world/languages/hello-world.pot file should match /X-Generator:\s/
+  When I run `fin scaffold plugin hello-world`
+  Then the contents of the fin-content/plugins/hello-world/languages/hello-world.pot file should match /X-Generator:\s/
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

@@ -1,4 +1,4 @@
-# wp user application-password delete
+# fin user application-password delete
 
 Delete an existing application password.
 
@@ -16,16 +16,16 @@ Delete an existing application password.
 ### EXAMPLES
 
     # Delete an existing application password
-    $ wp user application-password delete 123 6633824d-c1d7-4f79-9dd5-4586f734d69e
+    $ fin user application-password delete 123 6633824d-c1d7-4f79-9dd5-4586f734d69e
     Success: Deleted 1 of 1 application password.
 
     # Delete all of the user's application passwords
-    $ wp user application-password delete 123 --all
+    $ fin user application-password delete 123 --all
     Success: Deleted all application passwords.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -41,6 +41,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

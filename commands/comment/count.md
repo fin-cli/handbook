@@ -1,4 +1,4 @@
-# wp comment count
+# fin comment count
 
 Counts comments, on whole blog or on a given post.
 
@@ -10,7 +10,7 @@ Counts comments, on whole blog or on a given post.
 ### EXAMPLES
 
     # Count comments on whole blog.
-    $ wp comment count
+    $ fin comment count
     approved:        33
     spam:            3
     trash:           1
@@ -20,7 +20,7 @@ Counts comments, on whole blog or on a given post.
     total_comments:  37
 
     # Count comments in a post.
-    $ wp comment count 42
+    $ fin comment count 42
     approved:        19
     spam:            0
     trash:           0
@@ -31,7 +31,7 @@ Counts comments, on whole blog or on a given post.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -47,6 +47,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

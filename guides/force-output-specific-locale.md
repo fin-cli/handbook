@@ -1,13 +1,13 @@
 # Force output to a specific locale
 
-WP-CLI always outputs English because it doesn't support localization. But, because WordPress supports localization, you may see non-English output when performing specific commands.
+FIN-CLI always outputs English because it doesn't support localization. But, because WordPress supports localization, you may see non-English output when performing specific commands.
 
 For instance:
 
-    $ wp theme update --all
+    $ fin theme update --all
     מעבר למצב תחזוקה...
     מוריד עדכונים מ-https://downloads.wordpress.org/theme/hueman.3.3.25.zip...
-    Using cached file '/home/xxx/.wp-cli/cache/theme/hueman-3.3.25.zip'...
+    Using cached file '/home/xxx/.fin-cli/cache/theme/hueman-3.3.25.zip'...
     פתיחת עדכון...
     התקנת גרסה חדשה...
     הסרת הגרסה הקודמת של התבנית...
@@ -25,12 +25,12 @@ To force WordPress to always output English at the command line, you need to fil
 Given a `force-locale.php` file:
 
     <?php
-    WP_CLI::add_wp_hook( 'pre_option_WPLANG', function() {
+    FIN_CLI::add_fin_hook( 'pre_option_FINLANG', function() {
 	    return 'en_US';
     });
 
 You can force the locale to `en_US` with:
 
-    wp --require=force-locale.php
+    fin --require=force-locale.php
 
-One nice thing about this approach is that you can easily apply it across multiple WP installs [using a config file](https://make.wordpress.org/cli/handbook/config/#config-files).
+One nice thing about this approach is that you can easily apply it across multiple FIN installs [using a config file](https://make.wordpress.org/cli/handbook/config/#config-files).

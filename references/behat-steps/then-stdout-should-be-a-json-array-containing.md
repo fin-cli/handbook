@@ -11,7 +11,7 @@ Errors when some items are missing from the expected array.
 
 ```
 Scenario: My example scenario
-  When I run `wp plugin list --field=name --format=json`
+  When I run `fin plugin list --field=name --format=json`
   Then STDOUT should be a JSON array containing:
     """
     ["akismet", "hello-dolly"]
@@ -19,7 +19,7 @@ Scenario: My example scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

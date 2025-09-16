@@ -10,12 +10,12 @@ Check the contents of STDOUT or STDERR.
 ```
 Scenario: My example scenario
   Given an empty directory
-  When I run `wp core is-installed`
+  When I run `fin core is-installed`
   Then STDOUT should be empty
 
 Scenario: My other scenario
-  Given a WP install
-  When I run `wp plugin install akismet`
+  Given a FIN install
+  When I run `fin plugin install akismet`
   Then STDOUT should contain:
     """
     Plugin installed successfully.
@@ -24,7 +24,7 @@ Scenario: My other scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

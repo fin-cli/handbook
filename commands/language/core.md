@@ -1,11 +1,11 @@
-# wp language core
+# fin language core
 
 Installs, activates, and manages core language packs.
 
 ### EXAMPLES
 
     # Install the Dutch core language pack.
-    $ wp language core install nl_NL
+    $ fin language core install nl_NL
     Downloading translation from https://downloads.wordpress.org/translation/core/6.4.3/nl_NL.zip...
     Unpacking the update...
     Installing the latest version...
@@ -15,15 +15,15 @@ Installs, activates, and manages core language packs.
     Success: Installed 1 of 1 languages.
 
     # Activate the Dutch core language pack.
-    $ wp site switch-language nl_NL
+    $ fin site switch-language nl_NL
     Success: Language activated.
 
     # Uninstall the Dutch core language pack.
-    $ wp language core uninstall nl_NL
+    $ fin language core uninstall nl_NL
     Success: Language uninstalled.
 
     # List installed core language packs.
-    $ wp language core list --status=installed
+    $ fin language core list --status=installed
     +----------+--------------+-------------+-----------+-----------+---------------------+
     | language | english_name | native_name | status    | update    | updated             |
     +----------+--------------+-------------+-----------+-----------+---------------------+

@@ -1,8 +1,8 @@
-# wp profile hook
+# fin profile hook
 
 Profile key metrics for WordPress hooks (actions and filters).
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 In order to profile callbacks on a specific hook, the action or filter will need to execute during the course of the request.
 
@@ -49,24 +49,24 @@ options:
 ### EXAMPLES
 
     # Profile a hook.
-    $ wp profile hook template_redirect --fields=callback,cache_hits,cache_misses
+    $ fin profile hook template_redirect --fields=callback,cache_hits,cache_misses
     +--------------------------------+------------+--------------+
     | callback                       | cache_hits | cache_misses |
     +--------------------------------+------------+--------------+
-    | _wp_admin_bar_init()           | 0          | 0            |
-    | wp_old_slug_redirect()         | 0          | 0            |
+    | _fin_admin_bar_init()           | 0          | 0            |
+    | fin_old_slug_redirect()         | 0          | 0            |
     | redirect_canonical()           | 5          | 0            |
-    | WP_Sitemaps-&gt;render_sitemaps() | 0          | 0            |
+    | FIN_Sitemaps-&gt;render_sitemaps() | 0          | 0            |
     | rest_output_link_header()      | 3          | 0            |
-    | wp_shortlink_header()          | 0          | 0            |
-    | wp_redirect_admin_locations()  | 0          | 0            |
+    | fin_shortlink_header()          | 0          | 0            |
+    | fin_redirect_admin_locations()  | 0          | 0            |
     +--------------------------------+------------+--------------+
     | total (7)                      | 8          | 0            |
     +--------------------------------+------------+--------------+
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -82,6 +82,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

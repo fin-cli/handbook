@@ -1,4 +1,4 @@
-# wp rewrite list
+# fin rewrite list
 
 Gets a list of the current rewrite rules.
 
@@ -27,17 +27,17 @@ options:
 
 ### EXAMPLES
 
-    $ wp rewrite list --format=csv
+    $ fin rewrite list --format=csv
     match,query,source
-    ^wp-json/?$,index.php?rest_route=/,other
-    ^wp-json/(.*)?,index.php?rest_route=/$matches[1],other
+    ^fin-json/?$,index.php?rest_route=/,other
+    ^fin-json/(.*)?,index.php?rest_route=/$matches[1],other
     category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$,index.php?category_name=$matches[1]&amp;feed=$matches[2],category
     category/(.+?)/(feed|rdf|rss|rss2|atom)/?$,index.php?category_name=$matches[1]&amp;feed=$matches[2],category
     category/(.+?)/embed/?$,index.php?category_name=$matches[1]&amp;embed=true,category
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -53,6 +53,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

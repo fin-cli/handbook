@@ -9,12 +9,12 @@ Expect STDOUT or STDERR not to be empty.
 
 ```
 Scenario: My example scenario
-  When I run `wp user create examplejane jane@example.com`
+  When I run `fin user create examplejane jane@example.com`
   Then STDOUT should not be empty
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

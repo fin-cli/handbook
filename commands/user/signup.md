@@ -1,11 +1,11 @@
-# wp user signup
+# fin user signup
 
 Manages signups on a multisite installation.
 
 ### EXAMPLES
 
     # List signups.
-    $ wp user signup list
+    $ fin user signup list
     +-----------+------------+---------------------+---------------------+--------+------------------+
     | signup_id | user_login | user_email          | registered          | active | activation_key   |
     +-----------+------------+---------------------+---------------------+--------+------------------+
@@ -14,12 +14,12 @@ Manages signups on a multisite installation.
     +-----------+------------+---------------------+---------------------+--------+------------------+
 
     # Activate signup.
-    $ wp user signup activate 2
+    $ fin user signup activate 2
     Signup 2 activated. Password: bZFSGsfzb9xs
     Success: Activated 1 of 1 signups.
 
     # Delete signup.
-    $ wp user signup delete 3
+    $ fin user signup delete 3
     Signup 3 deleted.
     Success: Deleted 1 of 1 signups.
 

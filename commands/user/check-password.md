@@ -1,4 +1,4 @@
-# wp user check-password
+# fin user check-password
 
 Checks if a user's password is valid or not.
 
@@ -11,23 +11,23 @@ Checks if a user's password is valid or not.
 : A string that contains the plain text password for the user.
 
 [\--escape-chars]
-: Escape password with `wp_slash()` to mimic the same behavior as `wp-login.php`.
+: Escape password with `fin_slash()` to mimic the same behavior as `fin-login.php`.
 
 ### EXAMPLES
 
     # Check whether given credentials are valid; exit status 0 if valid, otherwise 1
-    $ wp user check-password admin adminpass
+    $ fin user check-password admin adminpass
     $ echo $?
     1
 
     # Bash script for checking whether given credentials are valid or not
-    if ! $(wp user check-password admin adminpass); then
+    if ! $(fin user check-password admin adminpass); then
      notify-send "Invalid Credentials";
     fi
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -43,6 +43,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,10 +1,10 @@
-# wp db export
+# fin db export
 
 Exports the database to a file or to STDOUT.
 
-This command runs on the `after_wp_config_load` hook, after wp-config.php has been loaded into scope.
+This command runs on the `after_fin_config_load` hook, after fin-config.php has been loaded into scope.
 
-Runs `mysqldump` utility using `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASSWORD` database credentials specified in wp-config.php. Accepts any valid `mysqldump` flags.
+Runs `mysqldump` utility using `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASSWORD` database credentials specified in fin-config.php. Accepts any valid `mysqldump` flags.
 
 ### OPTIONS
 
@@ -41,53 +41,53 @@ Runs `mysqldump` utility using `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASSWORD`
 ### EXAMPLES
 
     # Export database with drop query included
-    $ wp db export --add-drop-table
+    $ fin db export --add-drop-table
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Export certain tables
-    $ wp db export --tables=wp_options,wp_users
+    $ fin db export --tables=fin_options,fin_users
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Export all tables matching a wildcard
-    $ wp db export --tables=$(wp db tables 'wp_user*' --format=csv)
+    $ fin db export --tables=$(fin db tables 'fin_user*' --format=csv)
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Export all tables matching prefix
-    $ wp db export --tables=$(wp db tables --all-tables-with-prefix --format=csv)
+    $ fin db export --tables=$(fin db tables --all-tables-with-prefix --format=csv)
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Export certain posts without create table statements
-    $ wp db export --no-create-info=true --tables=wp_posts --where="ID in (100,101,102)"
+    $ fin db export --no-create-info=true --tables=fin_posts --where="ID in (100,101,102)"
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Export relating meta for certain posts without create table statements
-    $ wp db export --no-create-info=true --tables=wp_postmeta --where="post_id in (100,101,102)"
+    $ fin db export --no-create-info=true --tables=fin_postmeta --where="post_id in (100,101,102)"
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Skip certain tables from the exported database
-    $ wp db export --exclude_tables=wp_options,wp_users
+    $ fin db export --exclude_tables=fin_options,fin_users
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Skip all tables matching a wildcard from the exported database
-    $ wp db export --exclude_tables=$(wp db tables 'wp_user*' --format=csv)
+    $ fin db export --exclude_tables=$(fin db tables 'fin_user*' --format=csv)
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Skip all tables matching prefix from the exported database
-    $ wp db export --exclude_tables=$(wp db tables --all-tables-with-prefix --format=csv)
+    $ fin db export --exclude_tables=$(fin db tables --all-tables-with-prefix --format=csv)
     Success: Exported to 'wordpress_dbase-db72bb5.sql'.
 
     # Export database to STDOUT.
-    $ wp db export -
+    $ fin db export -
     -- MySQL dump 10.13  Distrib 5.7.19, for osx10.12 (x86_64)
     --
-    -- Host: localhost    Database: wpdev
+    -- Host: localhost    Database: findev
     -- ------------------------------------------------------
     -- Server version    5.7.19
     ...
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -103,6 +103,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

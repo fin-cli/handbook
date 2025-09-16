@@ -1,8 +1,8 @@
-# wp package path
+# fin package path
 
-Gets the path to an installed WP-CLI package, or the package directory.
+Gets the path to an installed FIN-CLI package, or the package directory.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 If you want to contribute to a package, this is a great way to jump to it.
 
@@ -14,20 +14,20 @@ If you want to contribute to a package, this is a great way to jump to it.
 ### EXAMPLES
 
     # Get package path.
-    $ wp package path
-    /home/person/.wp-cli/packages/
+    $ fin package path
+    /home/person/.fin-cli/packages/
 
     # Get path to an installed package.
-    $ wp package path wp-cli/server-command
-    /home/person/.wp-cli/packages/vendor/wp-cli/server-command
+    $ fin package path fin-cli/server-command
+    /home/person/.fin-cli/packages/vendor/fin-cli/server-command
 
     # Change directory to package path.
-    $ cd $(wp package path) && pwd
-    /home/vagrant/.wp-cli/packages
+    $ cd $(fin package path) && pwd
+    /home/vagrant/.fin-cli/packages
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -43,6 +43,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

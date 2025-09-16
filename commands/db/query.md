@@ -1,11 +1,11 @@
-# wp db query
+# fin db query
 
 Executes a SQL query against the database.
 
-This command runs on the `after_wp_config_load` hook, after wp-config.php has been loaded into scope.
+This command runs on the `after_fin_config_load` hook, after fin-config.php has been loaded into scope.
 
 Executes an arbitrary SQL query using `DB_HOST`, `DB_NAME`, `DB_USER`
- and `DB_PASSWORD` database credentials specified in wp-config.php.
+ and `DB_PASSWORD` database credentials specified in fin-config.php.
 
 Use the `--skip-column-names` MySQL argument to exclude the headers from a SELECT query. Pipe the output to remove the ASCII table entirely.
 
@@ -29,35 +29,35 @@ Use the `--skip-column-names` MySQL argument to exclude the headers from a SELEC
 ### EXAMPLES
 
     # Execute a query stored in a file
-    $ wp db query < debug.sql
+    $ fin db query < debug.sql
 
     # Query for a specific value in the database (pipe the result to remove the ASCII table borders)
-    $ wp db query 'SELECT option_value FROM wp_options WHERE option_name="home"' --skip-column-names
+    $ fin db query 'SELECT option_value FROM fin_options WHERE option_name="home"' --skip-column-names
     +---------------------+
     | https://example.com |
     +---------------------+
 
     # Check all tables in the database
-    $ wp db query "CHECK TABLE $(wp db tables | paste -s -d, -);"
+    $ fin db query "CHECK TABLE $(fin db tables | paste -s -d, -);"
     +---------------------------------------+-------+----------+----------+
     | Table                                 | Op    | Msg_type | Msg_text |
     +---------------------------------------+-------+----------+----------+
-    | wordpress_dbase.wp_users              | check | status   | OK       |
-    | wordpress_dbase.wp_usermeta           | check | status   | OK       |
-    | wordpress_dbase.wp_posts              | check | status   | OK       |
-    | wordpress_dbase.wp_comments           | check | status   | OK       |
-    | wordpress_dbase.wp_links              | check | status   | OK       |
-    | wordpress_dbase.wp_options            | check | status   | OK       |
-    | wordpress_dbase.wp_postmeta           | check | status   | OK       |
-    | wordpress_dbase.wp_terms              | check | status   | OK       |
-    | wordpress_dbase.wp_term_taxonomy      | check | status   | OK       |
-    | wordpress_dbase.wp_term_relationships | check | status   | OK       |
-    | wordpress_dbase.wp_termmeta           | check | status   | OK       |
-    | wordpress_dbase.wp_commentmeta        | check | status   | OK       |
+    | wordpress_dbase.fin_users              | check | status   | OK       |
+    | wordpress_dbase.fin_usermeta           | check | status   | OK       |
+    | wordpress_dbase.fin_posts              | check | status   | OK       |
+    | wordpress_dbase.fin_comments           | check | status   | OK       |
+    | wordpress_dbase.fin_links              | check | status   | OK       |
+    | wordpress_dbase.fin_options            | check | status   | OK       |
+    | wordpress_dbase.fin_postmeta           | check | status   | OK       |
+    | wordpress_dbase.fin_terms              | check | status   | OK       |
+    | wordpress_dbase.fin_term_taxonomy      | check | status   | OK       |
+    | wordpress_dbase.fin_term_relationships | check | status   | OK       |
+    | wordpress_dbase.fin_termmeta           | check | status   | OK       |
+    | wordpress_dbase.fin_commentmeta        | check | status   | OK       |
     +---------------------------------------+-------+----------+----------+
 
     # Pass extra arguments through to MySQL
-    $ wp db query 'SELECT * FROM wp_options WHERE option_name="home"' --skip-column-names
+    $ fin db query 'SELECT * FROM fin_options WHERE option_name="home"' --skip-column-names
     +---+------+------------------------------+-----+
     | 2 | home | http://wordpress-develop.dev | yes |
     +---+------+------------------------------+-----+
@@ -68,14 +68,14 @@ Please note that the global `--url` parameter will have no effect on this comman
 
 For example, to get the `home` option for your second site, modify the example above like so:
 
-    $ wp db query 'SELECT option_value FROM wp_2_options WHERE option_name="home"' --skip-column-names
+    $ fin db query 'SELECT option_value FROM fin_2_options WHERE option_name="home"' --skip-column-names
     +----------------------+
     | https://example2.com |
     +----------------------+
 
-To confirm the ID for the site you want to query, you can use the `wp site list` command:
+To confirm the ID for the site you want to query, you can use the `fin site list` command:
 
-    # wp site list --fields=blog_id,url
+    # fin site list --fields=blog_id,url
     +---------+-----------------------+
     | blog_id | url                   |
     +---------+-----------------------+
@@ -85,7 +85,7 @@ To confirm the ID for the site you want to query, you can use the `wp site list`
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -101,6 +101,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

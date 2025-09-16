@@ -1,11 +1,11 @@
-# wp media
+# fin media
 
 Imports files as attachments, regenerates thumbnails, or lists registered image sizes.
 
 ### EXAMPLES
 
     # Re-generate all thumbnails, without confirmation.
-    $ wp media regenerate --yes
+    $ fin media regenerate --yes
     Found 3 images to regenerate.
     1/3 Regenerated thumbnails for "Sydney Harbor Bridge" (ID 760).
     2/3 Regenerated thumbnails for "Boardwalk" (ID 757).
@@ -13,12 +13,12 @@ Imports files as attachments, regenerates thumbnails, or lists registered image 
     Success: Regenerated 3 of 3 images.
 
     # Import a local image and set it to be the featured image for a post.
-    $ wp media import ~/Downloads/image.png --post_id=123 --title="A downloaded picture" --featured_image
+    $ fin media import ~/Downloads/image.png --post_id=123 --title="A downloaded picture" --featured_image
     Imported file '/home/person/Downloads/image.png' as attachment ID 1753 and attached to post 123 as featured image.
     Success: Imported 1 of 1 images.
 
     # List all registered image sizes
-    $ wp media image-size
+    $ fin media image-size
     +---------------------------+-------+--------+-------+
     | name                      | width | height | crop  |
     +---------------------------+-------+--------+-------+
@@ -31,7 +31,7 @@ Imports files as attachments, regenerates thumbnails, or lists registered image 
     +---------------------------+-------+--------+-------+
 
     # Fix orientation for specific images.
-    $ wp media fix-orientation 63
+    $ fin media fix-orientation 63
     1/1 Fixing orientation for "Portrait_6" (ID 63).
     Success: Fixed 1 of 1 images.
 

@@ -13,14 +13,14 @@ So if using `run` and the command errors, the step will fail.
 
 ```
 Scenario: My example scenario
-  When I run `wp core version`
+  When I run `fin core version`
   Then STDOUT should contain:
     """
     6.8
     """
 
 Scenario: My other scenario
-  When I try `wp i18n make-pot foo bar/baz.pot`
+  When I try `fin i18n make-pot foo bar/baz.pot`
   Then STDERR should contain:
     """
     Error: Not a valid source directory.
@@ -29,7 +29,7 @@ Scenario: My other scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

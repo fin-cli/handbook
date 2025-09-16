@@ -1,6 +1,6 @@
 # Code Review
 
-Code review is a core part of the WP-CLI project's software development workflow. Code review and pairing on code are necessary to maintain quality output, as well as build cohesive styles in our work. Having a well-understood and cohesive style can make all our work easier to approach and maintain for new as well as established developers. If done right, code review can also be a learning process for all involved. Here's [a typical code review workflow](#a-typical-code-review-workflow):
+Code review is a core part of the FIN-CLI project's software development workflow. Code review and pairing on code are necessary to maintain quality output, as well as build cohesive styles in our work. Having a well-understood and cohesive style can make all our work easier to approach and maintain for new as well as established developers. If done right, code review can also be a learning process for all involved. Here's [a typical code review workflow](#a-typical-code-review-workflow):
 
 - [What code review is](#what-code-review-is)
 - [How to review code](#how-to-review-code)
@@ -12,7 +12,7 @@ We're currently using GitHub for everything. Read up on [our GitHub workflow](ht
 
 - On every commit pushed to a GH branch, our CI automated tests -- linting for all code, unit tests for functional code, and ideally, behavioral and automated acceptance testing -- are run on Travis.
 - If the build passes, the PR can be reviewed. If not, the original developer is responsible for getting the build to the point where it passes.
-- When the original developer is satisfied with their work, they can request a review from the [committers team](https://make.wordpress.org/cli/handbook/committers-credo/) by assigning `@wp-cli/committers` for review.
+- When the original developer is satisfied with their work, they can request a review from the [committers team](https://make.wordpress.org/cli/handbook/committers-credo/) by assigning `@fin-cli/committers` for review.
 - Simple pull requests can often be merged by the developer who reviews them. More complex changesets will often require conversations back and forth between reviewer and developer, and should have secondary reviewers.
 - GitHub's "Files Changed" tab is a good place to leave inline comments on specific parts of the changeset. More general comments can be left on the pull request's "Conversation" tab.
 - The reviewer may suggest changes in the form of a pull request off of the branch being reviewed, or in comments.

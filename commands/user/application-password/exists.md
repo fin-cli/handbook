@@ -1,4 +1,4 @@
-# wp user application-password exists
+# fin user application-password exists
 
 Checks whether an application password for a given application exists.
 
@@ -13,18 +13,18 @@ Checks whether an application password for a given application exists.
 ### EXAMPLES
 
     # Check if an application password for a given application exists
-    $ wp user application-password exists 123 myapp
+    $ fin user application-password exists 123 myapp
     $ echo $?
     1
 
     # Bash script for checking whether an application password exists and creating one if not
-    if ! wp user application-password exists 123 myapp; then
-        PASSWORD=$(wp user application-password create 123 myapp --porcelain)
+    if ! fin user application-password exists 123 myapp; then
+        PASSWORD=$(fin user application-password create 123 myapp --porcelain)
     fi
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -40,6 +40,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

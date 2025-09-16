@@ -1,4 +1,4 @@
-# wp taxonomy
+# fin taxonomy
 
 Retrieves information about registered taxonomies.
 
@@ -7,7 +7,7 @@ See references for [built-in taxonomies](https://developer.wordpress.org/themes/
 ### EXAMPLES
 
     # List all taxonomies with 'post' object type.
-    $ wp taxonomy list --object_type=post --fields=name,public
+    $ fin taxonomy list --object_type=post --fields=name,public
     +-------------+--------+
     | name        | public |
     +-------------+--------+
@@ -17,7 +17,7 @@ See references for [built-in taxonomies](https://developer.wordpress.org/themes/
     +-------------+--------+
 
     # Get capabilities of 'post_tag' taxonomy.
-    $ wp taxonomy get post_tag --field=cap
+    $ fin taxonomy get post_tag --field=cap
     {"manage_terms":"manage_categories","edit_terms":"manage_categories","delete_terms":"manage_categories","assign_terms":"edit_posts"}
 
 

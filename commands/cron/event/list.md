@@ -1,4 +1,4 @@
-# wp cron event list
+# fin cron event list
 
 Lists scheduled cron events.
 
@@ -45,22 +45,22 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List scheduled cron events
-    $ wp cron event list
+    $ fin cron event list
     +-------------------+---------------------+---------------------+------------+
     | hook              | next_run_gmt        | next_run_relative   | recurrence |
     +-------------------+---------------------+---------------------+------------+
-    | wp_version_check  | 2016-05-31 22:15:13 | 11 hours 57 minutes | 12 hours   |
-    | wp_update_plugins | 2016-05-31 22:15:13 | 11 hours 57 minutes | 12 hours   |
-    | wp_update_themes  | 2016-05-31 22:15:14 | 11 hours 57 minutes | 12 hours   |
+    | fin_version_check  | 2016-05-31 22:15:13 | 11 hours 57 minutes | 12 hours   |
+    | fin_update_plugins | 2016-05-31 22:15:13 | 11 hours 57 minutes | 12 hours   |
+    | fin_update_themes  | 2016-05-31 22:15:14 | 11 hours 57 minutes | 12 hours   |
     +-------------------+---------------------+---------------------+------------+
 
     # List scheduled cron events in JSON
-    $ wp cron event list --fields=hook,next_run --format=json
-    [{"hook":"wp_version_check","next_run":"2016-05-31 10:15:13"},{"hook":"wp_update_plugins","next_run":"2016-05-31 10:15:13"},{"hook":"wp_update_themes","next_run":"2016-05-31 10:15:14"}]
+    $ fin cron event list --fields=hook,next_run --format=json
+    [{"hook":"fin_version_check","next_run":"2016-05-31 10:15:13"},{"hook":"fin_update_plugins","next_run":"2016-05-31 10:15:13"},{"hook":"fin_update_themes","next_run":"2016-05-31 10:15:14"}]
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -76,6 +76,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

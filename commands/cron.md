@@ -1,11 +1,11 @@
-# wp cron
+# fin cron
 
-Tests, runs, and deletes WP-Cron events; manages WP-Cron schedules.
+Tests, runs, and deletes FIN-Cron events; manages FIN-Cron schedules.
 
 ### EXAMPLES
 
-    # Test WP Cron spawning system
-    $ wp cron test
-    Success: WP-Cron spawning is working as expected.
+    # Test FIN Cron spawning system
+    $ fin cron test
+    Success: FIN-Cron spawning is working as expected.
 
 

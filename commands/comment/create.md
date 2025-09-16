@@ -1,11 +1,11 @@
-# wp comment create
+# fin comment create
 
 Creates a new comment.
 
 ### OPTIONS
 
 [\--&lt;field&gt;=&lt;value&gt;]
-: Associative args for the new comment. See wp_insert_comment().
+: Associative args for the new comment. See fin_insert_comment().
 
 [\--porcelain]
 : Output just the new comment id.
@@ -13,12 +13,12 @@ Creates a new comment.
 ### EXAMPLES
 
     # Create comment.
-    $ wp comment create --comment_post_ID=15 --comment_content="hello blog" --comment_author="wp-cli"
+    $ fin comment create --comment_post_ID=15 --comment_content="hello blog" --comment_author="fin-cli"
     Success: Created comment 932.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -34,6 +34,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

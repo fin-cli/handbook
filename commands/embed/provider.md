@@ -1,11 +1,11 @@
-# wp embed provider
+# fin embed provider
 
 Retrieves oEmbed providers.
 
 ### EXAMPLES
 
     # List format,endpoint fields of available providers.
-    $ wp embed provider list
+    $ fin embed provider list
     +------------------------------+-----------------------------------------+
     | format                       | endpoint                                |
     +------------------------------+-----------------------------------------+
@@ -14,7 +14,7 @@ Retrieves oEmbed providers.
     | #https?://wordpress\.tv/.*#i | https://wordpress.tv/oembed/            |
 
     # Get the matching provider for the URL.
-    $ wp embed provider match https://www.youtube.com/watch?v=dQw4w9WgXcQ
+    $ fin embed provider match https://www.youtube.com/watch?v=dQw4w9WgXcQ
     https://www.youtube.com/oembed
 
 

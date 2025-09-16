@@ -1,4 +1,4 @@
-# wp site list
+# fin site list
 
 Lists all sites in a multisite installation.
 
@@ -9,7 +9,7 @@ Lists all sites in a multisite installation.
 
 [\--&lt;field&gt;=&lt;value&gt;]
 : Filter by one or more fields (see "Available Fields" section). However,
-'url' isn't an available filter, as it comes from 'home' in wp_options.
+'url' isn't an available filter, as it comes from 'home' in fin_options.
 
 [\--site__in=&lt;value&gt;]
 : Only list the sites with these blog_id values (comma-separated).
@@ -60,13 +60,13 @@ These fields are optionally available:
 ### EXAMPLES
 
     # Output a simple list of site URLs
-    $ wp site list --field=url
+    $ fin site list --field=url
     http://www.example.com/
     http://www.example.com/subdir/
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -82,6 +82,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

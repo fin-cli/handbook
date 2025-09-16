@@ -1,8 +1,8 @@
-# wp db cli
+# fin db cli
 
-Opens a MySQL console using credentials from wp-config.php
+Opens a MySQL console using credentials from fin-config.php
 
-This command runs on the `after_wp_config_load` hook, after wp-config.php has been loaded into scope.
+This command runs on the `after_fin_config_load` hook, after fin-config.php has been loaded into scope.
 
 ### OPTIONS
 
@@ -27,12 +27,12 @@ This command runs on the `after_wp_config_load` hook, after wp-config.php has be
 ### EXAMPLES
 
     # Open MySQL console
-    $ wp db cli
+    $ fin db cli
     mysql&gt;
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -48,6 +48,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

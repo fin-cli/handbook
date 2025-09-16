@@ -1,8 +1,8 @@
-# wp cli check-update
+# fin cli check-update
 
-Checks to see if there is a newer version of WP-CLI available.
+Checks to see if there is a newer version of FIN-CLI available.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 Queries the GitHub releases API. Returns available versions if there are updates available, or success message if using the latest release.
 
@@ -38,20 +38,20 @@ options:
 ### EXAMPLES
 
     # Check for update.
-    $ wp cli check-update
-    Success: WP-CLI is at the latest version.
+    $ fin cli check-update
+    Success: FIN-CLI is at the latest version.
 
     # Check for update and new version is available.
-    $ wp cli check-update
+    $ fin cli check-update
     +---------+-------------+-------------------------------------------------------------------------------+
     | version | update_type | package_url                                                                   |
     +---------+-------------+-------------------------------------------------------------------------------+
-    | 0.24.1  | patch       | https://github.com/wp-cli/wp-cli/releases/download/v0.24.1/wp-cli-0.24.1.phar |
+    | 0.24.1  | patch       | https://github.com/fin-cli/fin-cli/releases/download/v0.24.1/fin-cli-0.24.1.phar |
     +---------+-------------+-------------------------------------------------------------------------------+
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -67,6 +67,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,4 +1,4 @@
-# wp widget
+# fin widget
 
 Manages widgets, including adding and moving them within sidebars.
 
@@ -7,7 +7,7 @@ A [widget](https://developer.wordpress.org/themes/functionality/widgets/) adds c
 ### EXAMPLES
 
     # List widgets on a given sidebar
-    $ wp widget list sidebar-1
+    $ fin widget list sidebar-1
     +----------+------------+----------+----------------------+
     | name     | id         | position | options              |
     +----------+------------+----------+----------------------+
@@ -16,15 +16,15 @@ A [widget](https://developer.wordpress.org/themes/functionality/widgets/) adds c
     +----------+------------+----------+----------------------+
 
     # Add a calendar widget to the second position on the sidebar
-    $ wp widget add calendar sidebar-1 2
+    $ fin widget add calendar sidebar-1 2
     Success: Added widget to sidebar.
 
     # Update option(s) associated with a given widget
-    $ wp widget update calendar-1 --title="Calendar"
+    $ fin widget update calendar-1 --title="Calendar"
     Success: Widget updated.
 
     # Delete one or more widgets entirely
-    $ wp widget delete calendar-2 archive-1
+    $ fin widget delete calendar-2 archive-1
     Success: 2 widgets removed from sidebar.
 
 

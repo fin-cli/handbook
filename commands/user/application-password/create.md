@@ -1,4 +1,4 @@
-# wp user application-password create
+# fin user application-password create
 
 Creates a new application password.
 
@@ -19,21 +19,21 @@ Creates a new application password.
 ### EXAMPLES
 
     # Create user application password
-    $ wp user application-password create 123 myapp
+    $ fin user application-password create 123 myapp
     Success: Created application password.
     Password: ZG1bxdxdzjTwhsY8vK8l1C65
 
     # Only print the password without any chrome
-    $ wp user application-password create 123 myapp --porcelain
+    $ fin user application-password create 123 myapp --porcelain
     ZG1bxdxdzjTwhsY8vK8l1C65
 
     # Create user application with a custom application ID for internal tracking
-    $ wp user application-password create 123 myapp --app-id=42 --porcelain
+    $ fin user application-password create 123 myapp --app-id=42 --porcelain
     ZG1bxdxdzjTwhsY8vK8l1C65
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -49,6 +49,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

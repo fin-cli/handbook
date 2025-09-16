@@ -1,4 +1,4 @@
-# wp post create
+# fin post create
 
 Creates a new post.
 
@@ -90,7 +90,7 @@ Creates a new post.
   be read from STDIN.
 
 [\--&lt;field&gt;=&lt;value&gt;]
-: Associative args for the new post. See wp_insert_post().
+: Associative args for the new post. See fin_insert_post().
 
 [\--edit]
 : Immediately open system's editor to write or edit post content.
@@ -105,24 +105,24 @@ Creates a new post.
 ### EXAMPLES
 
     # Create post and schedule for future
-    $ wp post create --post_type=post --post_title='A future post' --post_status=future --post_date='2030-12-01 07:00:00'
+    $ fin post create --post_type=post --post_title='A future post' --post_status=future --post_date='2030-12-01 07:00:00'
     Success: Created post 1921.
 
     # Create post with content from given file
-    $ wp post create ./post-content.txt --post_category=201,345 --post_title='Post from file'
+    $ fin post create ./post-content.txt --post_category=201,345 --post_title='Post from file'
     Success: Created post 1922.
 
     # Create a post with multiple meta values.
-    $ wp post create --post_title='A post' --post_content='Just a small post.' --meta_input='{"key1":"value1","key2":"value2"}'
+    $ fin post create --post_title='A post' --post_content='Just a small post.' --meta_input='{"key1":"value1","key2":"value2"}'
     Success: Created post 1923.
 
     # Create a duplicate post from existing posts.
-    $ wp post create --from-post=123 --post_title='Different Title'
+    $ fin post create --from-post=123 --post_title='Different Title'
     Success: Created post 2350.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -138,6 +138,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

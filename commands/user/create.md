@@ -1,4 +1,4 @@
-# wp user create
+# fin user create
 
 Creates a new user.
 
@@ -52,17 +52,17 @@ Creates a new user.
 ### EXAMPLES
 
     # Create user
-    $ wp user create bob bob@example.com --role=author
+    $ fin user create bob bob@example.com --role=author
     Success: Created user 3.
     Password: k9**&amp;I4vNH(&amp;
 
     # Create user without showing password upon success
-    $ wp user create ann ann@example.com --porcelain
+    $ fin user create ann ann@example.com --porcelain
     4
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -78,6 +78,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,8 +1,8 @@
-# wp i18n make-json
+# fin i18n make-json
 
 Extract JavaScript strings from PO files and add them to individual JSON files.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 For JavaScript internationalization purposes, WordPress requires translations to be split up into one Jed-formatted JSON file per JavaScript source file.
 
@@ -37,23 +37,23 @@ See https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wo
 ### EXAMPLES
 
     # Create JSON files for all PO files in the languages directory
-    $ wp i18n make-json languages
+    $ fin i18n make-json languages
 
     # Create JSON files for my-plugin-de_DE.po and leave the PO file untouched.
-    $ wp i18n make-json my-plugin-de_DE.po /tmp --no-purge
+    $ fin i18n make-json my-plugin-de_DE.po /tmp --no-purge
 
     # Create JSON files with mapping
-    $ wp i18n make-json languages --use-map=build/map.json
+    $ fin i18n make-json languages --use-map=build/map.json
 
     # Create JSON files with multiple mappings
-    $ wp i18n make-json languages '--use-map=["build/map.json","build/map2.json"]'
+    $ fin i18n make-json languages '--use-map=["build/map.json","build/map2.json"]'
 
     # Create JSON files with object mapping
-    $ wp i18n make-json languages '--use-map={"source/index.js":"build/index.js"}'
+    $ fin i18n make-json languages '--use-map={"source/index.js":"build/index.js"}'
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -69,6 +69,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

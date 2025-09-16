@@ -1,6 +1,6 @@
 # Check status of a given plugin
 
-One of the check types included in `wp doctor` is `Plugin_Status`, or the ability to assert that a given plugin should be active, installed, or uninstalled. Although the check type isn't use by any of the [default diagnostic checks](https://make.wordpress.org/cli/handbook/guides/doctor/doctor-default-checks/), you can use the `Plugin_Status` check type in your [custom `doctor.yml` configuration file](https://make.wordpress.org/cli/handbook/guides/doctor/doctor-customize-config/).
+One of the check types included in `fin doctor` is `Plugin_Status`, or the ability to assert that a given plugin should be active, installed, or uninstalled. Although the check type isn't use by any of the [default diagnostic checks](https://make.wordpress.org/cli/handbook/guides/doctor/doctor-default-checks/), you can use the `Plugin_Status` check type in your [custom `doctor.yml` configuration file](https://make.wordpress.org/cli/handbook/guides/doctor/doctor-customize-config/).
 
 As an example, here are two checks using `Plugin_Status`, one which ensures Akismet is active on the system and other which ensures Hello Dolly is uninstalled:
 
@@ -18,7 +18,7 @@ As an example, here are two checks using `Plugin_Status`, one which ensures Akis
 
 Run together, you might see:
 
-    $ wp doctor check --config=plugin-status.yml --all
+    $ fin doctor check --config=plugin-status.yml --all
     +--------------------------+---------+----------------------------------------------------------------+
     | name                     | status  | message                                                        |
     +--------------------------+---------+----------------------------------------------------------------+
@@ -29,5 +29,5 @@ Run together, you might see:
 
 The `Plugin_Status` check type accepts the following options:
 
-* 'name': Name of the plugin as it appears in `wp plugin list`.
+* 'name': Name of the plugin as it appears in `fin plugin list`.
 * 'status': Expected plugin status as one of 'active', 'installed', or 'uninstalled'.

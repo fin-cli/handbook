@@ -9,13 +9,13 @@ Expect the HTTP status code for visiting `http://localhost:8080`.
 
 ```
 Scenario: My example scenario
-  Given a WP installation with Composer
+  Given a FIN installation with Composer
   And a PHP built-in web server to serve 'WordPress'
   Then the HTTP status code should be 200
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

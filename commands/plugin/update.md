@@ -1,4 +1,4 @@
-# wp plugin update
+# fin plugin update
 
 Updates one or more plugins.
 
@@ -41,7 +41,7 @@ options:
 
 ### EXAMPLES
 
-    $ wp plugin update bbpress --version=dev
+    $ fin plugin update bbpress --version=dev
     Installing bbPress (Development Version)
     Downloading install package from https://downloads.wordpress.org/plugin/bbpress.zip...
     Unpacking the package...
@@ -50,7 +50,7 @@ options:
     Plugin updated successfully.
     Success: Updated 1 of 2 plugins.
 
-    $ wp plugin update --all
+    $ fin plugin update --all
     Enabling Maintenance mode...
     Downloading update from https://downloads.wordpress.org/plugin/akismet.3.1.11.zip...
     Unpacking the update...
@@ -71,7 +71,7 @@ options:
     +------------------------+-------------+-------------+---------+
     Success: Updated 2 of 2 plugins.
 
-    $ wp plugin update --all --exclude=akismet
+    $ fin plugin update --all --exclude=akismet
     Enabling Maintenance mode...
     Downloading update from https://downloads.wordpress.org/plugin/nginx-champuru.3.2.0.zip...
     Unpacking the update...
@@ -87,7 +87,7 @@ options:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -103,6 +103,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -1,21 +1,21 @@
-# wp package install
+# fin package install
 
-Installs a WP-CLI package.
+Installs a FIN-CLI package.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 Packages are required to be a valid Composer package, and can be specified as:
 
-* Package name from WP-CLI's package index.
+* Package name from FIN-CLI's package index.
 * Git URL accessible by the current shell user.
 * Path to a directory on the local machine.
 * Local or remote .zip file.
 
-Packages are installed to `~/.wp-cli/packages/` by default. Use the `WP_CLI_PACKAGES_DIR` environment variable to provide a custom path.
+Packages are installed to `~/.fin-cli/packages/` by default. Use the `FIN_CLI_PACKAGES_DIR` environment variable to provide a custom path.
 
-When installing a local directory, WP-CLI simply registers a reference to the directory. If you move or delete the directory, WP-CLI's reference breaks.
+When installing a local directory, FIN-CLI simply registers a reference to the directory. If you move or delete the directory, FIN-CLI's reference breaks.
 
-When installing a .zip file, WP-CLI extracts the package to `~/.wp-cli/packages/local/&lt;package-name&gt;`.
+When installing a .zip file, FIN-CLI extracts the package to `~/.fin-cli/packages/local/&lt;package-name&gt;`.
 
 If Github token authorization is required, a GitHub Personal Access Token (https://github.com/settings/tokens) can be used. The following command will add a GitHub Personal Access Token to Composer's global configuration:
 composer config -g github-oauth.github.com &lt;GITHUB_TOKEN&gt; Once this has been added, the value used for &lt;GITHUB_TOKEN&gt; will be used for future authorization requests.
@@ -23,7 +23,7 @@ composer config -g github-oauth.github.com &lt;GITHUB_TOKEN&gt; Once this has be
 ### OPTIONS
 
 &lt;name|git|path|zip&gt;
-: Name, git URL, directory path, or .zip file for the package to install. Names can optionally include a version constraint (e.g. wp-cli/server-command:@stable).
+: Name, git URL, directory path, or .zip file for the package to install. Names can optionally include a version constraint (e.g. fin-cli/server-command:@stable).
 
 [\--insecure]
 : Retry downloads without certificate validation if TLS handshake fails. Note: This makes the request vulnerable to a MITM attack.
@@ -31,20 +31,20 @@ composer config -g github-oauth.github.com &lt;GITHUB_TOKEN&gt; Once this has be
 ### EXAMPLES
 
     # Install a package hosted at a git URL.
-    $ wp package install runcommand/hook
+    $ fin package install runcommand/hook
 
     # Install the latest stable version.
-    $ wp package install wp-cli/server-command:@stable
+    $ fin package install fin-cli/server-command:@stable
 
     # Install a package hosted at a GitLab.com URL.
-    $ wp package install https://gitlab.com/foo/wp-cli-bar-command.git
+    $ fin package install https://gitlab.com/foo/fin-cli-bar-command.git
 
     # Install a package in a .zip file.
-    $ wp package install google-sitemap-generator-cli.zip
+    $ fin package install google-sitemap-generator-cli.zip
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -60,6 +60,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

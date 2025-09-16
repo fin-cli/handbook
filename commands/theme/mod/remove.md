@@ -1,4 +1,4 @@
-# wp theme mod remove
+# fin theme mod remove
 
 Removes one or more theme mods.
 
@@ -13,20 +13,20 @@ Removes one or more theme mods.
 ### EXAMPLES
 
     # Remove all theme mods.
-    $ wp theme mod remove --all
+    $ fin theme mod remove --all
     Success: Theme mods removed.
 
     # Remove single theme mod.
-    $ wp theme mod remove background_color
+    $ fin theme mod remove background_color
     Success: 1 mod removed.
 
     # Remove multiple theme mods.
-    $ wp theme mod remove background_color header_textcolor
+    $ fin theme mod remove background_color header_textcolor
     Success: 2 mods removed.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -42,6 +42,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

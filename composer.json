@@ -1,5 +1,5 @@
 {
-    "name": "wp-cli/handbook",
+    "name": "fin-cli/handbook",
     "description": "Source files for the handbook that is generated for make.wordpress.org.",
     "config": {
         "allow-plugins": {
@@ -13,8 +13,8 @@
         ]
     },
     "require-dev": {
-        "wp-cli/wp-cli": "^2.11",
-        "wp-cli/wp-cli-tests": "^4.3.14"
+        "fin-cli/fin-cli": "^2.11",
+        "fin-cli/fin-cli-tests": "^4.3.14"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

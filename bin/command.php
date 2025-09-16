@@ -1,21 +1,21 @@
 <?php
 /**
- * WP-CLI commands to generate docs from the codebase.
+ * FIN-CLI commands to generate docs from the codebase.
  */
 
-namespace WP_CLI\Handbook;
+namespace FIN_CLI\Handbook;
 
 use Mustache_Engine;
 use Reflection;
-use WP_CLI;
-use WP_CLI\Utils;
+use FIN_CLI;
+use FIN_CLI\Utils;
 
 
-define( 'WP_CLI_HANDBOOK_PATH', dirname( __DIR__ ) );
+define( 'FIN_CLI_HANDBOOK_PATH', dirname( __DIR__ ) );
 
 
 /**
- * @when before_wp_load
+ * @when before_fin_load
  */
 class Command {
 
@@ -30,9 +30,9 @@ class Command {
 	 * @subcommand gen-all
 	 */
 	public function gen_all( $args, $assoc_args ) {
-		// Warn if not invoked with null WP_CLI_CONFIG_PATH.
-		if ( '/dev/null' !== getenv( 'WP_CLI_CONFIG_PATH' ) ) {
-			WP_CLI::warning( "Should be invoked on the target WP-CLI with 'WP_CLI_CONFIG_PATH=/dev/null'." );
+		// Warn if not invoked with null FIN_CLI_CONFIG_PATH.
+		if ( '/dev/null' !== getenv( 'FIN_CLI_CONFIG_PATH' ) ) {
+			FIN_CLI::warning( "Should be invoked on the target FIN-CLI with 'FIN_CLI_CONFIG_PATH=/dev/null'." );
 		}
 
 		self::gen_api_docs();
@@ -40,7 +40,7 @@ class Command {
 		self::gen_commands( $args, $assoc_args );
 		self::gen_commands_manifest();
 		self::gen_hb_manifest();
-		WP_CLI::success( 'Generated all doc pages.' );
+		FIN_CLI::success( 'Generated all doc pages.' );
 	}
 
 	private function prepare_api_slug( $full_name ) {
@@ -95,17 +95,17 @@ class Command {
 		$out = <<<'EOT'
 # Internal API
 
-WP-CLI includes a number of utilities which are considered stable and meant to be used by commands.
+FIN-CLI includes a number of utilities which are considered stable and meant to be used by commands.
 
 This also means functions and methods not listed here are considered part of the private API. They may change or disappear at any time.
 
-*Internal API documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Internal API documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 ***
 
 EOT;
 
-		self::empty_dir( WP_CLI_HANDBOOK_PATH . '/internal-api/' );
+		self::empty_dir( FIN_CLI_HANDBOOK_PATH . '/internal-api/' );
 
 		foreach ( $categories as $name => $apis ) {
 			$out .= '## ' . $name . PHP_EOL . PHP_EOL;
@@ -130,7 +130,7 @@ EOT;
 				$api['has_related'] = ! empty( $api['related'] );
 
 				$api_doc = self::render( 'internal-api.mustache', $api );
-				$path    = WP_CLI_HANDBOOK_PATH . "/internal-api/{$api['api_slug']}.md";
+				$path    = FIN_CLI_HANDBOOK_PATH . "/internal-api/{$api['api_slug']}.md";
 				if ( ! is_dir( dirname( $path ) ) ) {
 					mkdir( dirname( $path ) );
 				}
@@ -139,8 +139,8 @@ EOT;
 			$out .= PHP_EOL . PHP_EOL;
 		}
 
-		file_put_contents( WP_CLI_HANDBOOK_PATH . '/internal-api.md', $out );
-		WP_CLI::success( 'Generated internal-api/' );
+		file_put_contents( FIN_CLI_HANDBOOK_PATH . '/internal-api.md', $out );
+		FIN_CLI::success( 'Generated internal-api/' );
 	}
 
 	/**
@@ -172,15 +172,15 @@ EOT;
 		$out = <<<'EOT'
 # Behat Steps
 
-WP-CLI makes use of a Behat-based testing framework and provides a set of custom step definitions to write feature tests.
+FIN-CLI makes use of a Behat-based testing framework and provides a set of custom step definitions to write feature tests.
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 ***
 
 EOT;
 
-		self::empty_dir( WP_CLI_HANDBOOK_PATH . '/behat-steps/' );
+		self::empty_dir( FIN_CLI_HANDBOOK_PATH . '/behat-steps/' );
 
 		foreach ( $categories as $name => $apis ) {
 			$out .= '## ' . $name . PHP_EOL . PHP_EOL;
@@ -205,7 +205,7 @@ EOT;
 				$api['has_related'] = ! empty( $api['related'] );
 
 				$api_doc = self::render( 'behat-steps.mustache', $api );
-				$path    = WP_CLI_HANDBOOK_PATH . "/behat-steps/{$api['api_slug']}.md";
+				$path    = FIN_CLI_HANDBOOK_PATH . "/behat-steps/{$api['api_slug']}.md";
 				if ( ! is_dir( dirname( $path ) ) ) {
 					mkdir( dirname( $path ) );
 				}
@@ -214,8 +214,8 @@ EOT;
 			$out .= PHP_EOL . PHP_EOL;
 		}
 
-		file_put_contents( WP_CLI_HANDBOOK_PATH . '/behat-steps.md', $out );
-		WP_CLI::success( 'Generated behat-steps/' );
+		file_put_contents( FIN_CLI_HANDBOOK_PATH . '/behat-steps.md', $out );
+		FIN_CLI::success( 'Generated behat-steps/' );
 	}
 
 	/**
@@ -230,23 +230,23 @@ EOT;
 	 */
 	public function gen_commands( $args, $assoc_args ) {
 		// Check invoked with packages directory set to `bin/packages'.
-		if ( ! preg_match( '/bin\/packages\/?$/', getenv( 'WP_CLI_PACKAGES_DIR' ) ) ) {
-			WP_CLI::error( "Needs to be invoked on the target WP-CLI with 'WP_CLI_PACKAGES_DIR=bin/packages'." );
+		if ( ! preg_match( '/bin\/packages\/?$/', getenv( 'FIN_CLI_PACKAGES_DIR' ) ) ) {
+			FIN_CLI::error( "Needs to be invoked on the target FIN-CLI with 'FIN_CLI_PACKAGES_DIR=bin/packages'." );
 		}
 
 		// Check non-bundled commands installed.
-		$runner                    = WP_CLI::get_runner();
+		$runner                    = FIN_CLI::get_runner();
 		$have_nonbundled_installed = true;
 		foreach ( [ 'admin', 'find', 'profile', 'dist-archive' ] as $cmd ) {
 			$have_nonbundled_installed = $have_nonbundled_installed && is_array( $runner->find_command_to_run( [ $cmd ] ) );
 		}
 		if ( ! $have_nonbundled_installed ) {
-			WP_CLI::error( sprintf( "Install non-bundled packages by running '%s' first.", 'bin/install_packages.sh' ) );
+			FIN_CLI::error( sprintf( "Install non-bundled packages by running '%s' first.", 'bin/install_packages.sh' ) );
 		}
 
-		self::empty_dir( WP_CLI_HANDBOOK_PATH . '/commands/' );
+		self::empty_dir( FIN_CLI_HANDBOOK_PATH . '/commands/' );
 
-		$wp = WP_CLI::runcommand(
+		$fin = FIN_CLI::runcommand(
 			'cli cmd-dump',
 			[
 				'launch' => false,
@@ -257,14 +257,14 @@ EOT;
 
 		$verbose = Utils\get_flag_value( $assoc_args, 'verbose', false );
 
-		foreach ( $wp['subcommands'] as $cmd ) {
+		foreach ( $fin['subcommands'] as $cmd ) {
 			if ( in_array( $cmd['name'], [ 'website', 'handbook' ], true ) ) {
 				continue;
 			}
 			self::gen_cmd_pages( $cmd, [] /*parent*/, $verbose );
 		}
 
-		WP_CLI::success( 'Generated all command pages.' );
+		FIN_CLI::success( 'Generated all command pages.' );
 	}
 
 	/**
@@ -275,7 +275,7 @@ EOT;
 		$repo_url   = '';
 		if ( 'help' === substr( $full, 0, 4 )
 			|| 'cli' === substr( $full, 0, 3 ) ) {
-			$repo_url = 'https://github.com/wp-cli/wp-cli';
+			$repo_url = 'https://github.com/fin-cli/fin-cli';
 		}
 		if ( $reflection->hasProperty( 'when_invoked' ) ) {
 			$filename     = '';
@@ -298,12 +298,12 @@ EOT;
 				}
 			}
 			if ( $filename ) {
-				preg_match( '#(?:vendor/wp-cli/|wp-cli-dev/)([^/]+)#', $filename, $matches );
+				preg_match( '#(?:vendor/fin-cli/|fin-cli-dev/)([^/]+)#', $filename, $matches );
 				if ( ! empty( $matches[1] ) ) {
-					$repo_url = 'https://github.com/wp-cli/' . $matches[1];
+					$repo_url = 'https://github.com/fin-cli/' . $matches[1];
 				}
 			} else {
-				WP_CLI::error( 'No callable for: ' . var_export( $static, true ) );
+				FIN_CLI::error( 'No callable for: ' . var_export( $static, true ) );
 			}
 		}
 		foreach ( $command->get_subcommands() as $subcommand ) {
@@ -328,21 +328,21 @@ EOT;
 	public function gen_commands_manifest() {
 		$manifest      = [];
 		$paths         = [
-			WP_CLI_HANDBOOK_PATH . '/commands/*.md',
-			WP_CLI_HANDBOOK_PATH . '/commands/*/*.md',
-			WP_CLI_HANDBOOK_PATH . '/commands/*/*/*.md',
+			FIN_CLI_HANDBOOK_PATH . '/commands/*.md',
+			FIN_CLI_HANDBOOK_PATH . '/commands/*/*.md',
+			FIN_CLI_HANDBOOK_PATH . '/commands/*/*/*.md',
 		];
 		$commands_data = [];
-		foreach ( WP_CLI::get_root_command()->get_subcommands() as $command ) {
+		foreach ( FIN_CLI::get_root_command()->get_subcommands() as $command ) {
 			self::update_commands_data( $command, $commands_data, $command->get_name() );
 		}
 		foreach ( $paths as $path ) {
 			foreach ( glob( $path ) as $file ) {
 				$slug     = basename( $file, '.md' );
-				$cmd_path = str_replace( [ WP_CLI_HANDBOOK_PATH . '/commands/', '.md' ], '', $file );
+				$cmd_path = str_replace( [ FIN_CLI_HANDBOOK_PATH . '/commands/', '.md' ], '', $file );
 				$title    = '';
 				$contents = file_get_contents( $file );
-				if ( preg_match( '/^#\swp\s(.+)/', $contents, $matches ) ) {
+				if ( preg_match( '/^#\sfin\s(.+)/', $contents, $matches ) ) {
 					$title = $matches[1];
 				}
 				$parent = null;
@@ -368,7 +368,7 @@ EOT;
 					'cmd_path'        => $cmd_path,
 					'parent'          => $parent,
 					'markdown_source' => sprintf(
-						'https://github.com/wp-cli/handbook/blob/main/commands/%s.md',
+						'https://github.com/fin-cli/handbook/blob/main/commands/%s.md',
 						$cmd_path
 					),
 				];
@@ -377,9 +377,9 @@ EOT;
 				}
 			}
 		}
-		file_put_contents( WP_CLI_HANDBOOK_PATH . '/bin/commands-manifest.json', json_encode( $manifest, JSON_PRETTY_PRINT ) );
+		file_put_contents( FIN_CLI_HANDBOOK_PATH . '/bin/commands-manifest.json', json_encode( $manifest, JSON_PRETTY_PRINT ) );
 		$count = count( $manifest );
-		WP_CLI::success( "Generated bin/commands-manifest.json of {$count} commands" );
+		FIN_CLI::success( "Generated bin/commands-manifest.json of {$count} commands" );
 	}
 
 	/**
@@ -400,7 +400,7 @@ EOT;
 
 		$files = new \RecursiveIteratorIterator(
 			new \RecursiveCallbackFilterIterator(
-				new \RecursiveDirectoryIterator( WP_CLI_HANDBOOK_PATH, \RecursiveDirectoryIterator::SKIP_DOTS ),
+				new \RecursiveDirectoryIterator( FIN_CLI_HANDBOOK_PATH, \RecursiveDirectoryIterator::SKIP_DOTS ),
 				static function ( $file ) use ( $ignored_dirs ) {
 					/** @var SplFileInfo $file */
 
@@ -427,7 +427,7 @@ EOT;
 				continue;
 			}
 
-			$rel_path = str_replace( WP_CLI_HANDBOOK_PATH . '/', '', $file->getPathname() );
+			$rel_path = str_replace( FIN_CLI_HANDBOOK_PATH . '/', '', $file->getPathname() );
 
 			$path = explode( '/', $rel_path );
 			array_pop( $path );
@@ -447,7 +447,7 @@ EOT;
 				'title'           => $title,
 				'slug'            => 'index' === $slug ? 'handbook' : $slug,
 				'markdown_source' => sprintf(
-					'https://github.com/wp-cli/handbook/blob/main/%s',
+					'https://github.com/fin-cli/handbook/blob/main/%s',
 					$rel_path
 				),
 				'parent'          => $parent,
@@ -456,8 +456,8 @@ EOT;
 
 		ksort( $manifest );
 
-		file_put_contents( WP_CLI_HANDBOOK_PATH . '/bin/handbook-manifest.json', json_encode( $manifest, JSON_PRETTY_PRINT ) );
-		WP_CLI::success( 'Generated bin/handbook-manifest.json' );
+		file_put_contents( FIN_CLI_HANDBOOK_PATH . '/bin/handbook-manifest.json', json_encode( $manifest, JSON_PRETTY_PRINT ) );
+		FIN_CLI::success( 'Generated bin/handbook-manifest.json' );
 	}
 
 	private function get_internal_apis() {
@@ -474,7 +474,7 @@ EOT;
 
 		$classes = get_declared_classes();
 		foreach ( $classes as $class ) {
-			if ( false === stripos( $class, 'WP_CLI' ) ) {
+			if ( false === stripos( $class, 'FIN_CLI' ) ) {
 				continue;
 			}
 
@@ -495,11 +495,11 @@ EOT;
 	private function get_behat_steps() {
 		$apis    = [];
 		$classes = [
-			'\WP_CLI\Tests\Context\FeatureContext',
+			'\FIN_CLI\Tests\Context\FeatureContext',
 		];
 
 		foreach ( $classes as $class ) {
-			if ( false === stripos( $class, 'WP_CLI' ) ) {
+			if ( false === stripos( $class, 'FIN_CLI' ) ) {
 				continue;
 			}
 
@@ -522,7 +522,7 @@ EOT;
 
 		static $params;
 		if ( ! isset( $params ) ) {
-			$params = WP_CLI::runcommand(
+			$params = FIN_CLI::runcommand(
 				'cli param-dump',
 				[
 					'launch' => false,
@@ -560,7 +560,7 @@ EOT;
 
 		$hook_name        = $cmd['hook'];
 		$hook_description = $hook_name ? Utils\get_hook_description( $hook_name ) : null;
-		if ( $hook_description && 'after_wp_load' !== $hook_name ) {
+		if ( $hook_description && 'after_fin_load' !== $hook_name ) {
 			if ( $binding['has-subcommands'] ) {
 				$binding['description'] .= "\n\nUnless overridden, these commands run on the `$hook_name` hook, $hook_description";
 			} else {
@@ -614,13 +614,13 @@ EOT;
 			$docs = preg_replace( '/ &gt; /', ' > ', $docs );
 			$docs = preg_replace( '/ &lt;&lt;/', ' <<', $docs );
 			$docs = preg_replace( '/&quot;/', '"', $docs );
-			$docs = preg_replace( '/wp&gt; /', 'wp> ', $docs );
+			$docs = preg_replace( '/fin&gt; /', 'fin> ', $docs );
 			$docs = preg_replace( '/2&gt;\//', '2>/', $docs );
 			$docs = preg_replace( '/=&gt;/', '=>', $docs );
 			$docs = preg_replace( '/ &amp;&amp; /', ' && ', $docs );
 
 			$global_parameters = <<<'EOT'
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -658,7 +658,7 @@ EOT;
 		}
 		file_put_contents( "$path.md", self::render( 'subcmd-list.mustache', $binding ) );
 		if ( $verbose ) {
-			WP_CLI::log( 'Generated commands/' . $binding['path'] . '/' );
+			FIN_CLI::log( 'Generated commands/' . $binding['path'] . '/' );
 		}
 
 		if ( ! isset( $cmd['subcommands'] ) ) {
@@ -799,7 +799,7 @@ EOT;
 
 	private static function render( $path, $binding ) {
 		$m        = new Mustache_Engine();
-		$template = file_get_contents( WP_CLI_HANDBOOK_PATH . "/bin/templates/$path" );
+		$template = file_get_contents( FIN_CLI_HANDBOOK_PATH . "/bin/templates/$path" );
 		return $m->render( $template, $binding );
 	}
 
@@ -810,16 +810,16 @@ EOT;
 	 */
 	private static function empty_dir( $dir ) {
 		$cmd = Utils\esc_cmd( 'rm -rf %s', $dir );
-		$pr  = WP_CLI::launch( $cmd, false /*exit_on_error*/, true /*return_detailed*/ ); // Won't fail if directory doesn't exist.
+		$pr  = FIN_CLI::launch( $cmd, false /*exit_on_error*/, true /*return_detailed*/ ); // Won't fail if directory doesn't exist.
 		if ( $pr->return_code ) {
-			WP_CLI::error( sprintf( 'Failed to `%s`: (%d) %s', $cmd, $pr->return_code, $pr->stderr ) );
+			FIN_CLI::error( sprintf( 'Failed to `%s`: (%d) %s', $cmd, $pr->return_code, $pr->stderr ) );
 		}
 		if ( ! mkdir( $dir ) ) {
 			$error = error_get_last();
-			WP_CLI::error( sprintf( "Failed to create '%s' directory: %s", $dir, $error['message'] ) );
+			FIN_CLI::error( sprintf( "Failed to create '%s' directory: %s", $dir, $error['message'] ) );
 		}
-		WP_CLI::log( sprintf( "Removed existing contents of '%s'", $dir ) );
+		FIN_CLI::log( sprintf( "Removed existing contents of '%s'", $dir ) );
 	}
 }
 
-WP_CLI::add_command( 'handbook', '\WP_CLI\Handbook\Command' );
+FIN_CLI::add_command( 'handbook', '\FIN_CLI\Handbook\Command' );

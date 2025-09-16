@@ -1,4 +1,4 @@
-# wp user import-csv
+# fin user import-csv
 
 Imports users from a CSV file.
 
@@ -18,13 +18,13 @@ If the user already exists (matching the email address or login), then the user 
 ### EXAMPLES
 
     # Import users from local CSV file
-    $ wp user import-csv /path/to/users.csv
+    $ fin user import-csv /path/to/users.csv
     Success: bobjones created.
     Success: newuser1 created.
     Success: existinguser created.
 
     # Import users from remote CSV file
-    $ wp user import-csv http://example.com/users.csv
+    $ fin user import-csv http://example.com/users.csv
 
     Sample users.csv file:
 
@@ -35,7 +35,7 @@ If the user already exists (matching the email address or login), then the user 
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -51,6 +51,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

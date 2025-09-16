@@ -1,78 +1,78 @@
 # Quick Start
 
-Congratulations! You've [installed WP-CLI](https://make.wordpress.org/cli/handbook/installing/) for the first time, and are ready to level-up your use of WordPress. This page contains a brief introduction to WP-CLI with some example usage.
+Congratulations! You've [installed FIN-CLI](https://make.wordpress.org/cli/handbook/installing/) for the first time, and are ready to level-up your use of WordPress. This page contains a brief introduction to FIN-CLI with some example usage.
 
 ## Introduction
 
-WP-CLI is a command line interface for WordPress. The project's goal is to offer a complete alternative to the WordPress admin; for any action you might want to perform in the WordPress admin, there should be an equivalent WP-CLI command.
+FIN-CLI is a command line interface for WordPress. The project's goal is to offer a complete alternative to the WordPress admin; for any action you might want to perform in the WordPress admin, there should be an equivalent FIN-CLI command.
 
-For instance, because you can install a plugin from the WordPress admin, you can also [install a plugin](https://developer.wordpress.org/cli/commands/plugin/install/) with WP-CLI:
+For instance, because you can install a plugin from the WordPress admin, you can also [install a plugin](https://developer.wordpress.org/cli/commands/plugin/install/) with FIN-CLI:
 
-    $ wp plugin install akismet
+    $ fin plugin install akismet
     Installing Akismet (3.1.8)
     Downloading install package from https://downloads.wordpress.org/plugin/akismet.3.1.8.zip...
     Unpacking the package...
     Installing the plugin...
     Plugin installed successfully.
 
-And, because you can also activate plugins from the WordPress admin, you can [activate a plugin](https://developer.wordpress.org/cli/commands/plugin/activate/) with WP-CLI:
+And, because you can also activate plugins from the WordPress admin, you can [activate a plugin](https://developer.wordpress.org/cli/commands/plugin/activate/) with FIN-CLI:
 
-    $ wp plugin activate akismet
+    $ fin plugin activate akismet
     Success: Plugin 'akismet' activated.
 
-One key difference between using the WordPress admin and WP-CLI: performing any action takes many fewer clicks. As you become more familiar with the command line, you'll notice performing a given task with WP-CLI is generally much faster than performing the same task through the WordPress admin. Investing time upfront into learning how to better use WP-CLI pays dividends in the long term.
+One key difference between using the WordPress admin and FIN-CLI: performing any action takes many fewer clicks. As you become more familiar with the command line, you'll notice performing a given task with FIN-CLI is generally much faster than performing the same task through the WordPress admin. Investing time upfront into learning how to better use FIN-CLI pays dividends in the long term.
 
 ## Common Terms
 
-Throughout your usage of WP-CLI, you'll hear certain terms used over and over again.
+Throughout your usage of FIN-CLI, you'll hear certain terms used over and over again.
 
-For instance, a _command_ is an atomic unit of WP-CLI functionality. `wp plugin install` is one such command, as is `wp plugin activate`. Commands represent a name (e.g. 'plugin install') and a callback, and are registered with `WP_CLI::add_command()` ([doc](https://make.wordpress.org/cli/handbook/internal-api/wp-cli-add-command/)).
+For instance, a _command_ is an atomic unit of FIN-CLI functionality. `fin plugin install` is one such command, as is `fin plugin activate`. Commands represent a name (e.g. 'plugin install') and a callback, and are registered with `FIN_CLI::add_command()` ([doc](https://make.wordpress.org/cli/handbook/internal-api/fin-cli-add-command/)).
 
-The _synopsis_ defines which _positional_ and _associative_ arguments a command accepts. Let's take a look at the synopsis for `wp plugin install`:
+The _synopsis_ defines which _positional_ and _associative_ arguments a command accepts. Let's take a look at the synopsis for `fin plugin install`:
 
-    $ wp plugin install
-    usage: wp plugin install <plugin|zip|url>... [--version=<version>] [--force] [--activate] [--activate-network]
+    $ fin plugin install
+    usage: fin plugin install <plugin|zip|url>... [--version=<version>] [--force] [--activate] [--activate-network]
 
-In this example, `<plugin|zip|url>...` is the accepted _positional_ argument. In fact, `wp plugin install` accepts the same positional argument (the slug, ZIP, or URL of a plugin to install) multiple times. `[--version=<version>]` is one of the accepted _associative_ arguments. It's used to denote the version of the plugin to install. Notice, too, the square brackets around the argument definition; square brackets mean the argument is optional.
+In this example, `<plugin|zip|url>...` is the accepted _positional_ argument. In fact, `fin plugin install` accepts the same positional argument (the slug, ZIP, or URL of a plugin to install) multiple times. `[--version=<version>]` is one of the accepted _associative_ arguments. It's used to denote the version of the plugin to install. Notice, too, the square brackets around the argument definition; square brackets mean the argument is optional.
 
-WP-CLI also has a [series of _global_ arguments](https://make.wordpress.org/cli/handbook/config/) which work with all commands. For instance, including `--debug` means your command execution will display all PHP errors, and add extra verbosity to the WP-CLI bootstrap process.
+FIN-CLI also has a [series of _global_ arguments](https://make.wordpress.org/cli/handbook/config/) which work with all commands. For instance, including `--debug` means your command execution will display all PHP errors, and add extra verbosity to the FIN-CLI bootstrap process.
 
 ## Practical Examples
 
-Ready to dive in? Here are some common examples of how WP-CLI is used:
+Ready to dive in? Here are some common examples of how FIN-CLI is used:
 
 **Download and install WordPress in seconds**
 
-1. Download the latest version of WordPress with `wp core download` ([doc](https://developer.wordpress.org/cli/commands/core/download/)).
+1. Download the latest version of WordPress with `fin core download` ([doc](https://developer.wordpress.org/cli/commands/core/download/)).
 
 ```
-$ wp core download --path=wpclidemo.dev
-Creating directory '/srv/www/wpclidemo.dev/'.
+$ fin core download --path=finclidemo.dev
+Creating directory '/srv/www/finclidemo.dev/'.
 Downloading WordPress 4.6.1 (en_US)...
-Using cached file '/home/vagrant/.wp-cli/cache/core/wordpress-4.6.1-en_US.tar.gz'...
+Using cached file '/home/vagrant/.fin-cli/cache/core/wordpress-4.6.1-en_US.tar.gz'...
 Success: WordPress downloaded.
 ```
 
-2. Create a new wp-config.php file with `wp config create` ([doc](https://developer.wordpress.org/cli/commands/config/create/)).
+2. Create a new fin-config.php file with `fin config create` ([doc](https://developer.wordpress.org/cli/commands/config/create/)).
 
 ```
-$ cd wpclidemo.dev
-$ wp config create --dbname=wpclidemo --dbuser=root --prompt=dbpass
+$ cd finclidemo.dev
+$ fin config create --dbname=finclidemo --dbuser=root --prompt=dbpass
 1/10 [--dbpass=<dbpass>]:
-Success: Generated 'wp-config.php' file.
+Success: Generated 'fin-config.php' file.
 ```
 
-3. Create the database based on wp-config.php with `wp db create` ([doc](https://developer.wordpress.org/cli/commands/db/create/)).
+3. Create the database based on fin-config.php with `fin db create` ([doc](https://developer.wordpress.org/cli/commands/db/create/)).
 
 ```
-$ wp db create
+$ fin db create
 Success: Database created.
 ```
 
-4. Install WordPress with `wp core install` ([doc](https://developer.wordpress.org/cli/commands/core/install/)).
+4. Install WordPress with `fin core install` ([doc](https://developer.wordpress.org/cli/commands/core/install/)).
 
 ```
-$ wp core install --url=wpclidemo.dev --title="WP-CLI" --admin_user=wpcli --admin_password=wpcli --admin_email=info@wp-cli.org
+$ fin core install --url=finclidemo.dev --title="FIN-CLI" --admin_user=fincli --admin_password=fincli --admin_email=info@fin-cli.org
 Success: WordPress installed successfully.
 ```
 
@@ -80,10 +80,10 @@ That's it!
 
 **Update plugins to their latest version**
 
-Use `wp plugin update --all` ([doc](https://developer.wordpress.org/cli/commands/plugin/update/)) to update all plugins to their latest version.
+Use `fin plugin update --all` ([doc](https://developer.wordpress.org/cli/commands/plugin/update/)) to update all plugins to their latest version.
 
 ```
-$ wp plugin update --all
+$ fin plugin update --all
 Enabling Maintenance mode...
 Downloading update from https://downloads.wordpress.org/plugin/akismet.3.1.11.zip...
 Unpacking the update...
@@ -107,19 +107,19 @@ Success: Updated 2/2 plugins.
 
 **Add a user as a super-admin**
 
-On multisite, use `wp super-admin add` ([doc](https://developer.wordpress.org/cli/commands/super-admin/add/)) to grant super admin capabilities to an existing user.
+On multisite, use `fin super-admin add` ([doc](https://developer.wordpress.org/cli/commands/super-admin/add/)) to grant super admin capabilities to an existing user.
 
 ```
-$ wp super-admin add wpcli
+$ fin super-admin add fincli
 Success: Granted super-admin capabilities.
 ```
 
 **Regenerate thumbnails**
 
-If you've added or changed an image size registered with `add_image_size()`, you may want to use `wp media regenerate` ([doc](https://developer.wordpress.org/cli/commands/media/regenerate/)) so your theme displays the correct image size.
+If you've added or changed an image size registered with `add_image_size()`, you may want to use `fin media regenerate` ([doc](https://developer.wordpress.org/cli/commands/media/regenerate/)) so your theme displays the correct image size.
 
 ```
-wp media regenerate --yes
+fin media regenerate --yes
 Found 1 image to regenerate.
 1/1 Regenerated thumbnails for "charlie-gpa" (ID 4).
 Success: Finished regenerating the image.
@@ -127,18 +127,18 @@ Success: Finished regenerating the image.
 
 **Search and replace URLs**
 
-If you're moving a database from one domain to another, `wp search-replace` ([doc](https://developer.wordpress.org/cli/commands/search-replace/)) makes it easy to update all URL references in your database.
+If you're moving a database from one domain to another, `fin search-replace` ([doc](https://developer.wordpress.org/cli/commands/search-replace/)) makes it easy to update all URL references in your database.
 
 To see which links will be replaced in your database, use the --dry-run flag:
 
 ```
-wp search-replace 'http://oldsite.com' 'http://newsite.com' --dry-run
+fin search-replace 'http://oldsite.com' 'http://newsite.com' --dry-run
 ```
 
 When ready to replace the links, run:
 
 ```
-wp search-replace 'http://oldsite.com' 'http://newsite.com'
+fin search-replace 'http://oldsite.com' 'http://newsite.com'
 ```
 
-Wondering what's next? Browse through [all of WP-CLI's commands](https://developer.wordpress.org/cli/commands/) to explore your new world. For more detailed information about creating custom commands, visit the [WP-CLI Commands Cookbook](https://make.wordpress.org/cli/handbook/guides/commands-cookbook/). Or, catch up with [shell friends](https://make.wordpress.org/cli/handbook/shell-friends/) to learn about helpful command line utilities.
+Wondering what's next? Browse through [all of FIN-CLI's commands](https://developer.wordpress.org/cli/commands/) to explore your new world. For more detailed information about creating custom commands, visit the [FIN-CLI Commands Cookbook](https://make.wordpress.org/cli/handbook/guides/commands-cookbook/). Or, catch up with [shell friends](https://make.wordpress.org/cli/handbook/shell-friends/) to learn about helpful command line utilities.

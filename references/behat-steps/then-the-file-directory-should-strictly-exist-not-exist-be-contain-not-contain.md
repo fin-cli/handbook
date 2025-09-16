@@ -9,22 +9,22 @@ Expect a certain file or directory to (not) exist or (not) contain certain conte
 
 ```
 Scenario: My example scenario
-  When I run `wp core download`
-  Then the wp-settings.php file should exist
-  And the wp-content directory should exist
+  When I run `fin core download`
+  Then the fin-settings.php file should exist
+  And the fin-content directory should exist
   And the {RUN_DIR} directory should contain:
     """
     index.php
     license.txt
     """
-  And the wp-config.php file should contain:
+  And the fin-config.php file should contain:
     """
     That's all, stop editing! Happy publishing.
     """
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

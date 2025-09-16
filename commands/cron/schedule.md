@@ -1,11 +1,11 @@
-# wp cron schedule
+# fin cron schedule
 
-Gets WP-Cron schedules.
+Gets FIN-Cron schedules.
 
 ### EXAMPLES
 
     # List available cron schedules
-    $ wp cron schedule list
+    $ fin cron schedule list
     +------------+-------------+----------+
     | name       | display     | interval |
     +------------+-------------+----------+

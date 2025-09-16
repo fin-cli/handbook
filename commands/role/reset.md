@@ -1,4 +1,4 @@
-# wp role reset
+# fin role reset
 
 Resets any default role to default capabilities.
 
@@ -15,24 +15,24 @@ Uses WordPress' `populate_roles()` function to put one or more roles back into t
 ### EXAMPLES
 
     # Reset three roles.
-    $ wp role reset administrator author contributor
+    $ fin role reset administrator author contributor
     Restored 1 capability to and removed 0 capabilities from 'administrator' role.
     No changes necessary for 'author' role.
     No changes necessary for 'contributor' role.
     Success: 1 of 3 roles reset.
 
     # Reset a custom role.
-    $ wp role reset custom_role
+    $ fin role reset custom_role
     Custom role 'custom_role' not affected.
     Error: Must specify a default role to reset.
 
     # Reset all default roles.
-    $ wp role reset --all
+    $ fin role reset --all
     Success: All default roles reset.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -48,6 +48,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

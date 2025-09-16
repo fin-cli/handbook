@@ -1,8 +1,8 @@
 # Default doctor diagnostic checks
 
-Although it's power comes from its [ability to be customized](https://make.wordpress.org/cli/handbook/doctor-customize-config/), `wp doctor` includes a number of default diagnostic checks considered to be recommendations for production websites.
+Although it's power comes from its [ability to be customized](https://make.wordpress.org/cli/handbook/doctor-customize-config/), `fin doctor` includes a number of default diagnostic checks considered to be recommendations for production websites.
 
-Use `wp doctor list` to view these default checks:
+Use `fin doctor list` to view these default checks:
 
 <table>
 
@@ -38,9 +38,9 @@ Use `wp doctor list` to view these default checks:
 
 <tr>
 
-<td>constant-wp-debug-falsy</td>
+<td>constant-fin-debug-falsy</td>
 
-<td>Confirms expected state of the WP_DEBUG constant.</td>
+<td>Confirms expected state of the FIN_DEBUG constant.</td>
 
 </tr>
 
@@ -134,4 +134,4 @@ To explain these further:
 *   Because `SAVEQUERIES` causes WordPress to save a backtrace for every SQL query, which is an expensive operation, using `SAVEQUERIES` in production is discouraged.
 *   WordPress minor versions are typically security releases that should be applied immediately.
 
-If you [create a custom `doctor.yml` config file](https://make.wordpress.org/cli/handbook/doctor-customize-config/), you can use `wp doctor list --config=<file>` to view the diagnostic checks listed in the file.
+If you [create a custom `doctor.yml` config file](https://make.wordpress.org/cli/handbook/doctor-customize-config/), you can use `fin doctor list --config=<file>` to view the diagnostic checks listed in the file.

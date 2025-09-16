@@ -1,13 +1,13 @@
-# wp post list
+# fin post list
 
 Gets a list of posts.
 
-Display posts based on all arguments supported by [WP_Query()](https://developer.wordpress.org/reference/classes/wp_query/). Only shows post types marked as post by default.
+Display posts based on all arguments supported by [FIN_Query()](https://developer.wordpress.org/reference/classes/fin_query/). Only shows post types marked as post by default.
 
 ### OPTIONS
 
 [\--&lt;field&gt;=&lt;value&gt;]
-: One or more args to pass to WP_Query.
+: One or more args to pass to FIN_Query.
 
 [\--field=&lt;field&gt;]
 : Prints the value of a single field for each post.
@@ -64,18 +64,18 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List post
-    $ wp post list --field=ID
+    $ fin post list --field=ID
     568
     829
     1329
     1695
 
     # List posts in JSON
-    $ wp post list --post_type=post --posts_per_page=5 --format=json
+    $ fin post list --post_type=post --posts_per_page=5 --format=json
     [{"ID":1,"post_title":"Hello world!","post_name":"hello-world","post_date":"2015-06-20 09:00:10","post_status":"publish"},{"ID":1178,"post_title":"Markup: HTML Tags and Formatting","post_name":"markup-html-tags-and-formatting","post_date":"2013-01-11 20:22:19","post_status":"draft"}]
 
     # List all pages
-    $ wp post list --post_type=page --fields=post_title,post_status
+    $ fin post list --post_type=page --fields=post_title,post_status
     +-------------+-------------+
     | post_title  | post_status |
     +-------------+-------------+
@@ -83,11 +83,11 @@ These fields are optionally available:
     +-------------+-------------+
 
     # List ids of all pages and posts
-    $ wp post list --post_type=page,post --format=ids
+    $ fin post list --post_type=page,post --format=ids
     15 25 34 37 198
 
     # List given posts
-    $ wp post list --post__in=1,3
+    $ fin post list --post__in=1,3
     +----+--------------+-------------+---------------------+-------------+
     | ID | post_title   | post_name   | post_date           | post_status |
     +----+--------------+-------------+---------------------+-------------+
@@ -96,7 +96,7 @@ These fields are optionally available:
     +----+--------------+-------------+---------------------+-------------+
 
     # List given post by a specific author
-    $ wp post list --author=2
+    $ fin post list --author=2
     +----+-------------------+-------------------+---------------------+-------------+
     | ID | post_title        | post_name         | post_date           | post_status |
     +----+-------------------+-------------------+---------------------+-------------+
@@ -105,7 +105,7 @@ These fields are optionally available:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -121,6 +121,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

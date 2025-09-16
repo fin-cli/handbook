@@ -1,4 +1,4 @@
-# wp taxonomy get
+# fin taxonomy get
 
 Gets details about a registered taxonomy.
 
@@ -45,7 +45,7 @@ These fields are optionally available:
 ### EXAMPLES
 
     # Get details of `category` taxonomy.
-    $ wp taxonomy get category --fields=name,label,object_type
+    $ fin taxonomy get category --fields=name,label,object_type
     +-------------+------------+
     | Field       | Value      |
     +-------------+------------+
@@ -55,12 +55,12 @@ These fields are optionally available:
     +-------------+------------+
 
     # Get capabilities of 'post_tag' taxonomy.
-    $ wp taxonomy get post_tag --field=cap
+    $ fin taxonomy get post_tag --field=cap
     {"manage_terms":"manage_categories","edit_terms":"manage_categories","delete_terms":"manage_categories","assign_terms":"edit_posts"}
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -76,6 +76,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

@@ -9,13 +9,13 @@ Launch a given command in the background.
 
 ```
 Scenario: My example scenario
-  Given a WP install
-  And I launch in the background `wp server --host=localhost --port=8181`
+  Given a FIN install
+  And I launch in the background `fin server --host=localhost --port=8181`
   ...
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

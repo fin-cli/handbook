@@ -1,13 +1,13 @@
-# wp db tables
+# fin db tables
 
 Lists the database tables.
 
-Defaults to all tables registered to the $wpdb database handler.
+Defaults to all tables registered to the $findb database handler.
 
 ### OPTIONS
 
 [&lt;table&gt;...]
-: List tables based on wildcard search, e.g. 'wp_*_options' or 'wp_post?'.
+: List tables based on wildcard search, e.g. 'fin_*_options' or 'fin_post?'.
 
 [\--scope=&lt;scope&gt;]
 : Can be all, global, ms_global, blog, or old tables. Defaults to all.
@@ -16,10 +16,10 @@ Defaults to all tables registered to the $wpdb database handler.
 : List all the tables in a multisite install.
 
 [\--all-tables-with-prefix]
-: List all tables that match the table prefix even if not registered on $wpdb. Overrides --network.
+: List all tables that match the table prefix even if not registered on $findb. Overrides --network.
 
 [\--all-tables]
-: List all tables in the database, regardless of the prefix, and even if not registered on $wpdb. Overrides --all-tables-with-prefix.
+: List all tables in the database, regardless of the prefix, and even if not registered on $findb. Overrides --all-tables-with-prefix.
 
 [\--format=&lt;format&gt;]
 : Render output in a particular format.
@@ -32,25 +32,25 @@ options:
 
 ### EXAMPLES
 
-    # List tables for a single site, without shared tables like 'wp_users'
-    $ wp db tables --scope=blog --url=sub.example.com
-    wp_3_posts
-    wp_3_comments
-    wp_3_options
-    wp_3_postmeta
-    wp_3_terms
-    wp_3_term_taxonomy
-    wp_3_term_relationships
-    wp_3_termmeta
-    wp_3_commentmeta
+    # List tables for a single site, without shared tables like 'fin_users'
+    $ fin db tables --scope=blog --url=sub.example.com
+    fin_3_posts
+    fin_3_comments
+    fin_3_options
+    fin_3_postmeta
+    fin_3_terms
+    fin_3_term_taxonomy
+    fin_3_term_relationships
+    fin_3_termmeta
+    fin_3_commentmeta
 
     # Export only tables for a single site
-    $ wp db export --tables=$(wp db tables --url=sub.example.com --format=csv)
+    $ fin db export --tables=$(fin db tables --url=sub.example.com --format=csv)
     Success: Exported to wordpress_dbase.sql
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -66,6 +66,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

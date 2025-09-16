@@ -11,7 +11,7 @@ Run or try the previous command again.
 
 ```
 Scenario: My example scenario
-  When I run `wp site option update admin_user_id 1`
+  When I run `fin site option update admin_user_id 1`
   Then STDOUT should contain:
     """
     Success: Updated 'admin_user_id' site option.
@@ -25,7 +25,7 @@ Scenario: My example scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

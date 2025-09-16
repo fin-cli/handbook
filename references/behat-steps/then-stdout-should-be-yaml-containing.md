@@ -9,7 +9,7 @@ Expect STDOUT to be YAML containig certain content.
 
 ```
 Scenario: My example scenario
-  When I run `wp cli alias list`
+  When I run `fin cli alias list`
   Then STDOUT should be YAML containing:
     """
     @all: Run command against every registered alias.
@@ -19,7 +19,7 @@ Scenario: My example scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

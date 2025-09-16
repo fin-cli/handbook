@@ -1,8 +1,8 @@
-# wp i18n make-mo
+# fin i18n make-mo
 
 Create MO files from PO files.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 ### OPTIONS
 
@@ -15,17 +15,17 @@ This command runs on the `before_wp_load` hook, just before the WP load process 
 ### EXAMPLES
 
     # Create MO files for all PO files in the current directory.
-    $ wp i18n make-mo .
+    $ fin i18n make-mo .
 
     # Create a MO file from a single PO file in a specific directory.
-    $ wp i18n make-mo example-plugin-de_DE.po languages
+    $ fin i18n make-mo example-plugin-de_DE.po languages
 
     # Create a MO file from a single PO file to a specific file destination
-    $ wp i18n make-mo example-plugin-de_DE.po languages/bar.mo
+    $ fin i18n make-mo example-plugin-de_DE.po languages/bar.mo
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -41,6 +41,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

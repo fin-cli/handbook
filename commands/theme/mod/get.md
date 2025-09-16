@@ -1,4 +1,4 @@
-# wp theme mod get
+# fin theme mod get
 
 Gets one or more theme mods.
 
@@ -27,7 +27,7 @@ options:
 ### EXAMPLES
 
     # Get all theme mods.
-    $ wp theme mod get --all
+    $ fin theme mod get --all
     +------------------+---------+
     | key              | value   |
     +------------------+---------+
@@ -37,15 +37,15 @@ options:
     +------------------+---------+
 
     # Get single theme mod in JSON format.
-    $ wp theme mod get background_color --format=json
+    $ fin theme mod get background_color --format=json
     [{"key":"background_color","value":"dd3333"}]
 
     # Get value of a single theme mod.
-    $ wp theme mod get background_color --field=value
+    $ fin theme mod get background_color --field=value
     dd3333
 
     # Get multiple theme mods.
-    $ wp theme mod get background_color header_textcolor
+    $ fin theme mod get background_color header_textcolor
     +------------------+--------+
     | key              | value  |
     +------------------+--------+
@@ -55,7 +55,7 @@ options:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -71,6 +71,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

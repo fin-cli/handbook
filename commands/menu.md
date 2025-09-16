@@ -1,4 +1,4 @@
-# wp menu
+# fin menu
 
 Lists, creates, assigns, and deletes the active theme's navigation menus.
 
@@ -7,11 +7,11 @@ See the [Navigation Menus](https://developer.wordpress.org/themes/functionality/
 ### EXAMPLES
 
     # Create a new menu
-    $ wp menu create "My Menu"
+    $ fin menu create "My Menu"
     Success: Created menu 200.
 
     # List existing menus
-    $ wp menu list
+    $ fin menu list
     +---------+----------+----------+-----------+-------+
     | term_id | name     | slug     | locations | count |
     +---------+----------+----------+-----------+-------+
@@ -20,11 +20,11 @@ See the [Navigation Menus](https://developer.wordpress.org/themes/functionality/
     +---------+----------+----------+-----------+-------+
 
     # Create a new menu link item
-    $ wp menu item add-custom my-menu Apple http://apple.com --porcelain
+    $ fin menu item add-custom my-menu Apple http://apple.com --porcelain
     1922
 
     # Assign the 'my-menu' menu to the 'primary' location
-    $ wp menu location assign my-menu primary
+    $ fin menu location assign my-menu primary
     Success: Assigned location primary to menu my-menu.
 
 

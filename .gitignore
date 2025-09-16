@@ -5,7 +5,7 @@ composer.lock
 vendor
 _drafts/
 bin/packages
-.*.swp
+.*.sfin
 commands/doctor*
 commands/google-sitemap*
 commands/maintenance*

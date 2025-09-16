@@ -1,4 +1,4 @@
-# wp plugin status
+# fin plugin status
 
 Reveals the status of one or all plugins.
 
@@ -10,7 +10,7 @@ Reveals the status of one or all plugins.
 ### EXAMPLES
 
     # Displays status of all plugins
-    $ wp plugin status
+    $ fin plugin status
     5 installed plugins:
       I akismet                3.1.11
       I easy-digital-downloads 2.5.16
@@ -20,7 +20,7 @@ Reveals the status of one or all plugins.
     Legend: I = Inactive, A = Active, M = Must Use
 
     # Displays status of a plugin
-    $ wp plugin status theme-check
+    $ fin plugin status theme-check
     Plugin theme-check details:
         Name: Theme Check
         Status: Active
@@ -30,7 +30,7 @@ Reveals the status of one or all plugins.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -46,6 +46,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

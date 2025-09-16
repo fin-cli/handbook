@@ -1,8 +1,8 @@
-# wp embed fetch
+# fin embed fetch
 
 Attempts to convert a URL into embed HTML.
 
-In non-raw mode, starts by checking the URL against the regex of the registered embed handlers. If none of the regex matches and it's enabled, then the URL will be given to the WP_oEmbed class.
+In non-raw mode, starts by checking the URL against the regex of the registered embed handlers. If none of the regex matches and it's enabled, then the URL will be given to the FIN_oEmbed class.
 
 In raw mode, checks the providers directly and returns the data.
 
@@ -49,16 +49,16 @@ options:
 ### EXAMPLES
 
     # Get embed HTML for a given URL.
-    $ wp embed fetch https://www.youtube.com/watch?v=dQw4w9WgXcQ
+    $ fin embed fetch https://www.youtube.com/watch?v=dQw4w9WgXcQ
     &lt;iframe width="525" height="295" src="https://www.youtube.com/embed/dQw4w9WgXcQ?feature=oembed" ...
 
     # Get raw oEmbed data for a given URL.
-    $ wp embed fetch https://www.youtube.com/watch?v=dQw4w9WgXcQ --raw
+    $ fin embed fetch https://www.youtube.com/watch?v=dQw4w9WgXcQ --raw
     {"author_url":"https:\/\/www.youtube.com\/user\/RickAstleyVEVO","width":525,"version":"1.0", ...
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -74,6 +74,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

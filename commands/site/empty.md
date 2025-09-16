@@ -1,4 +1,4 @@
-# wp site empty
+# fin site empty
 
 Empties a site of its content (posts, comments, terms, and meta).
 
@@ -9,11 +9,11 @@ If running a persistent object cache, make sure to flush the cache after emptyin
 To also empty custom database tables, you'll need to hook into command execution:
 
 ```
-WP_CLI::add_hook( 'after_invoke:site empty', function(){
-    global $wpdb;
+FIN_CLI::add_hook( 'after_invoke:site empty', function(){
+    global $findb;
     foreach( array( 'p2p', 'p2pmeta' ) as $table ) {
-        $table = $wpdb-&gt;$table;
-        $wpdb-&gt;query( "TRUNCATE $table" );
+        $table = $findb-&gt;$table;
+        $findb-&gt;query( "TRUNCATE $table" );
     }
 });
 ```
@@ -28,13 +28,13 @@ WP_CLI::add_hook( 'after_invoke:site empty', function(){
 
 ### EXAMPLES
 
-    $ wp site empty
+    $ fin site empty
     Are you sure you want to empty the site at http://www.example.com of all posts, links, comments, and terms? [y/n] y
     Success: The site at 'http://www.example.com' was emptied.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -50,6 +50,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

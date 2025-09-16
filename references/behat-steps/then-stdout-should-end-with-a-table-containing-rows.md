@@ -11,21 +11,21 @@ Useful when the table is preceded by some other output.
 
 ```
 Scenario: My example scenario
-  Given a WP installation
-  When I run `wp search-replace foo bar --report-changed-only`
+  Given a FIN installation
+  When I run `fin search-replace foo bar --report-changed-only`
   Then STDOUT should contain:
     """
     Success: Made 3 replacements.
     """
   And STDOUT should end with a table containing rows:
     | Table       | Column       | Replacements | Type |
-    | wp_options  | option_value | 1            | PHP  |
-    | wp_postmeta | meta_value   | 1            | SQL  |
-    | wp_posts    | post_title   | 1            | SQL  |
+    | fin_options  | option_value | 1            | PHP  |
+    | fin_postmeta | meta_value   | 1            | SQL  |
+    | fin_posts    | post_title   | 1            | SQL  |
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

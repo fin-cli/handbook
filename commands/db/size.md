@@ -1,8 +1,8 @@
-# wp db size
+# fin db size
 
 Displays the database name and size.
 
-Display the database name and size for `DB_NAME` specified in wp-config.php. The size defaults to a human-readable number.
+Display the database name and size for `DB_NAME` specified in fin-config.php. The size defaults to a human-readable number.
 
 Available size formats include:
 * b (bytes)
@@ -68,10 +68,10 @@ options:
 : Number of digits after decimal point. Defaults to 0.
 
 [\--all-tables-with-prefix]
-: List all tables that match the table prefix even if not registered on $wpdb. Overrides --network.
+: List all tables that match the table prefix even if not registered on $findb. Overrides --network.
 
 [\--all-tables]
-: List all tables in the database, regardless of the prefix, and even if not registered on $wpdb. Overrides --all-tables-with-prefix.
+: List all tables in the database, regardless of the prefix, and even if not registered on $findb. Overrides --all-tables-with-prefix.
 
 [\--order=&lt;order&gt;]
 : Ascending or Descending order.
@@ -93,43 +93,43 @@ options:
 
 ### EXAMPLES
 
-    $ wp db size
+    $ fin db size
     +-------------------+------+
     | Name              | Size |
     +-------------------+------+
     | wordpress_default | 6 MB |
     +-------------------+------+
 
-    $ wp db size --tables
+    $ fin db size --tables
     +-----------------------+-------+
     | Name                  | Size  |
     +-----------------------+-------+
-    | wp_users              | 64 KB |
-    | wp_usermeta           | 48 KB |
-    | wp_posts              | 80 KB |
-    | wp_comments           | 96 KB |
-    | wp_links              | 32 KB |
-    | wp_options            | 32 KB |
-    | wp_postmeta           | 48 KB |
-    | wp_terms              | 48 KB |
-    | wp_term_taxonomy      | 48 KB |
-    | wp_term_relationships | 32 KB |
-    | wp_termmeta           | 48 KB |
-    | wp_commentmeta        | 48 KB |
+    | fin_users              | 64 KB |
+    | fin_usermeta           | 48 KB |
+    | fin_posts              | 80 KB |
+    | fin_comments           | 96 KB |
+    | fin_links              | 32 KB |
+    | fin_options            | 32 KB |
+    | fin_postmeta           | 48 KB |
+    | fin_terms              | 48 KB |
+    | fin_term_taxonomy      | 48 KB |
+    | fin_term_relationships | 32 KB |
+    | fin_termmeta           | 48 KB |
+    | fin_commentmeta        | 48 KB |
     +-----------------------+-------+
 
-    $ wp db size --size_format=b
+    $ fin db size --size_format=b
     5865472
 
-    $ wp db size --size_format=kb
+    $ fin db size --size_format=kb
     5728
 
-    $ wp db size --size_format=mb
+    $ fin db size --size_format=mb
     6
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -145,6 +145,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

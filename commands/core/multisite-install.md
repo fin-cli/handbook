@@ -1,8 +1,8 @@
-# wp core multisite-install
+# fin core multisite-install
 
 Installs WordPress multisite from scratch.
 
-Creates the WordPress tables in the database using the URL, title, and default admin user details provided. Then, creates the multisite tables in the database and adds multisite constants to the wp-config.php.
+Creates the WordPress tables in the database using the URL, title, and default admin user details provided. Then, creates the multisite tables in the database and adds multisite constants to the fin-config.php.
 
 For those using WordPress with Apache, remember to update the `.htaccess` file with the appropriate multisite rewrite rules.
 
@@ -39,21 +39,21 @@ default: admin
 : Don't send an email notification to the new admin user.
 
 [\--skip-config]
-: Don't add multisite constants to wp-config.php.
+: Don't add multisite constants to fin-config.php.
 
 ### EXAMPLES
 
-    $ wp core multisite-install --title="Welcome to the WordPress" \
+    $ fin core multisite-install --title="Welcome to the WordPress" \
     > --admin_user="admin" --admin_password="password" \
     > --admin_email="user@example.com"
     Single site database tables already present.
     Set up multisite database tables.
-    Added multisite constants to wp-config.php.
+    Added multisite constants to fin-config.php.
     Success: Network installed. Don't forget to set up rewrite rules.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -69,6 +69,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

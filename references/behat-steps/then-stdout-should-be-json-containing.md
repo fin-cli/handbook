@@ -9,7 +9,7 @@ Expect valid JSON output in STDOUT.
 
 ```
 Scenario: My example scenario
-  When I run `wp post meta get 1 meta-key --format=json`
+  When I run `fin post meta get 1 meta-key --format=json`
   Then STDOUT should be JSON containing:
     """
     {
@@ -19,7 +19,7 @@ Scenario: My example scenario
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

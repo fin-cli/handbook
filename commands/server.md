@@ -1,8 +1,8 @@
-# wp server
+# fin server
 
 Launches PHP's built-in web server for a specific WordPress installation.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
 Uses `php -S` to launch a web server serving the WordPress webroot.
 &lt;http://php.net/manual/en/features.commandline.webserver.php&gt;
@@ -32,21 +32,21 @@ default: 8080
 ### EXAMPLES
 
     # Make the instance available on any address (with port 8080)
-    $ wp server --host=0.0.0.0
+    $ fin server --host=0.0.0.0
     PHP 5.6.9 Development Server started at Tue May 24 01:27:11 2016
     Listening on http://0.0.0.0:8080
     Document root is /
     Press Ctrl-C to quit.
 
     # Run on port 80 (for multisite)
-    $ wp server --host=localhost.localdomain --port=80
+    $ fin server --host=localhost.localdomain --port=80
     PHP 5.6.9 Development Server started at Tue May 24 01:30:06 2016
     Listening on http://localhost1.localdomain1:80
     Document root is /
     Press Ctrl-C to quit.
 
     # Configure the server with a specific .ini file
-    $ wp server --config=development.ini
+    $ fin server --config=development.ini
     PHP 7.0.9 Development Server started at Mon Aug 22 12:09:04 2016
     Listening on http://localhost:8080
     Document root is /
@@ -54,7 +54,7 @@ default: 8080
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -70,6 +70,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

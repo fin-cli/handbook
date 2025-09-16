@@ -1,6 +1,6 @@
 # Write a custom check to perform an arbitrary assertion
 
-Because `wp doctor` checks are built on top of a foundational abstraction, it's relatively straightforward for you to write your own custom check. The basic requirement is that you create a class extending `runcommand\Doctor\Checks\Check` that implements a `run()` method. The `run()` must set a status and message based on whatever procedural logic As an example, here's an annotated custom check to assert Akismet is activated with a valid API key:
+Because `fin doctor` checks are built on top of a foundational abstraction, it's relatively straightforward for you to write your own custom check. The basic requirement is that you create a class extending `runcommand\Doctor\Checks\Check` that implements a `run()` method. The `run()` must set a status and message based on whatever procedural logic As an example, here's an annotated custom check to assert Akismet is activated with a valid API key:
 
     <?php
 
@@ -11,9 +11,9 @@ Because `wp doctor` checks are built on top of a foundational abstraction, it's 
 
     	public function __construct( $options = array() ) {
     		parent::__construct( $options );
-    		// Every check is to run on 'after_wp_load' by default.
-    		// You could instead use 'before_wp_load' or 'after_wp_config_load'
-    		$this->set_when( 'after_wp_load' );
+    		// Every check is to run on 'after_fin_load' by default.
+    		// You could instead use 'before_fin_load' or 'after_fin_config_load'
+    		$this->set_when( 'after_fin_load' );
     	}
 
     	public function run() {
@@ -55,7 +55,7 @@ If the class were placed in an `akismet-activated.php` file, you could register 
 
 Then, run the config file:
 
-    $ wp doctor check plugin-akismet-activated --config=doctor.yml
+    $ fin doctor check plugin-akismet-activated --config=doctor.yml
     +--------------------------+--------+---------------------+
     | name                     | status | message             |
     +--------------------------+--------+---------------------+

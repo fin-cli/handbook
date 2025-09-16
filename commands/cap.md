@@ -1,21 +1,21 @@
-# wp cap
+# fin cap
 
 Adds, removes, and lists capabilities of a user role.
 
-See references for [Roles and Capabilities](https://codex.wordpress.org/Roles_and_Capabilities) and [WP User class](https://codex.wordpress.org/Class_Reference/WP_User).
+See references for [Roles and Capabilities](https://codex.wordpress.org/Roles_and_Capabilities) and [FIN User class](https://codex.wordpress.org/Class_Reference/FIN_User).
 
 ### EXAMPLES
 
     # Add 'spectate' capability to 'author' role.
-    $ wp cap add 'author' 'spectate'
+    $ fin cap add 'author' 'spectate'
     Success: Added 1 capability to 'author' role.
 
     # Add all caps from 'editor' role to 'author' role.
-    $ wp cap list 'editor' | xargs wp cap add 'author'
+    $ fin cap list 'editor' | xargs fin cap add 'author'
     Success: Added 24 capabilities to 'author' role.
 
     # Remove all caps from 'editor' role that also appear in 'author' role.
-    $ wp cap list 'author' | xargs wp cap remove 'editor'
+    $ fin cap list 'author' | xargs fin cap remove 'editor'
     Success: Removed 34 capabilities from 'editor' role.
 
 

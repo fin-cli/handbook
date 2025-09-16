@@ -1,4 +1,4 @@
-# wp plugin list
+# fin plugin list
 
 Gets a list of plugins.
 
@@ -68,17 +68,17 @@ These fields are optionally available:
 * tested_up_to
 * requires
 * requires_php
-* wporg_status
-* wporg_last_updated
+* finorg_status
+* finorg_last_updated
 
 ### EXAMPLES
 
     # List active plugins on the site.
-    $ wp plugin list --status=active --format=json
-    [{"name":"dynamic-hostname","status":"active","update":"none","version":"0.4.2","update_version":"","auto_update":"off"},{"name":"tinymce-templates","status":"active","update":"none","version":"4.8.1","update_version":"","auto_update":"off"},{"name":"wp-multibyte-patch","status":"active","update":"none","version":"2.9","update_version":"","auto_update":"off"},{"name":"wp-total-hacks","status":"active","update":"none","version":"4.7.2","update_version":"","auto_update":"off"}]
+    $ fin plugin list --status=active --format=json
+    [{"name":"dynamic-hostname","status":"active","update":"none","version":"0.4.2","update_version":"","auto_update":"off"},{"name":"tinymce-templates","status":"active","update":"none","version":"4.8.1","update_version":"","auto_update":"off"},{"name":"fin-multibyte-patch","status":"active","update":"none","version":"2.9","update_version":"","auto_update":"off"},{"name":"fin-total-hacks","status":"active","update":"none","version":"4.7.2","update_version":"","auto_update":"off"}]
 
     # List plugins on each site in a network.
-    $ wp site list --field=url | xargs -I % wp plugin list --url=%
+    $ fin site list --field=url | xargs -I % fin plugin list --url=%
     +---------+----------------+-----------+---------+-----------------+------------+
     | name    | status         | update    | version | update_version | auto_update |
     +---------+----------------+-----------+---------+----------------+-------------+
@@ -93,9 +93,9 @@ These fields are optionally available:
     +---------+----------------+-----------+---------+----------------+-------------+
 
     # Check whether plugins are still active on WordPress.org
-    $ wp plugin list --fields=name,wporg_status,wporg_last_updated
+    $ fin plugin list --fields=name,finorg_status,finorg_last_updated
     +--------------------+--------------+--------------------+
-    | name               | wporg_status | wporg_last_updated |
+    | name               | finorg_status | finorg_last_updated |
     +--------------------+--------------+--------------------+
     | akismet            | active       | 2023-12-11         |
     | user-switching     | active       | 2023-11-17         |
@@ -104,12 +104,12 @@ These fields are optionally available:
     +--------------------+--------------+--------------------+
 
     # List recently active plugins on the site.
-    $ wp plugin list --recently-active --field=name --format=json
+    $ fin plugin list --recently-active --field=name --format=json
     ["akismet","bbpress","buddypress"]
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -125,6 +125,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

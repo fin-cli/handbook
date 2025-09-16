@@ -1,14 +1,14 @@
-# wp db check
+# fin db check
 
 Checks the current status of the database.
 
-This command runs on the `after_wp_config_load` hook, after wp-config.php has been loaded into scope.
+This command runs on the `after_fin_config_load` hook, after fin-config.php has been loaded into scope.
 
-Runs `mysqlcheck` utility with `--check` using `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASSWORD` database credentials specified in wp-config.php.
+Runs `mysqlcheck` utility with `--check` using `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASSWORD` database credentials specified in fin-config.php.
 
 [See docs](http://dev.mysql.com/doc/refman/5.7/en/check-table.html) for more details on the `CHECK TABLE` statement.
 
-This command does not check whether WordPress is installed; to do that run `wp core is-installed`.
+This command does not check whether WordPress is installed; to do that run `fin core is-installed`.
 
 ### OPTIONS
 
@@ -26,12 +26,12 @@ This command does not check whether WordPress is installed; to do that run `wp c
 
 ### EXAMPLES
 
-    $ wp db check
+    $ fin db check
     Success: Database checked.
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -47,6 +47,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

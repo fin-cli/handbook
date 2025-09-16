@@ -1,10 +1,10 @@
-# wp package browse
+# fin package browse
 
-Browses WP-CLI packages available for installation.
+Browses FIN-CLI packages available for installation.
 
-This command runs on the `before_wp_load` hook, just before the WP load process begins.
+This command runs on the `before_fin_load` hook, just before the FIN load process begins.
 
-Lists packages available for installation from the [Package Index](http://wp-cli.org/package-index/). Although the package index will remain in place for backward compatibility reasons, it has been deprecated and will not be updated further. Please refer to https://github.com/wp-cli/ideas/issues/51 to read about its potential replacement.
+Lists packages available for installation from the [Package Index](http://fin-cli.org/package-index/). Although the package index will remain in place for backward compatibility reasons, it has been deprecated and will not be updated further. Please refer to https://github.com/fin-cli/ideas/issues/51 to read about its potential replacement.
 
 ### OPTIONS
 
@@ -36,27 +36,27 @@ There are no optionally available fields.
 
 ### EXAMPLES
 
-    $ wp package browse --format=yaml
+    $ fin package browse --format=yaml
     ---
     10up/mu-migration:
       name: 10up/mu-migration
-      description: A set of WP-CLI commands to support the migration of single WordPress instances to multisite
+      description: A set of FIN-CLI commands to support the migration of single WordPress instances to multisite
       authors: Nícholas André
       version: dev-main, dev-develop
-    aaemnnosttv/wp-cli-dotenv-command:
-      name: aaemnnosttv/wp-cli-dotenv-command
-      description: Dotenv commands for WP-CLI
+    aaemnnosttv/fin-cli-dotenv-command:
+      name: aaemnnosttv/fin-cli-dotenv-command
+      description: Dotenv commands for FIN-CLI
       authors: Evan Mattson
       version: v0.1, v0.1-beta.1, v0.2, dev-main, dev-dev, dev-develop, dev-tests/behat
-    aaemnnosttv/wp-cli-http-command:
-      name: aaemnnosttv/wp-cli-http-command
-      description: WP-CLI command for using the WordPress HTTP API
+    aaemnnosttv/fin-cli-http-command:
+      name: aaemnnosttv/fin-cli-http-command
+      description: FIN-CLI command for using the WordPress HTTP API
       authors: Evan Mattson
       version: dev-main
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -72,6 +72,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

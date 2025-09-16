@@ -1,4 +1,4 @@
-# wp theme install
+# fin theme install
 
 Installs one or more themes.
 
@@ -25,7 +25,7 @@ Installs one or more themes.
 ### EXAMPLES
 
     # Install the latest version from wordpress.org and activate
-    $ wp theme install twentysixteen --activate
+    $ fin theme install twentysixteen --activate
     Installing Twenty Sixteen (1.2)
     Downloading install package from http://downloads.wordpress.org/theme/twentysixteen.1.2.zip...
     Unpacking the package...
@@ -36,14 +36,14 @@ Installs one or more themes.
     Success: Installed 1 of 1 themes.
 
     # Install from a local zip file
-    $ wp theme install ../my-theme.zip
+    $ fin theme install ../my-theme.zip
 
     # Install from a remote zip file
-    $ wp theme install http://s3.amazonaws.com/bucketname/my-theme.zip?AWSAccessKeyId=123&amp;Expires=456&amp;Signature=abcdef
+    $ fin theme install http://s3.amazonaws.com/bucketname/my-theme.zip?AWSAccessKeyId=123&amp;Expires=456&amp;Signature=abcdef
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -59,6 +59,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

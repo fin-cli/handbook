@@ -9,13 +9,13 @@ Expect a specific exit code of the previous command.
 
 ```
 Scenario: My example scenario
-  Given a WP installation
-  When I try `wp plugin install`
+  Given a FIN installation
+  When I try `fin plugin install`
   Then the return code should be 1
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

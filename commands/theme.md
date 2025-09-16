@@ -1,4 +1,4 @@
-# wp theme
+# fin theme
 
 Manages themes, including installs, activations, and updates.
 
@@ -7,7 +7,7 @@ See the WordPress [Theme Handbook](https://developer.wordpress.org/themes/) deve
 ### EXAMPLES
 
     # Install the latest version of a theme from wordpress.org and activate
-    $ wp theme install twentysixteen --activate
+    $ fin theme install twentysixteen --activate
     Installing Twenty Sixteen (1.2)
     Downloading install package from http://downloads.wordpress.org/theme/twentysixteen.1.2.zip...
     Unpacking the package...
@@ -18,7 +18,7 @@ See the WordPress [Theme Handbook](https://developer.wordpress.org/themes/) deve
     Success: Installed 1 of 1 themes.
 
     # Get details of an installed theme
-    $ wp theme get twentysixteen --fields=name,title,version
+    $ fin theme get twentysixteen --fields=name,title,version
     +---------+----------------+
     | Field   | Value          |
     +---------+----------------+
@@ -28,7 +28,7 @@ See the WordPress [Theme Handbook](https://developer.wordpress.org/themes/) deve
     +---------+----------------+
 
     # Get status of theme
-    $ wp theme status twentysixteen
+    $ fin theme status twentysixteen
     Theme twentysixteen details:
          Name: Twenty Sixteen
          Status: Active

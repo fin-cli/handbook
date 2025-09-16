@@ -1,14 +1,14 @@
-# wp comment list
+# fin comment list
 
 Gets a list of comments.
 
 Display comments based on all arguments supported by
-[WP_Comment_Query()](https://developer.wordpress.org/reference/classes/WP_Comment_Query/__construct/).
+[FIN_Comment_Query()](https://developer.wordpress.org/reference/classes/FIN_Comment_Query/__construct/).
 
 ### OPTIONS
 
 [\--&lt;field&gt;=&lt;value&gt;]
-: One or more args to pass to WP_Comment_Query.
+: One or more args to pass to FIN_Comment_Query.
 
 [\--field=&lt;field&gt;]
 : Prints the value of a single field for each comment.
@@ -56,13 +56,13 @@ These fields are optionally available:
 ### EXAMPLES
 
     # List comment IDs.
-    $ wp comment list --field=ID
+    $ fin comment list --field=ID
     22
     23
     24
 
     # List comments of a post.
-    $ wp comment list --post_id=1 --fields=ID,comment_date,comment_author
+    $ fin comment list --post_id=1 --fields=ID,comment_date,comment_author
     +------------+---------------------+----------------+
     | comment_ID | comment_date        | comment_author |
     +------------+---------------------+----------------+
@@ -70,7 +70,7 @@ These fields are optionally available:
     +------------+---------------------+----------------+
 
     # List approved comments.
-    $ wp comment list --number=3 --status=approve --fields=ID,comment_date,comment_author
+    $ fin comment list --number=3 --status=approve --fields=ID,comment_date,comment_author
     +------------+---------------------+----------------+
     | comment_ID | comment_date        | comment_author |
     +------------+---------------------+----------------+
@@ -80,7 +80,7 @@ These fields are optionally available:
     +------------+---------------------+----------------+
 
     # List unapproved comments.
-    $ wp comment list --number=3 --status=hold --fields=ID,comment_date,comment_author
+    $ fin comment list --number=3 --status=hold --fields=ID,comment_date,comment_author
     +------------+---------------------+----------------+
     | comment_ID | comment_date        | comment_author |
     +------------+---------------------+----------------+
@@ -90,7 +90,7 @@ These fields are optionally available:
     +------------+---------------------+----------------+
 
     # List comments marked as spam.
-    $ wp comment list --status=spam --fields=ID,comment_date,comment_author
+    $ fin comment list --status=spam --fields=ID,comment_date,comment_author
     +------------+---------------------+----------------+
     | comment_ID | comment_date        | comment_author |
     +------------+---------------------+----------------+
@@ -98,7 +98,7 @@ These fields are optionally available:
     +------------+---------------------+----------------+
 
     # List comments in trash.
-    $ wp comment list --status=trash --fields=ID,comment_date,comment_author
+    $ fin comment list --status=trash --fields=ID,comment_date,comment_author
     +------------+---------------------+----------------+
     | comment_ID | comment_date        | comment_author |
     +------------+---------------------+----------------+
@@ -107,7 +107,7 @@ These fields are optionally available:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -123,6 +123,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

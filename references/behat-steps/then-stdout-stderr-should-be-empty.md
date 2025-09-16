@@ -9,13 +9,13 @@ Expect STDOUT or STDERR to be empty.
 
 ```
 Scenario: My other scenario
-  Given a WP install
-  When I run `wp plugin install akismet`
+  Given a FIN install
+  When I run `fin plugin install akismet`
   Then STDERR should be empty
 ```
 
 
-*Behat steps documentation is generated from the WP-CLI codebase on every release. To suggest improvements, please submit a pull request.*
+*Behat steps documentation is generated from the FIN-CLI codebase on every release. To suggest improvements, please submit a pull request.*
 
 
 ***

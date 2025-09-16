@@ -1,8 +1,8 @@
-# wp transient delete
+# fin transient delete
 
 Deletes a transient value.
 
-For a more complete explanation of the transient cache, including the network|site cache, please see docs for `wp transient`.
+For a more complete explanation of the transient cache, including the network|site cache, please see docs for `fin transient`.
 
 ### OPTIONS
 
@@ -21,31 +21,31 @@ For a more complete explanation of the transient cache, including the network|si
 ### EXAMPLES
 
     # Delete transient.
-    $ wp transient delete sample_key
+    $ fin transient delete sample_key
     Success: Transient deleted.
 
     # Delete expired transients.
-    $ wp transient delete --expired
+    $ fin transient delete --expired
     Success: 12 expired transients deleted from the database.
 
     # Delete expired site transients.
-    $ wp transient delete --expired --network
+    $ fin transient delete --expired --network
     Success: 1 expired transient deleted from the database.
 
     # Delete all transients.
-    $ wp transient delete --all
+    $ fin transient delete --all
     Success: 14 transients deleted from the database.
 
     # Delete all site transients.
-    $ wp transient delete --all --network
+    $ fin transient delete --all --network
     Success: 2 transients deleted from the database.
 
     # Delete all transients in a multisite.
-    $ wp transient delete --all --network && wp site list --field=url | xargs -n1 -I % wp --url=% transient delete --all
+    $ fin transient delete --all --network && fin site list --field=url | xargs -n1 -I % fin --url=% transient delete --all
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -61,6 +61,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |

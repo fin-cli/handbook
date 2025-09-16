@@ -1,4 +1,4 @@
-# wp term migrate
+# fin term migrate
 
 Migrate a term of a taxonomy to another taxonomy.
 
@@ -25,7 +25,7 @@ options:
 ### EXAMPLES
 
     # Migrate a category's term (video) to tag taxonomy.
-    $ wp term migrate 9190 --from=category --to=post_tag
+    $ fin term migrate 9190 --from=category --to=post_tag
     Term 'video' assigned to post 1155.
     Term 'video' migrated.
     Old instance of term 'video' removed from its original taxonomy.
@@ -33,7 +33,7 @@ options:
 
 ### GLOBAL PARAMETERS
 
-These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how WP-CLI interacts with WordPress.
+These [global parameters](https://make.wordpress.org/cli/handbook/config/) have the same behavior across all commands and affect how FIN-CLI interacts with WordPress.
 
 | **Argument**    | **Description**              |
 |:----------------|:-----------------------------|
@@ -49,6 +49,6 @@ These [global parameters](https://make.wordpress.org/cli/handbook/config/) have 
 | `--exec=<php-code>` | Execute PHP code before running the command (may be used more than once). |
 | `--context=<context>` | Load WordPress in a given context. |
 | `--[no-]color` | Whether to colorize the output. |
-| `--debug[=<group>]` | Show all PHP errors and add verbosity to WP-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
+| `--debug[=<group>]` | Show all PHP errors and add verbosity to FIN-CLI output. Built-in groups include: bootstrap, commandfactory, and help. |
 | `--prompt[=<assoc>]` | Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values. |
 | `--quiet` | Suppress informational messages. |
